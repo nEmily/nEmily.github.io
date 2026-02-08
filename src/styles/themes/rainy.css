@@ -1,0 +1,230 @@
+/* =============================================================================
+   RAINY THEME - Cool lavender/pink rainy day vibes
+   Alternate theme: wisteria, sage, rose, misty blues
+   ============================================================================= */
+
+:root.theme-rainy {
+    /* Base colors */
+    --bg-cream: #F0F1F5;
+    --bg-soft: #E5E7EE;
+    --terminal-bg: #252332;
+    --terminal-border: #6B6880;
+
+    /* Accent palette */
+    --accent-mint: #A8C8B8;       /* sage green */
+    --accent-peach: #F0C4B8;      /* soft peach */
+    --accent-lavender: #C4B0D9;   /* lavender */
+    --accent-butter: #E8C888;     /* muted gold */
+    --accent-rose: #E8A0B5;       /* dusty rose */
+    --accent-wisteria: #A8A0D0;   /* wisteria purple */
+    --accent-sky: #A0C4D8;        /* misty blue */
+
+    /* Text colors */
+    --text-dark: #3A3845;
+    --text-light: #EAE8F0;
+    --text-muted: #7A7888;
+
+    /* Semantic colors */
+    --cursor-color: var(--accent-rose);
+    --prompt-color: var(--accent-rose);
+    --command-color: var(--accent-mint);
+    --link-color: var(--accent-lavender);
+    --highlight-color: var(--accent-rose);
+    --comment-color: var(--text-muted);
+    --tag-color: var(--accent-mint);
+    --tag-bg: rgba(168, 200, 184, 0.12);
+    --tag-border: rgba(168, 200, 184, 0.22);
+}
+
+/* =============================================================================
+   BACKDROP - Misty rainy day watercolor
+   ============================================================================= */
+
+.theme-rainy .backdrop {
+    background:
+        /* Soft clouds/mist at top */
+        radial-gradient(ellipse 120% 40% at 20% 10%, rgba(232, 220, 235, 0.9) 0%, transparent 60%),
+        radial-gradient(ellipse 100% 35% at 80% 5%, rgba(220, 230, 240, 0.8) 0%, transparent 50%),
+
+        /* Dreamy middle layer - pinks and lavenders */
+        radial-gradient(ellipse 80% 50% at 10% 40%, rgba(232, 180, 200, 0.4) 0%, transparent 60%),
+        radial-gradient(ellipse 90% 60% at 85% 35%, rgba(200, 180, 220, 0.35) 0%, transparent 55%),
+        radial-gradient(ellipse 70% 40% at 50% 30%, rgba(180, 200, 220, 0.3) 0%, transparent 50%),
+
+        /* Warm undertones */
+        radial-gradient(ellipse 100% 80% at 30% 70%, rgba(240, 210, 190, 0.4) 0%, transparent 60%),
+        radial-gradient(ellipse 80% 60% at 70% 80%, rgba(200, 220, 200, 0.3) 0%, transparent 50%),
+
+        /* Base gradient - soft horizon feel */
+        linear-gradient(180deg,
+            #E8E0E8 0%,
+            #E0D8E4 15%,
+            #D8D4E0 30%,
+            #E4DCD8 50%,
+            #D8E0D8 70%,
+            #C8D4C8 85%,
+            #B8C8B8 100%
+        );
+}
+
+/* =============================================================================
+   WINDOW FRAME
+   ============================================================================= */
+
+.theme-rainy .window-frame {
+    background: var(--bg-soft);
+    border: 1px solid rgba(107, 104, 128, 0.4);
+    box-shadow:
+        0 20px 60px rgba(60, 50, 70, 0.25),
+        0 8px 24px rgba(60, 50, 70, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+}
+
+/* Title Bar */
+.theme-rainy .title-bar {
+    background: linear-gradient(180deg, #7A7890 0%, #6B6880 100%);
+    border-bottom: 1px solid #5A5870;
+}
+
+.theme-rainy .title-text {
+    color: rgba(255, 255, 255, 0.85);
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.15);
+}
+
+.theme-rainy .btn-close { background: #E88A95; }
+.theme-rainy .btn-minimize { background: #E8C888; }
+.theme-rainy .btn-maximize { background: #88C8A0; }
+
+/* =============================================================================
+   TAB BAR
+   ============================================================================= */
+
+.theme-rainy .tab-bar {
+    background: #2D2A3A;
+    border-bottom: 1px solid #3A3848;
+}
+
+.theme-rainy .tab {
+    color: #7A7888;
+}
+
+.theme-rainy .tab:hover {
+    color: var(--text-light);
+    background: #3A3848;
+}
+
+.theme-rainy .tab.active {
+    color: var(--accent-rose);
+    background: var(--terminal-bg);
+}
+
+.theme-rainy .tab-add {
+    color: #7A7888;
+}
+
+.theme-rainy .tab-add:hover {
+    color: var(--text-light);
+}
+
+.theme-rainy .tab-close {
+    color: inherit;
+}
+
+.theme-rainy .tab-close:hover {
+    color: var(--accent-rose);
+}
+
+/* =============================================================================
+   TERMINAL
+   ============================================================================= */
+
+.theme-rainy .terminal {
+    background: var(--terminal-bg);
+    color: var(--text-light);
+}
+
+.theme-rainy .ascii-art {
+    color: var(--accent-mint);
+}
+
+.theme-rainy .prompt {
+    color: var(--prompt-color);
+}
+
+.theme-rainy .command {
+    color: var(--command-color);
+}
+
+.theme-rainy .comment {
+    color: var(--comment-color);
+    font-style: italic;
+}
+
+.theme-rainy .highlight {
+    color: var(--highlight-color);
+}
+
+.theme-rainy .cursor {
+    background: var(--cursor-color);
+}
+
+/* Tags */
+.theme-rainy .tag {
+    background: var(--tag-bg);
+    color: var(--tag-color);
+    border: 1px solid var(--tag-border);
+}
+
+/* Links */
+.theme-rainy .link {
+    color: var(--link-color);
+    border-bottom: 1px dashed var(--link-color);
+}
+
+.theme-rainy .link:hover {
+    color: var(--accent-rose);
+    border-color: var(--accent-rose);
+}
+
+/* Projects */
+.theme-rainy .project-name {
+    color: var(--accent-sky);
+}
+
+.theme-rainy .game-name {
+    color: var(--accent-sky);
+}
+
+.theme-rainy .game-platform {
+    color: var(--accent-wisteria);
+}
+
+/* =============================================================================
+   RESTORE BUTTON
+   ============================================================================= */
+
+.theme-rainy .restore-btn {
+    background: var(--bg-soft);
+    color: var(--text-dark);
+    border: 1px solid var(--terminal-border);
+    box-shadow: 0 4px 12px rgba(60, 50, 70, 0.2);
+}
+
+.theme-rainy .restore-btn:hover {
+    background: var(--bg-cream);
+    transform: translateX(-50%) translateY(-2px);
+    box-shadow: 0 6px 16px rgba(60, 50, 70, 0.25);
+}
+
+/* =============================================================================
+   DESKTOP ICONS
+   ============================================================================= */
+
+.theme-rainy .icon-label {
+    color: var(--text-dark);
+}
+
+.theme-rainy .desktop-icon.selected {
+    background: rgba(200, 180, 220, 0.4);
+    outline: 2px solid rgba(200, 180, 220, 0.6);
+}

@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>~/emilynguyen</title>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Warm meadow palette */
+            --bg-cream: #FDF8F3;
+            --bg-soft: #F5EDE4;
+            --terminal-bg: #2D2A24;
+            --terminal-border: #8B7355;
+
+            /* Warm cozy accents */
+            --accent-mint: #98D4BB;
+            --accent-peach: #FFB5A7;
+            --accent-lavender: #C9B8E8;
+            --accent-butter: #F9E4B7;
+            --accent-rose: #E8A0BF;
+
+            --text-dark: #4A4238;
+            --text-light: #F5EDE4;
+            --text-muted: #6B6560;
+            --cursor-blink: #98D4BB;
+            --prompt-color: #FFB5A7;
+            --command-color: #98D4BB;
+            --link-color: #C9B8E8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            min-height: 100vh;
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* Watercolor sunshine meadow backdrop */
+        .backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: -1;
+
+            background:
+                /* Warm sunlight from top-right */
+                radial-gradient(ellipse 80% 60% at 85% 15%, rgba(255, 248, 220, 0.95) 0%, transparent 50%),
+                radial-gradient(ellipse 60% 40% at 75% 10%, rgba(255, 235, 180, 0.8) 0%, transparent 45%),
+
+                /* Soft peachy clouds */
+                radial-gradient(ellipse 100% 50% at 20% 20%, rgba(255, 210, 190, 0.5) 0%, transparent 55%),
+                radial-gradient(ellipse 70% 35% at 60% 25%, rgba(255, 225, 200, 0.4) 0%, transparent 50%),
+
+                /* Meadow greens at bottom */
+                radial-gradient(ellipse 120% 50% at 30% 90%, rgba(180, 210, 160, 0.6) 0%, transparent 50%),
+                radial-gradient(ellipse 100% 45% at 70% 95%, rgba(160, 200, 140, 0.5) 0%, transparent 45%),
+                radial-gradient(ellipse 80% 40% at 50% 85%, rgba(190, 220, 170, 0.4) 0%, transparent 50%),
+
+                /* Lavender hints */
+                radial-gradient(ellipse 60% 40% at 10% 50%, rgba(210, 190, 230, 0.25) 0%, transparent 50%),
+
+                /* Warm base gradient - sunny meadow */
+                linear-gradient(180deg,
+                    #FFF8E8 0%,
+                    #FFF0D8 15%,
+                    #FFE8C8 30%,
+                    #F0E8D0 50%,
+                    #E0E8C8 70%,
+                    #D0E0C0 85%,
+                    #C8D8B8 100%
+                );
+        }
+
+        /* Subtle texture overlay */
+        .backdrop::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%' height='100%' filter='url(%23noise)'/%3E%3C/svg%3E");
+            opacity: 0.025;
+            pointer-events: none;
+        }
+
+        /* Desktop container */
+        .desktop {
+            min-height: 100vh;
+            padding: 3rem;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+
+        .window-frame {
+            background: var(--bg-soft);
+            border-radius: 12px;
+            box-shadow:
+                0 16px 48px rgba(139, 115, 85, 0.2),
+                0 6px 20px rgba(139, 115, 85, 0.12),
+                inset 0 1px 0 rgba(255, 255, 255, 0.7);
+            max-width: 780px;
+            width: 100%;
+            overflow: hidden;
+            border: 2px solid var(--terminal-border);
+
+            /* Off-center positioning */
+            margin-left: 5%;
+            margin-top: 4vh;
+        }
+
+        .title-bar {
+            background: linear-gradient(180deg, #A08060 0%, #8B7355 100%);
+            padding: 0.5rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-bottom: 1px solid #6B5344;
+        }
+
+        .window-buttons {
+            display: flex;
+            gap: 8px;
+        }
+
+        .btn {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            border: 1px solid rgba(0,0,0,0.15);
+            cursor: pointer;
+            transition: filter 0.15s ease;
+        }
+
+        .btn:hover {
+            filter: brightness(1.1);
+        }
+
+        .btn-close { background: var(--accent-peach); }
+        .btn-minimize { background: var(--accent-butter); }
+        .btn-maximize { background: var(--accent-mint); }
+
+        .title-text {
+            flex: 1;
+            text-align: center;
+            font-family: 'VT323', monospace;
+            font-size: 1.1rem;
+            color: var(--bg-cream);
+            text-shadow: 1px 1px 0 rgba(0,0,0,0.2);
+            letter-spacing: 0.5px;
+        }
+
+        /* Tab bar */
+        .tab-bar {
+            display: flex;
+            background: #3D3A34;
+            border-bottom: 1px solid #4D4A44;
+            padding-left: 0.5rem;
+            padding-top: 0.2rem;
+        }
+
+        .tab {
+            padding: 0.4rem 1rem;
+            font-family: 'VT323', monospace;
+            font-size: 0.95rem;
+            color: #8B8578;
+            cursor: pointer;
+            border-radius: 6px 6px 0 0;
+            transition: all 0.15s ease;
+            position: relative;
+            margin-right: 2px;
+        }
+
+        .tab:hover {
+            color: var(--text-light);
+            background: #4D4A44;
+        }
+
+        .tab.active {
+            color: var(--accent-mint);
+            background: var(--terminal-bg);
+        }
+
+        .tab-add {
+            padding: 0.4rem 0.6rem;
+            color: #8B8578;
+            cursor: pointer;
+            font-size: 1rem;
+            line-height: 1;
+            transition: color 0.15s ease;
+        }
+
+        .tab-add:hover {
+            color: var(--text-light);
+        }
+
+        .terminal {
+            background: var(--terminal-bg);
+            padding: 1rem 1.25rem;
+            font-family: 'VT323', monospace;
+            font-size: 1.2rem;
+            line-height: 1.5;
+            color: var(--text-light);
+        }
+
+        .line {
+            margin-bottom: 0.3rem;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .prompt {
+            color: var(--prompt-color);
+            margin-right: 0.5rem;
+        }
+
+        .command {
+            color: var(--command-color);
+        }
+
+        .output {
+            color: var(--text-light);
+            padding-left: 0;
+            margin-bottom: 0.75rem;
+        }
+
+        .ascii-art {
+            color: var(--accent-mint);
+            white-space: pre;
+            font-size: 0.8rem;
+            line-height: 1.15;
+            margin: 0.5rem 0;
+            opacity: 0.85;
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 8px;
+            height: 1.1em;
+            background: var(--cursor-blink);
+            animation: blink 1s infinite;
+            vertical-align: middle;
+            margin-left: 2px;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        .highlight {
+            color: var(--accent-rose);
+        }
+
+        .tag {
+            display: inline-block;
+            background: rgba(152, 212, 187, 0.12);
+            color: var(--accent-mint);
+            padding: 0.05rem 0.45rem;
+            border-radius: 4px;
+            margin: 0.1rem;
+            font-size: 1rem;
+            border: 1px solid rgba(152, 212, 187, 0.22);
+        }
+
+        .comment {
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 900px) {
+            .desktop {
+                padding: 1.5rem;
+                justify-content: center;
+            }
+
+            .window-frame {
+                margin-left: 0;
+                margin-top: 2vh;
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .desktop {
+                padding: 1rem;
+            }
+
+            .terminal {
+                padding: 0.75rem;
+                font-size: 1.1rem;
+            }
+
+            .ascii-art {
+                font-size: 0.65rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="backdrop"></div>
+
+    <div class="desktop">
+        <div class="window-frame">
+            <div class="title-bar">
+                <div class="window-buttons">
+                    <div class="btn btn-close"></div>
+                    <div class="btn btn-minimize"></div>
+                    <div class="btn btn-maximize"></div>
+                </div>
+                <div class="title-text">emily — home</div>
+                <div style="width: 54px;"></div>
+            </div>
+
+            <div class="tab-bar">
+                <div class="tab active">~/home</div>
+                <div class="tab">~/projects</div>
+                <div class="tab">~/games</div>
+                <div class="tab">~/contact</div>
+                <div class="tab-add">+</div>
+            </div>
+
+            <div class="terminal">
+                <pre class="ascii-art">   ╭─────────────────────────────────────────────────────╮
+   │  software engineer  ·  game dev  ·  educator       │
+   │  Bay Area, CA                                      │
+   ╰─────────────────────────────────────────────────────╯</pre>
+
+                <div class="line">
+                    <span class="prompt">></span>
+                    <span class="command">cat about.txt</span>
+                </div>
+                <div class="output">
+                    <span class="comment"># hello world</span><br><br>
+                    I'm <span class="highlight">Emily Nguyen</span>, a UC Berkeley CS grad.<br>
+                    Currently teaching code to young programmers while<br>
+                    building games and seeking new adventures.
+                </div>
+
+                <div class="line">
+                    <span class="prompt">></span>
+                    <span class="command">ls skills/</span>
+                </div>
+                <div class="output">
+                    <span class="tag">python</span>
+                    <span class="tag">javascript</span>
+                    <span class="tag">react</span>
+                    <span class="tag">game-dev</span>
+                    <span class="tag">teaching</span>
+                </div>
+
+                <div class="line" style="margin-top: 0.75rem;">
+                    <span class="prompt">></span>
+                    <span class="cursor"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

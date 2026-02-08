@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emily Nguyen ~ Hybrid Cozy Terminal</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Hybrid: Modern terminal meets cozy game UI */
+            --bg-night: #1A1B26;
+            --bg-surface: #24283B;
+            --bg-elevated: #2F3549;
+
+            /* Cozy accent palette */
+            --mint: #9ECE6A;
+            --peach: #FF9E64;
+            --lavender: #BB9AF7;
+            --rose: #F7768E;
+            --sky: #7DCFFF;
+            --cream: #C0CAF5;
+            --gold: #E0AF68;
+            --teal: #73DACA;
+
+            --text-primary: #C0CAF5;
+            --text-muted: #565F89;
+            --border: #3B4261;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: var(--bg-night);
+            min-height: 100vh;
+            color: var(--text-primary);
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Subtle grid background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                linear-gradient(var(--border) 1px, transparent 1px),
+                linear-gradient(90deg, var(--border) 1px, transparent 1px);
+            background-size: 50px 50px;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+
+        .container {
+            max-width: 900px;
+            width: 100%;
+        }
+
+        /* Header with avatar */
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: var(--bg-surface);
+            border-radius: 16px;
+            border: 1px solid var(--border);
+        }
+
+        .avatar {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--lavender), var(--rose));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            box-shadow: 0 0 20px rgba(187, 154, 247, 0.3);
+        }
+
+        .header-info h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, var(--lavender), var(--sky));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-info .tagline {
+            color: var(--text-muted);
+            font-size: 1rem;
+            margin-top: 0.25rem;
+        }
+
+        .status-badges {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 0.75rem;
+        }
+
+        .badge {
+            font-size: 0.75rem;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        .badge.available {
+            background: rgba(158, 206, 106, 0.2);
+            color: var(--mint);
+            border: 1px solid var(--mint);
+        }
+
+        .badge.location {
+            background: rgba(125, 207, 255, 0.2);
+            color: var(--sky);
+            border: 1px solid var(--sky);
+        }
+
+        /* Main terminal card */
+        .terminal-card {
+            background: var(--bg-surface);
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            overflow: hidden;
+        }
+
+        .tab-bar {
+            display: flex;
+            background: var(--bg-elevated);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .tab {
+            padding: 0.75rem 1.5rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            transition: all 0.2s ease;
+        }
+
+        .tab:hover {
+            color: var(--text-primary);
+            background: rgba(255,255,255,0.02);
+        }
+
+        .tab.active {
+            color: var(--lavender);
+            border-bottom-color: var(--lavender);
+            background: var(--bg-surface);
+        }
+
+        .terminal-content {
+            padding: 1.5rem;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .prompt-line {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 0.25rem;
+        }
+
+        .prompt {
+            color: var(--mint);
+            margin-right: 0.5rem;
+            user-select: none;
+        }
+
+        .path {
+            color: var(--sky);
+            margin-right: 0.5rem;
+        }
+
+        .command {
+            color: var(--peach);
+        }
+
+        .output-block {
+            margin: 1rem 0 1.5rem 0;
+            padding-left: 0;
+        }
+
+        .comment {
+            color: var(--text-muted);
+            font-style: italic;
+        }
+
+        /* Skill cards grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 0.75rem;
+            margin: 1rem 0;
+        }
+
+        .skill-card {
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 0.75rem;
+            text-align: center;
+            transition: all 0.2s ease;
+        }
+
+        .skill-card:hover {
+            border-color: var(--lavender);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+
+        .skill-card .icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .skill-card .name {
+            font-size: 0.8rem;
+            color: var(--text-primary);
+        }
+
+        /* Links section */
+        .links-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin: 1rem 0;
+        }
+
+        .link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: var(--bg-elevated);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: all 0.2s ease;
+        }
+
+        .link-btn:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+        }
+
+        .link-btn .icon {
+            font-size: 1rem;
+        }
+
+        /* Interactive input */
+        .input-area {
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+            border-top: 1px dashed var(--border);
+        }
+
+        .input-row {
+            display: flex;
+            align-items: center;
+        }
+
+        .input-field {
+            flex: 1;
+            background: transparent;
+            border: none;
+            color: var(--text-primary);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.95rem;
+            outline: none;
+        }
+
+        .cursor {
+            width: 8px;
+            height: 1.2em;
+            background: var(--lavender);
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        /* Featured section */
+        .featured-section {
+            margin-top: 2rem;
+        }
+
+        .section-title {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .featured-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.25rem;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .featured-card:hover {
+            border-color: var(--teal);
+            transform: translateY(-2px);
+        }
+
+        .featured-card .card-icon {
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .featured-card h3 {
+            font-family: 'Nunito', sans-serif;
+            font-size: 1rem;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
+        }
+
+        .featured-card p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        .featured-card .tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            padding: 0.15rem 0.5rem;
+            background: rgba(115, 218, 202, 0.15);
+            color: var(--teal);
+            border-radius: 4px;
+            margin-top: 0.5rem;
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 2rem;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+
+        .footer a {
+            color: var(--lavender);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header with avatar -->
+        <div class="header">
+            <div class="avatar">👩‍💻</div>
+            <div class="header-info">
+                <h1>Emily Nguyen</h1>
+                <p class="tagline">Software Engineer & Game Dev Enthusiast</p>
+                <div class="status-badges">
+                    <span class="badge available">✨ Open to work</span>
+                    <span class="badge location">📍 Bay Area, CA</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main terminal -->
+        <div class="terminal-card">
+            <div class="tab-bar">
+                <div class="tab active">~/home</div>
+                <div class="tab">~/projects</div>
+                <div class="tab">~/games</div>
+                <div class="tab">~/contact</div>
+            </div>
+
+            <div class="terminal-content">
+                <div class="prompt-line">
+                    <span class="prompt">❯</span>
+                    <span class="path">~/emily</span>
+                    <span class="command">cat about.txt</span>
+                </div>
+                <div class="output-block">
+                    <span class="comment"># Hello, world! ✿</span><br><br>
+                    UC Berkeley CS graduate, currently teaching code to young minds<br>
+                    while building games and seeking new adventures in software.<br><br>
+                    <span class="comment"># I love making things that bring joy.</span>
+                </div>
+
+                <div class="prompt-line">
+                    <span class="prompt">❯</span>
+                    <span class="path">~/emily</span>
+                    <span class="command">ls skills/</span>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <div class="icon">🐍</div>
+                        <div class="name">Python</div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="icon">⚡</div>
+                        <div class="name">JavaScript</div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="icon">⚛️</div>
+                        <div class="name">React</div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="icon">🎮</div>
+                        <div class="name">Game Dev</div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="icon">🎨</div>
+                        <div class="name">UI/UX</div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="icon">📚</div>
+                        <div class="name">Teaching</div>
+                    </div>
+                </div>
+
+                <div class="prompt-line">
+                    <span class="prompt">❯</span>
+                    <span class="path">~/emily</span>
+                    <span class="command">open links/</span>
+                </div>
+                <div class="links-row">
+                    <a href="#" class="link-btn"><span class="icon">📄</span> Resume</a>
+                    <a href="#" class="link-btn"><span class="icon">🐙</span> GitHub</a>
+                    <a href="#" class="link-btn"><span class="icon">💼</span> LinkedIn</a>
+                    <a href="#" class="link-btn"><span class="icon">✉️</span> Email</a>
+                </div>
+
+                <div class="input-area">
+                    <div class="input-row">
+                        <span class="prompt">❯</span>
+                        <span class="path">~/emily</span>
+                        <input type="text" class="input-field" placeholder="type 'help' for commands..." readonly>
+                        <div class="cursor"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Featured projects/games -->
+        <div class="featured-section">
+            <div class="section-title">
+                <span>✦</span> Featured Work
+            </div>
+            <div class="featured-grid">
+                <div class="featured-card">
+                    <div class="card-icon">🎲</div>
+                    <h3>Cozy Puzzle Game</h3>
+                    <p>A relaxing puzzle game with lo-fi vibes</p>
+                    <span class="tag">Play Now</span>
+                </div>
+                <div class="featured-card">
+                    <div class="card-icon">🛠️</div>
+                    <h3>Dev Tools Extension</h3>
+                    <p>Browser extension for developers</p>
+                    <span class="tag">View Project</span>
+                </div>
+                <div class="featured-card">
+                    <div class="card-icon">📊</div>
+                    <h3>Data Viz Dashboard</h3>
+                    <p>Interactive visualization tool</p>
+                    <span class="tag">Live Demo</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            made with ♡ by emily • <a href="#">view source</a>
+        </div>
+    </div>
+</body>
+</html>

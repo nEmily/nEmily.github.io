@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emily Nguyen ~ Rune Factory Style Terminal</title>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Rune Factory inspired - warmer, more fantasy */
+            --bg-parchment: #F4E8D1;
+            --bg-warm: #E8D5B5;
+            --terminal-bg: #1E2D24;
+            --terminal-glow: rgba(144, 238, 144, 0.1);
+            --frame-wood: #6B4423;
+            --frame-light: #8B6914;
+            --accent-leaf: #7CB342;
+            --accent-gold: #FFD54F;
+            --accent-berry: #E57373;
+            --accent-sky: #81D4FA;
+            --accent-flower: #F48FB1;
+            --text-cream: #FAF3E0;
+            --prompt-gold: #FFD54F;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background:
+                linear-gradient(180deg, #87CEEB 0%, #98D8C8 30%, #7CB342 60%, #558B2F 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        /* Floating decorations */
+        .decoration {
+            position: fixed;
+            font-size: 2rem;
+            opacity: 0.6;
+            animation: float 6s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        .deco-1 { top: 10%; left: 5%; animation-delay: 0s; }
+        .deco-2 { top: 20%; right: 8%; animation-delay: 1s; }
+        .deco-3 { bottom: 15%; left: 10%; animation-delay: 2s; }
+        .deco-4 { bottom: 25%; right: 5%; animation-delay: 3s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(5deg); }
+        }
+
+        .terminal-container {
+            position: relative;
+            max-width: 750px;
+            width: 100%;
+        }
+
+        /* Wooden frame effect */
+        .wood-frame {
+            background: linear-gradient(135deg, #8B6914 0%, #6B4423 50%, #5D3A1A 100%);
+            border-radius: 16px;
+            padding: 12px;
+            box-shadow:
+                0 10px 40px rgba(0,0,0,0.3),
+                inset 0 2px 4px rgba(255,255,255,0.2),
+                inset 0 -2px 4px rgba(0,0,0,0.3);
+        }
+
+        /* Inner parchment border */
+        .parchment-border {
+            background: var(--bg-parchment);
+            border-radius: 8px;
+            padding: 8px;
+        }
+
+        .title-banner {
+            background: linear-gradient(90deg, var(--accent-berry), var(--accent-flower), var(--accent-gold));
+            padding: 0.5rem 1rem;
+            border-radius: 6px 6px 0 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .title-banner h1 {
+            font-family: 'Quicksand', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: white;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+            letter-spacing: 2px;
+        }
+
+        .banner-icon {
+            font-size: 1.2rem;
+        }
+
+        .terminal {
+            background: var(--terminal-bg);
+            background-image:
+                radial-gradient(ellipse at center, var(--terminal-glow) 0%, transparent 70%);
+            padding: 1.5rem;
+            font-family: 'VT323', monospace;
+            font-size: 1.25rem;
+            line-height: 1.7;
+            color: var(--text-cream);
+            border-radius: 0 0 6px 6px;
+            min-height: 420px;
+            position: relative;
+        }
+
+        /* CRT scanline effect - subtle */
+        .terminal::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.03),
+                rgba(0, 0, 0, 0.03) 1px,
+                transparent 1px,
+                transparent 2px
+            );
+            pointer-events: none;
+            border-radius: 0 0 6px 6px;
+        }
+
+        .welcome-box {
+            border: 2px solid var(--accent-gold);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            background: rgba(255, 213, 79, 0.05);
+        }
+
+        .welcome-box .title {
+            color: var(--accent-gold);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .welcome-box .subtitle {
+            color: var(--accent-leaf);
+            font-size: 1rem;
+        }
+
+        .line {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 0.3rem;
+        }
+
+        .prompt {
+            color: var(--prompt-gold);
+            margin-right: 0.75rem;
+            flex-shrink: 0;
+        }
+
+        .command {
+            color: var(--accent-sky);
+        }
+
+        .output {
+            margin-bottom: 1rem;
+            padding-left: 0;
+        }
+
+        .name {
+            color: var(--accent-flower);
+            font-weight: bold;
+        }
+
+        .stat-row {
+            display: flex;
+            align-items: center;
+            margin: 0.3rem 0;
+        }
+
+        .stat-label {
+            color: var(--accent-gold);
+            width: 100px;
+        }
+
+        .stat-bar {
+            background: rgba(255,255,255,0.1);
+            height: 12px;
+            width: 200px;
+            border-radius: 6px;
+            overflow: hidden;
+            margin-left: 0.5rem;
+        }
+
+        .stat-fill {
+            height: 100%;
+            border-radius: 6px;
+            transition: width 0.5s ease;
+        }
+
+        .stat-fill.python { background: var(--accent-sky); width: 90%; }
+        .stat-fill.js { background: var(--accent-gold); width: 85%; }
+        .stat-fill.games { background: var(--accent-berry); width: 75%; }
+        .stat-fill.teaching { background: var(--accent-flower); width: 95%; }
+
+        .menu-box {
+            border: 1px solid var(--accent-leaf);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+
+        .menu-title {
+            color: var(--accent-leaf);
+            margin-bottom: 0.75rem;
+            font-size: 1.1rem;
+        }
+
+        .menu-item {
+            display: inline-block;
+            background: rgba(124, 179, 66, 0.2);
+            color: var(--accent-leaf);
+            padding: 0.3rem 0.8rem;
+            margin: 0.2rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            border: 1px solid transparent;
+        }
+
+        .menu-item:hover {
+            background: rgba(124, 179, 66, 0.4);
+            border-color: var(--accent-leaf);
+            transform: translateY(-2px);
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 12px;
+            height: 1.3em;
+            background: var(--accent-leaf);
+            animation: blink 0.8s infinite;
+            vertical-align: middle;
+            box-shadow: 0 0 8px var(--accent-leaf);
+        }
+
+        @keyframes blink {
+            0%, 45% { opacity: 1; }
+            50%, 100% { opacity: 0; }
+        }
+
+        .input-line {
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+            border-top: 1px dashed rgba(124, 179, 66, 0.3);
+        }
+
+        /* Corner decorations */
+        .corner-deco {
+            position: absolute;
+            font-size: 1.5rem;
+            opacity: 0.4;
+        }
+        .corner-deco.tl { top: 8px; left: 12px; }
+        .corner-deco.tr { top: 8px; right: 12px; }
+        .corner-deco.bl { bottom: 8px; left: 12px; }
+        .corner-deco.br { bottom: 8px; right: 12px; }
+    </style>
+</head>
+<body>
+    <!-- Floating decorations -->
+    <div class="decoration deco-1">🌸</div>
+    <div class="decoration deco-2">🍃</div>
+    <div class="decoration deco-3">✨</div>
+    <div class="decoration deco-4">🌿</div>
+
+    <div class="terminal-container">
+        <div class="wood-frame">
+            <div class="parchment-border">
+                <div class="title-banner">
+                    <span class="banner-icon">⚔️</span>
+                    <h1>EMILY'S WORKSHOP</h1>
+                    <span class="banner-icon">🛡️</span>
+                </div>
+
+                <div class="terminal">
+                    <span class="corner-deco tl">❀</span>
+                    <span class="corner-deco tr">❀</span>
+                    <span class="corner-deco bl">❀</span>
+                    <span class="corner-deco br">❀</span>
+
+                    <div class="welcome-box">
+                        <div class="title">⋆ Welcome, Traveler! ⋆</div>
+                        <div class="subtitle">You've found Emily's coding workshop</div>
+                    </div>
+
+                    <div class="line">
+                        <span class="prompt">▸</span>
+                        <span class="command">inspect player</span>
+                    </div>
+                    <div class="output">
+                        <span class="name">★ Emily Nguyen</span><br>
+                        Class: Software Engineer | Level: UC Berkeley Graduate<br>
+                        Location: Bay Area Village<br>
+                        Quest: Building games & teaching code
+                    </div>
+
+                    <div class="line">
+                        <span class="prompt">▸</span>
+                        <span class="command">view skills</span>
+                    </div>
+                    <div class="output">
+                        <div class="stat-row">
+                            <span class="stat-label">Python</span>
+                            <div class="stat-bar"><div class="stat-fill python"></div></div>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">JavaScript</span>
+                            <div class="stat-bar"><div class="stat-fill js"></div></div>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">Game Dev</span>
+                            <div class="stat-bar"><div class="stat-fill games"></div></div>
+                        </div>
+                        <div class="stat-row">
+                            <span class="stat-label">Teaching</span>
+                            <div class="stat-bar"><div class="stat-fill teaching"></div></div>
+                        </div>
+                    </div>
+
+                    <div class="menu-box">
+                        <div class="menu-title">◇ Quick Travel ◇</div>
+                        <a href="#" class="menu-item">📜 Resume</a>
+                        <a href="#" class="menu-item">🏠 Projects</a>
+                        <a href="#" class="menu-item">🎮 Games</a>
+                        <a href="#" class="menu-item">💌 Contact</a>
+                        <a href="#" class="menu-item">🐙 GitHub</a>
+                    </div>
+
+                    <div class="input-line">
+                        <div class="line">
+                            <span class="prompt">▸</span>
+                            <span class="cursor"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
