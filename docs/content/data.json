@@ -1,0 +1,117 @@
+{
+  "meta": {
+    "title": "~/emilynguyen",
+    "description": "Emily Nguyen - Software Engineer, Game Dev, Educator"
+  },
+
+  "profile": {
+    "name": "Emily Nguyen",
+    "location": "Seattle, WA",
+    "roles": ["software engineer", "game dev", "educator"],
+    "bio": "UC Berkeley CS grad with 5+ years building robust frameworks and tooling. Currently at Meta working on CI/CD infrastructure for Reality Labs wearables. I love making tools that help developers ship faster.",
+    "status": "open to opportunities"
+  },
+
+  "links": {
+    "resume": "/assets/resume.pdf",
+    "github": "https://github.com/nEmily",
+    "linkedin": "https://linkedin.com/in/nguyen-emily",
+    "email": "mailto:emilyn@berkeley.edu"
+  },
+
+  "skills": {
+    "languages": ["Python", "C++", "C#", "Java", "JavaScript"],
+    "frameworks": ["NumPy", "Pandas", "asyncio", "Jupyter", "Unity", "Unreal Engine"],
+    "tools": ["Git", "GitLab CI/CD", "Docker"]
+  },
+
+  "experience": [
+    {
+      "title": "Senior Software Engineer",
+      "company": "Meta",
+      "location": "Seattle, WA",
+      "dates": "2024 - Present",
+      "description": "Lead engineer on test and release infrastructure for Reality Labs wearable prototypes. Building CI/CD enabled E2E testing and prototype device test lab.",
+      "tags": ["Python", "CI/CD", "Hardware"]
+    },
+    {
+      "title": "Senior Software Engineer",
+      "company": "Dolby Laboratories",
+      "location": "San Francisco, CA",
+      "dates": "2021 - 2023",
+      "description": "Released the Dolby Atmos Plugin for Unreal Engine with a team of 12, collaborating with Epic Games. Built Python interfaces for complex applications and optimized CI/CD pipelines by 33%.",
+      "tags": ["Python", "C++", "Unreal Engine", "Audio"]
+    },
+    {
+      "title": "Code Coach",
+      "company": "the Coder School",
+      "location": "Berkeley, CA",
+      "dates": "2019 - 2021",
+      "description": "Taught programming to students ages 7-16 in personalized sessions. Led nine week-long camps with 12-14 students each.",
+      "tags": ["Teaching", "Python", "Scratch"]
+    },
+    {
+      "title": "Software Developer",
+      "company": "Lokafy",
+      "location": "Toronto, Canada",
+      "dates": "2018",
+      "description": "Built a QuickPay payment system with Stripe API. Designed UI/UX and developed frontend with Django.",
+      "tags": ["Python", "Django", "Stripe"]
+    }
+  ],
+
+  "education": {
+    "degree": "B.S. Computer Science",
+    "school": "University of California, Berkeley",
+    "year": "2020"
+  },
+
+  "projects": [
+    {
+      "name": "Dolby Atmos for Unreal",
+      "description": "Cross-platform real-time audio processing SDK plugin for Unreal Engine, released in collaboration with Epic Games.",
+      "tags": ["C++", "Unreal", "Audio"],
+      "link": "https://news.dolby.com/en-WW/227541-dolby-releases-native-dolby-vision-and-dolby-atmos-plug-ins-for-unreal-engine",
+      "type": "work"
+    },
+    {
+      "name": "Crowd Simulation",
+      "description": "Unity simulation of a busy intersection with traffic lights, pedestrians, and crosswalks using NavMesh AI.",
+      "tags": ["Unity", "C#", "AI"],
+      "type": "personal"
+    },
+    {
+      "name": "VR Escape Room",
+      "description": "Interactive VR escape room with minigames, built for Oculus.",
+      "tags": ["Unity", "C#", "VR"],
+      "type": "personal"
+    },
+    {
+      "name": "ArkAngel",
+      "description": "2D top-down adventure RPG with dialogue branching, player movement, and minigames.",
+      "tags": ["Unity", "C#", "Game Dev"],
+      "type": "personal"
+    }
+  ],
+
+  "games": [
+    {
+      "name": "VR Escape Room",
+      "description": "Interactive escape room with puzzles and minigames",
+      "platform": "Oculus VR",
+      "playable": false
+    },
+    {
+      "name": "ArkAngel",
+      "description": "2D adventure RPG with dialogue and minigames",
+      "platform": "PC",
+      "playable": false
+    },
+    {
+      "name": "Crowd Simulation",
+      "description": "Watch pedestrians navigate a busy intersection",
+      "platform": "Web",
+      "playable": false
+    }
+  ]
+}

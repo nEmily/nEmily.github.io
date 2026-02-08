@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Terminal window background -->
+  <rect x="2" y="4" width="28" height="24" rx="3" fill="#2D2A24"/>
+
+  <!-- Title bar -->
+  <rect x="2" y="4" width="28" height="6" rx="3" fill="#8B7355"/>
+  <rect x="2" y="7" width="28" height="3" fill="#8B7355"/>
+
+  <!-- Window buttons -->
+  <circle cx="6" cy="7" r="1.5" fill="#FFB5A7"/>
+  <circle cx="10" cy="7" r="1.5" fill="#F9E4B7"/>
+  <circle cx="14" cy="7" r="1.5" fill="#98D4BB"/>
+
+  <!-- Prompt chevron -->
+  <polygon points="6,16 10,19 6,22" fill="#FFB5A7"/>
+
+  <!-- Cursor -->
+  <rect x="13" y="15" width="5" height="8" fill="#98D4BB"/>
+</svg>
