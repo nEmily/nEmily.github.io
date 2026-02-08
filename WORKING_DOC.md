@@ -3,16 +3,16 @@
 ## Project Overview
 A personal portfolio website with a cozy terminal aesthetic - terminal functionality reimagined with warm, inviting colors inspired by games like Animal Crossing and Rune Factory. Hosted on GitHub Pages.
 
-**Current status:** Website feature-complete. Ready for deployment after adding resume.pdf and og-image.png.
+**Current status:** Live at https://nemily.github.io/. GitHub Pages serves from `docs/` on main.
 
 ---
 
 ## File Index
 
 ```
-cozy-terminal-site/
+personal-website/
 ├── WORKING_DOC.md          # This file - project context & TODOs
-├── src/
+├── docs/                    # ← GitHub Pages serves from here
 │   ├── index.html          # Main HTML structure ✅
 │   ├── styles/
 │   │   ├── main.css        # Core layout & terminal structure ✅
@@ -25,15 +25,15 @@ cozy-terminal-site/
 │   │   ├── terminal.js     # Interactive terminal commands ✅
 │   │   ├── window.js       # Window controls (close/min/max/restore) ✅
 │   │   └── themes.js       # Theme switching logic (TODO)
-│   └── content/
-│       └── data.json       # All text content (bio, skills, projects, etc.) ✅
+│   ├── content/
+│   │   └── data.json       # All text content (bio, skills, projects, etc.) ✅
+│   └── assets/
+│       └── resume.pdf      # (TODO: add resume)
 ├── mockups/                 # Design reference files
 │   ├── mockup-v1f.html     # Cool-tone version (reference for rainy theme)
 │   ├── mockup-v1g.html     # APPROVED - warm meadow version
 │   ├── mockup-v2.html      # Fantasy RPG style (reference)
 │   └── mockup-v3.html      # Modern hybrid (reference)
-└── assets/
-    └── resume.pdf          # (TODO: add resume)
 ```
 
 ---
@@ -60,7 +60,7 @@ cozy-terminal-site/
 
 ## Content Structure
 
-Content lives in `src/content/data.json` for easy updates:
+Content lives in `docs/content/data.json` for easy updates:
 
 ```json
 {
@@ -296,13 +296,13 @@ Content lives in `src/content/data.json` for easy updates:
 
 When updating this project:
 
-1. **To update content:** Edit `src/content/data.json` only
-2. **To change colors/theme:** Edit files in `src/styles/themes/`
-3. **To modify layout:** Edit `src/styles/main.css`
-4. **To add interactivity:** Edit files in `src/scripts/`
-5. **To change backdrop:** Edit `src/styles/backdrop.css`
+1. **To update content:** Edit `docs/content/data.json` only
+2. **To change colors/theme:** Edit files in `docs/styles/themes/`
+3. **To modify layout:** Edit `docs/styles/main.css`
+4. **To add interactivity:** Edit files in `docs/scripts/`
+5. **To change backdrop:** Edit `docs/styles/backdrop.css`
 
-The HTML structure in `index.html` should rarely need changes once built. All dynamic content is pulled from `data.json`.
+All site files live in `docs/` — GitHub Pages serves directly from there. No build step needed.
 
 ---
 
