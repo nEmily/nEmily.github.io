@@ -338,9 +338,11 @@
         }
 
         // Also support just 'x' key when not typing to close tab
-        if (e.key === 'x' && !e.target.closest('.input-text') && !e.target.closest('input')) {
-            e.preventDefault();
-            closeTab(getActiveTab());
+        if (e.key === 'x' && (e.target === document.body || e.target.closest('.terminal'))) {
+            if (!e.target.closest('.input-text') && !e.target.closest('input')) {
+                e.preventDefault();
+                closeTab(getActiveTab());
+            }
         }
     });
 

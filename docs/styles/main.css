@@ -110,7 +110,7 @@ body {
     border-radius: 8px;
     border: none;
     cursor: pointer;
-    font-family: 'VT323', monospace;
+    font-family: 'JetBrains Mono', monospace;
     font-size: 1.1rem;
     transition: all 0.2s ease;
     z-index: 100;
@@ -141,8 +141,6 @@ body {
     display: flex;
     flex-direction: column;
     transition: all 0.3s ease;
-    /* Native browser resize - handle appears at bottom-right corner */
-    resize: both;
     overflow: hidden;
 }
 
@@ -173,11 +171,7 @@ body {
     position: absolute;
     z-index: 1000;
     pointer-events: auto;
-    background: rgba(152, 212, 187, 0.2);
-}
-
-.resize-handle:hover {
-    background: rgba(152, 212, 187, 0.5);
+    background: transparent;
 }
 
 /* Disable transition during resize/drag for smooth interaction */
@@ -303,10 +297,26 @@ body {
     transform: scale(0.95);
 }
 
+.btn:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.6);
+    outline-offset: 2px;
+}
+
+.tab:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.4);
+    outline-offset: -2px;
+}
+
+.tab-add:focus-visible,
+.desktop-icon:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.4);
+    outline-offset: 2px;
+}
+
 .title-text {
     flex: 1;
     text-align: center;
-    font-family: 'VT323', monospace;
+    font-family: 'JetBrains Mono', monospace;
     font-size: 1.1rem;
     letter-spacing: 0.5px;
 }
@@ -325,11 +335,18 @@ body {
     padding-top: 0.2rem;
     border: none;
     flex-shrink: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+}
+
+.tab-bar::-webkit-scrollbar {
+    display: none;
 }
 
 .tab {
     padding: 0.4rem 1rem;
-    font-family: 'VT323', monospace;
+    font-family: 'JetBrains Mono', monospace;
     font-size: 0.95rem;
     cursor: pointer;
     border-radius: 6px 6px 0 0;
@@ -338,6 +355,8 @@ body {
     margin-right: 2px;
     border: none;
     background: transparent;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
 .tab-add {
@@ -348,6 +367,7 @@ body {
     transition: color 0.15s ease;
     border: none;
     background: transparent;
+    flex-shrink: 0;
 }
 
 /* Tab close button */
@@ -379,8 +399,8 @@ body {
 
 .terminal {
     padding: 1rem 1.25rem;
-    font-family: 'VT323', monospace;
-    font-size: 1.2rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.95rem;
     line-height: 1.5;
     overflow-y: auto;
     flex: 1;
@@ -497,6 +517,7 @@ body {
 .link {
     text-decoration: none;
     transition: all 0.15s ease;
+    cursor: pointer;
 }
 
 /* =============================================================================
@@ -552,7 +573,7 @@ body {
 
     .terminal {
         padding: 0.75rem;
-        font-size: 1.1rem;
+        font-size: 0.85rem;
     }
 
     .ascii-art {
@@ -562,5 +583,9 @@ body {
     .tab {
         padding: 0.4rem 0.6rem;
         font-size: 0.85rem;
+    }
+
+    .resize-handle {
+        display: none;
     }
 }
