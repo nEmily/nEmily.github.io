@@ -94,24 +94,5 @@
     }
   ],
 
-  "games": [
-    {
-      "name": "VR Escape Room",
-      "description": "Interactive escape room with puzzles and minigames",
-      "platform": "Oculus VR",
-      "playable": false
-    },
-    {
-      "name": "ArkAngel",
-      "description": "2D adventure RPG with dialogue and minigames",
-      "platform": "PC",
-      "playable": false
-    },
-    {
-      "name": "Crowd Simulation",
-      "description": "Watch pedestrians navigate a busy intersection",
-      "platform": "Web",
-      "playable": false
-    }
-  ]
+  "games": []
 }
