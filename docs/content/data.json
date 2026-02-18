@@ -1,14 +1,14 @@
 {
   "meta": {
     "title": "~/emilynguyen",
-    "description": "Emily Nguyen - Software Engineer, Game Dev, Educator"
+    "description": "Emily Nguyen - Software Engineer specializing in developer tooling, CI/CD, and AI-integrated workflows"
   },
 
   "profile": {
     "name": "Emily Nguyen",
     "location": "Seattle, WA",
-    "roles": ["software engineer", "game dev", "educator"],
-    "bio": "UC Berkeley CS grad with 5+ years building robust frameworks and tooling. Currently at Meta working on CI/CD infrastructure for Reality Labs wearables. I love making tools that help developers ship faster.",
+    "roles": ["software engineer", "developer tooling", "ai workflows"],
+    "bio": "UC Berkeley CS grad with 5+ years building CI/CD systems, test frameworks, and LLM-powered automation at scale. Currently at Meta working on test infrastructure for Reality Labs. Passionate about autonomous coding agents and tools that help engineers ship faster.",
     "status": "open to opportunities"
   },
 
@@ -20,43 +20,32 @@
   },
 
   "skills": {
-    "languages": ["Python", "C++", "C#", "Java", "JavaScript"],
-    "frameworks": ["NumPy", "Pandas", "asyncio", "Jupyter", "Unity", "Unreal Engine"],
-    "tools": ["Git", "GitLab CI/CD", "Docker"]
+    "languages": ["Python", "TypeScript", "JavaScript", "C++", "C#", "Java"],
+    "frameworks": ["FastAPI", "Node.js", "Playwright", "asyncio", "NumPy", "Pandas"],
+    "tools": ["Git", "GitLab CI/CD", "Docker", "AWS", "Chef", "Claude Code", "LLM tooling", "prompt engineering"]
   },
 
   "experience": [
     {
       "title": "Senior Software Engineer",
       "company": "Meta",
-      "location": "Seattle, WA",
       "dates": "2024 - Present",
-      "description": "Lead engineer on test and release infrastructure for Reality Labs wearable prototypes. Building CI/CD enabled E2E testing and prototype device test lab.",
-      "tags": ["Python", "CI/CD", "Hardware"]
+      "description": "Built AI-powered developer tooling including LLM IDE plugins and an AI agent pipeline that auto-generates team wiki docs from code changes. Designed end-to-end test automation pipelines for embedded wearable devices and led a 3-engineer testing team, surfacing 72 bugs pre-release.",
+      "tags": ["Python", "CI/CD", "LLM tooling", "Test Infrastructure"]
     },
     {
       "title": "Senior Software Engineer",
       "company": "Dolby Laboratories",
-      "location": "San Francisco, CA",
       "dates": "2021 - 2023",
-      "description": "Released the Dolby Atmos Plugin for Unreal Engine with a team of 12, collaborating with Epic Games. Built Python interfaces for complex applications and optimized CI/CD pipelines by 33%.",
-      "tags": ["Python", "C++", "Unreal Engine", "Audio"]
+      "description": "Released the Dolby Atmos Plugin for Unreal Engine with a team of 12, in collaboration with Epic Games. Built Python interfaces for a real-time audio C++/C SDK and optimized CI/CD pipelines, improving speed by 33%.",
+      "tags": ["Python", "C++", "Unreal Engine", "CI/CD"]
     },
     {
       "title": "Code Coach",
       "company": "the Coder School",
-      "location": "Berkeley, CA",
       "dates": "2019 - 2021",
       "description": "Taught programming to students ages 7-16 in personalized sessions. Led nine week-long camps with 12-14 students each.",
-      "tags": ["Teaching", "Python", "Scratch"]
-    },
-    {
-      "title": "Software Developer",
-      "company": "Lokafy",
-      "location": "Toronto, Canada",
-      "dates": "2018",
-      "description": "Built a QuickPay payment system with Stripe API. Designed UI/UX and developed frontend with Django.",
-      "tags": ["Python", "Django", "Stripe"]
+      "tags": ["Teaching", "Python", "Scratch", "Java"]
     }
   ],
 
@@ -68,6 +57,18 @@
 
   "projects": [
     {
+      "name": "AI-Powered Developer Tooling",
+      "description": "LLM tool-use automation system for autonomous coding agents — hook-based orchestration, real-time terminal status indicators, dual-agent pre-push code review gate, and a multi-agent framework with persistent cross-session memory.",
+      "tags": ["TypeScript", "JavaScript", "Claude Code", "LLM", "Orchestration"],
+      "type": "personal"
+    },
+    {
+      "name": "Pixietown",
+      "description": "Multi-agent orchestration visualizer with real-time state management. Python bridge polls task state files and broadcasts agent activity over WebSocket to a pixel-art frontend rendering live orchestration status.",
+      "tags": ["Python", "JavaScript", "WebSocket", "Multi-agent"],
+      "type": "personal"
+    },
+    {
       "name": "Dolby Atmos for Unreal",
       "description": "Cross-platform real-time audio processing SDK plugin for Unreal Engine, released in collaboration with Epic Games.",
       "tags": ["C++", "Unreal", "Audio"],
@@ -75,9 +76,9 @@
       "type": "work"
     },
     {
-      "name": "Crowd Simulation",
-      "description": "Unity simulation of a busy intersection with traffic lights, pedestrians, and crosswalks using NavMesh AI.",
-      "tags": ["Unity", "C#", "AI"],
+      "name": "ArkAngel",
+      "description": "2D top-down adventure RPG with dialogue branching, player movement, and minigames.",
+      "tags": ["Unity", "C#", "Game Dev"],
       "type": "personal"
     },
     {
@@ -85,14 +86,27 @@
       "description": "Interactive VR escape room with minigames, built for Oculus.",
       "tags": ["Unity", "C#", "VR"],
       "type": "personal"
-    },
-    {
-      "name": "ArkAngel",
-      "description": "2D top-down adventure RPG with dialogue branching, player movement, and minigames.",
-      "tags": ["Unity", "C#", "Game Dev"],
-      "type": "personal"
     }
   ],
 
-  "games": []
+  "games": [
+    {
+      "name": "ArkAngel",
+      "platform": "PC",
+      "description": "2D adventure RPG with branching dialogue and minigames",
+      "status": "demo coming soon"
+    },
+    {
+      "name": "VR Escape Room",
+      "platform": "Oculus VR",
+      "description": "Escape room with puzzles and minigames",
+      "status": "demo coming soon"
+    },
+    {
+      "name": "Crowd Simulation",
+      "platform": "Web",
+      "description": "NavMesh AI pedestrians navigating an intersection",
+      "status": "demo coming soon"
+    }
+  ]
 }

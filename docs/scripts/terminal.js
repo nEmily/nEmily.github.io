@@ -41,10 +41,10 @@
             content: `<span class="comment"># hello world</span>
 
 I'm <span class="highlight">Emily Nguyen</span>, a UC Berkeley CS grad with 5+ years
-building robust frameworks and tooling. Currently at Meta
-working on test infrastructure for Reality Labs wearables.
+building CI/CD systems, test frameworks, and LLM-powered automation.
+Currently at Meta working on test infrastructure for Reality Labs.
 
-I love making tools that help developers ship faster.`
+Passionate about autonomous coding agents and AI-integrated dev tools.`
         },
         '~/skills': {
             type: 'dir',
@@ -52,19 +52,38 @@ I love making tools that help developers ship faster.`
         },
         '~/skills/languages': {
             type: 'dir',
-            children: ['python', 'cpp', 'csharp', 'java', 'javascript']
+            children: ['python', 'typescript', 'javascript', 'cpp', 'csharp', 'java']
         },
         '~/skills/frameworks': {
             type: 'dir',
-            children: ['numpy', 'pandas', 'asyncio', 'unity', 'unreal']
+            children: ['fastapi', 'nodejs', 'playwright', 'asyncio', 'numpy', 'pandas']
         },
         '~/skills/tools': {
             type: 'dir',
-            children: ['git', 'gitlab-ci', 'jupyter']
+            children: ['git', 'gitlab-ci', 'docker', 'aws', 'claude-code', 'llm-tooling']
         },
         '~/projects': {
             type: 'dir',
-            children: ['dolby-atmos-unreal/', 'crowd-simulation/', 'vr-escape-room/', 'arkangel/']
+            children: ['ai-powered-dev-tooling/', 'pixietown/', 'dolby-atmos-unreal/', 'arkangel/', 'vr-escape-room/']
+        },
+        '~/projects/ai-powered-dev-tooling': {
+            type: 'dir',
+            content: `AI-Powered Developer Tooling
+LLM tool-use automation system for autonomous coding agents
+Hook-based orchestration, real-time terminal status indicators
+Dual-agent pre-push code review gate and prompt-engineered iteration loops
+Multi-agent framework with persistent cross-session memory
+
+Tags: TypeScript, JavaScript, Claude Code, LLM, Orchestration`
+        },
+        '~/projects/pixietown': {
+            type: 'dir',
+            content: `Pixietown
+Multi-agent orchestration visualizer with real-time state management
+Python bridge polls task state files and broadcasts over WebSocket
+Pixel-art frontend renders live orchestration status
+
+Tags: Python, JavaScript, WebSocket, Multi-agent`
         },
         '~/projects/dolby-atmos-unreal': {
             type: 'dir',
@@ -75,13 +94,13 @@ Released in collaboration with Epic Games
 Tags: C++, Unreal, Audio
 Link: https://news.dolby.com/en-WW/227541-dolby-releases-native-dolby-vision-and-dolby-atmos-plug-ins-for-unreal-engine`
         },
-        '~/projects/crowd-simulation': {
+        '~/projects/arkangel': {
             type: 'dir',
-            content: `Crowd Simulation
-Unity simulation of a busy intersection
-Uses NavMesh AI for realistic pedestrian movement
+            content: `ArkAngel
+2D top-down adventure RPG
+Features dialogue branching and minigames
 
-Tags: Unity, C#, AI`
+Tags: Unity, C#, Game Dev`
         },
         '~/projects/vr-escape-room': {
             type: 'dir',
@@ -91,23 +110,14 @@ Built for Oculus VR
 
 Tags: Unity, C#, VR`
         },
-        '~/projects/arkangel': {
-            type: 'dir',
-            content: `ArkAngel
-2D top-down adventure RPG
-Features dialogue branching and minigames
-
-Tags: Unity, C#, Game Dev`
-        },
         '~/games': {
             type: 'dir',
-            children: ['vr-escape-room/', 'arkangel/', 'crowd-sim/']
+            children: ['arkangel/', 'vr-escape-room/', 'crowd-sim/']
         },
         '~/contact.txt': {
             type: 'file',
             content: `# let's connect
 
-email:    emilyn@berkeley.edu
 github:   github.com/nEmily
 linkedin: linkedin.com/in/nguyen-emily`
         },
@@ -437,7 +447,7 @@ linkedin: linkedin.com/in/nguyen-emily`
         usage: 'sudo <command>',
         execute: (args) => {
             if (args[0] === 'hire' && args[1] === 'emily') {
-                return `<span class="highlight">Permission granted!</span>\n\nGreat choice. Let's connect:\n• email: emilyn@berkeley.edu\n• linkedin: linkedin.com/in/nguyen-emily`;
+                return `<span class="highlight">Permission granted!</span>\n\nGreat choice. Let's connect:\n• linkedin: linkedin.com/in/nguyen-emily\n• github: github.com/nEmily`;
             }
             if (args[0] === 'make' && args[1] === 'me' && args[2] === 'a' && args[3] === 'sandwich') {
                 return "Okay.";
@@ -626,42 +636,43 @@ Try <span class="command">claude</span> instead. 😉`
         const responses = [
             {
                 patterns: ['who are you', 'about you', 'tell me about yourself', 'introduce yourself'],
-                response: `I'm Emily Nguyen, a software engineer. I graduated from UC Berkeley with a CS degree and have spent the last 5+ years building developer tools and frameworks.
+                response: `I'm Emily Nguyen, a software engineer specializing in developer tooling, CI/CD infrastructure, and AI-integrated engineering workflows.
 
-Currently I'm at Meta working on test infrastructure for Reality Labs wearables. Before that, I was at Dolby where I shipped the Atmos plugin for Unreal Engine.
+UC Berkeley CS grad with 5+ years of experience. Currently at Meta building test infrastructure for Reality Labs. Before that, Dolby Laboratories — shipped the Dolby Atmos Plugin for Unreal Engine with Epic Games.
 
-I'm also passionate about game development and teaching code to others.`
+I'm also into game dev and autonomous coding agents.`
             },
             {
                 patterns: ['what do you do', 'your job', 'your work', 'current role', 'where do you work'],
-                response: `I'm a Senior Software Engineer at Meta, working on test and release infrastructure for Reality Labs wearable prototypes.
+                response: `I'm a Senior Software Engineer at Meta, working on test infrastructure and release tooling for Reality Labs.
 
-My day-to-day involves:
-• Building CI/CD enabled E2E testing systems
-• Setting up prototype device test labs
-• Creating tools that help researchers ship faster`
+My work includes:
+• Building AI-powered developer tools (LLM IDE plugins, agent pipelines)
+• Designing end-to-end test automation for wearable devices
+• CI/CD systems, quality gating, and release qualification`
             },
             {
                 patterns: ['projects', 'what have you built', 'portfolio', 'your work'],
                 response: `Here are some things I've worked on:
 
+<span class="highlight">AI-Powered Developer Tooling</span> - LLM orchestration framework, multi-agent system, pre-push review gate
+<span class="highlight">Pixietown</span> - Multi-agent orchestration visualizer with pixel-art frontend
 <span class="highlight">Dolby Atmos for Unreal</span> - Cross-platform audio SDK, shipped with Epic Games
-<span class="highlight">VR Escape Room</span> - Interactive puzzle game for Oculus
 <span class="highlight">ArkAngel</span> - 2D adventure RPG with dialogue system
-<span class="highlight">Crowd Simulation</span> - NavMesh AI pedestrian simulation
+<span class="highlight">VR Escape Room</span> - Interactive puzzle game for Oculus
 
 Type 'ls projects/' to see more, or 'cat ~/projects/[name]' for details.`
             },
             {
                 patterns: ['skills', 'languages', 'tech stack', 'technologies', 'what can you code'],
                 response: `<span class="comment"># languages</span>
-Python (primary), C++, C#, Java, JavaScript
+Python, TypeScript, JavaScript, C++, C#, Java
 
 <span class="comment"># frameworks & tools</span>
-Unity, Unreal Engine, NumPy, Pandas, asyncio
+FastAPI, Node.js, Playwright, asyncio, NumPy, Pandas
 
-<span class="comment"># infrastructure</span>
-Git, GitLab CI/CD, Jupyter, Docker`
+<span class="comment"># infrastructure & ai tooling</span>
+Git, GitLab CI/CD, Docker, AWS, Claude Code, LLM tooling, prompt engineering`
             },
             {
                 patterns: ['games', 'game dev', 'video games', 'game development'],
@@ -680,14 +691,21 @@ At Dolby, I also worked closely with game studios and Epic Games on audio techno
 While there, I was also a teaching assistant and XR/VR course facilitator.`
             },
             {
+                patterns: ['ai', 'llm', 'machine learning', 'agent', 'claude', 'prompt'],
+                response: `I've been building AI-powered developer tooling since 2025 — hook-based orchestration, multi-agent frameworks, automated code review gates using LLMs, and prompt-engineered iteration loops.
+
+At Meta, I also built an AI agent pipeline that automatically generates team wiki docs from code changes.
+
+This portfolio itself was built with Claude Code, including some of the automation infrastructure running behind it.`
+            },
+            {
                 patterns: ['contact', 'reach you', 'hire', 'get in touch', 'email'],
                 response: `You can reach me at:
 
-<span class="command">email</span>    emilyn@berkeley.edu
 <span class="command">github</span>   github.com/nEmily
 <span class="command">linkedin</span> linkedin.com/in/nguyen-emily
 
-Or just type 'email', 'github', or 'linkedin' to open directly!`
+Or just type 'github' or 'linkedin' to open directly!`
             },
             {
                 patterns: ['teaching', 'teach', 'educator', 'coder school'],
@@ -711,7 +729,9 @@ Key work:
                 patterns: ['meta', 'reality labs', 'facebook'],
                 response: `I joined <span class="highlight">Meta</span> in 2024 as a Senior Software Engineer.
 
-I'm working on test and release infrastructure for Reality Labs wearable prototypes - building the tooling that helps researchers and engineers ship faster.`
+I design test automation pipelines for wearable devices, lead a 3-engineer testing team, and build AI-powered developer tools — including an LLM IDE plugin and an AI agent pipeline that auto-generates wiki docs from code changes.
+
+Also surfaced 72 bugs pre-release and helped define the org's first structured software test strategy.`
             },
             {
                 patterns: ['hobby', 'hobbies', 'fun', 'free time', 'interests'],
