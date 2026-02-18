@@ -44,7 +44,7 @@ I'm <span class="highlight">Emily Nguyen</span>, a UC Berkeley CS grad with 5+ y
 building CI/CD systems, test frameworks, and LLM-powered automation.
 Currently at Meta working on test infrastructure for Reality Labs.
 
-Passionate about autonomous coding agents and AI-integrated dev tools.`
+Building autonomous coding agents and AI-integrated dev tools.`
         },
         '~/skills': {
             type: 'dir',
