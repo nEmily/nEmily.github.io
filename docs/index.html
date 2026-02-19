@@ -123,6 +123,10 @@
                     <span class="tab-label">~/contact</span>
                     <span class="tab-close" aria-label="Close tab">×</span>
                 </button>
+                <button class="tab" role="tab" aria-selected="false" data-tab="experience">
+                    <span class="tab-label">~/experience</span>
+                    <span class="tab-close" aria-label="Close tab">×</span>
+                </button>
                 <button class="tab-add" aria-label="New tab">+</button>
             </nav>
 
@@ -143,7 +147,13 @@
                         I'm <span class="highlight">Emily Nguyen</span>, a UC Berkeley CS grad with 5+ years<br>
                         building CI/CD systems, test frameworks, and LLM-powered automation.<br>
                         Currently at Meta working on test infrastructure for Reality Labs.<br><br>
-                        Building autonomous coding agents and AI-integrated dev tools.
+                        I build autonomous coding agents and AI-integrated dev workflows —<br>
+                        multi-agent orchestration, hook-based tooling, pre-push code review gates,<br>
+                        and persistent cross-session agent memory. Claude Code power user.<br><br>
+                        <span class="comment"># quick links</span><br>
+                        <a href="/assets/resume.pdf" class="link" target="_blank" rel="noopener">resume.pdf</a> ·
+                        <a href="https://linkedin.com/in/nguyen-emily" class="link" target="_blank" rel="noopener">linkedin</a> ·
+                        <a href="https://github.com/nEmily" class="link" target="_blank" rel="noopener">github</a>
                     </div>
 
                     <div class="terminal-line input-line">
@@ -159,27 +169,31 @@
                         <span class="command">ls projects/</span>
                     </div>
                     <div class="output">
-                        <div class="project-item">
+                        <div class="project-item project-featured">
+                            <div class="featured-badge">★ featured</div>
                             <span class="project-name">ai-powered-dev-tooling/</span>
-                            <span class="project-desc">— LLM orchestration, multi-agent framework, pre-push code review gate</span>
+                            <span class="project-desc">— Hook-based LLM orchestration for autonomous coding agents. Multi-agent framework with persistent cross-session memory, real-time terminal status indicators, and a dual-agent pre-push code review gate. Built on Claude Code.</span>
                             <div class="project-tags">
                                 <span class="tag">TypeScript</span>
                                 <span class="tag">Claude Code</span>
                                 <span class="tag">LLM</span>
+                                <span class="tag">Multi-agent</span>
+                                <span class="tag">Orchestration</span>
                             </div>
                         </div>
                         <div class="project-item">
                             <span class="project-name">pixietown/</span>
-                            <span class="project-desc">— Multi-agent orchestration visualizer with pixel-art frontend</span>
+                            <span class="project-desc">— Multi-agent orchestration visualizer with real-time state management. Python bridge polls task state files and broadcasts agent activity over WebSocket to a pixel-art frontend.</span>
                             <div class="project-tags">
                                 <span class="tag">Python</span>
                                 <span class="tag">JavaScript</span>
                                 <span class="tag">WebSocket</span>
+                                <span class="tag">Multi-agent</span>
                             </div>
                         </div>
                         <div class="project-item">
                             <span class="project-name">dolby-atmos-unreal/</span>
-                            <span class="project-desc">— Cross-platform audio SDK for Unreal Engine, shipped with Epic Games</span>
+                            <span class="project-desc">— Cross-platform real-time audio SDK plugin for Unreal Engine, released in collaboration with Epic Games</span>
                             <div class="project-tags">
                                 <span class="tag">C++</span>
                                 <span class="tag">Unreal</span>
@@ -196,7 +210,7 @@
                         </div>
                         <div class="project-item">
                             <span class="project-name">vr-escape-room/</span>
-                            <span class="project-desc">— Interactive VR puzzles for Oculus</span>
+                            <span class="project-desc">— Interactive VR escape room with puzzles, built for Oculus</span>
                             <div class="project-tags">
                                 <span class="tag">Unity</span>
                                 <span class="tag">VR</span>
@@ -218,22 +232,68 @@
                     </div>
                     <div class="output">
                         <span class="comment"># games I've made</span><br><br>
-                        <div class="game-item">
-                            <span class="game-name">arkangel</span>
-                            <span class="game-platform">[PC]</span><br>
-                            <span class="game-desc">2D adventure RPG with branching dialogue and minigames</span>
+                        <div class="game-showcase">
+                            <div class="game-card game-card-rpg">
+                                <div class="game-card-icon">
+<pre class="game-ascii">┌───────┐
+│ ⚔ ♠  │
+│  RPG  │
+│ ♥ 🗡  │
+└───────┘</pre>
+                                </div>
+                                <div class="game-card-info">
+                                    <span class="game-name">arkangel</span>
+                                    <span class="game-platform">[PC]</span>
+                                    <div class="game-desc">2D top-down adventure RPG with branching dialogue system and minigames</div>
+                                    <div class="game-status">demo coming soon</div>
+                                </div>
+                            </div>
+                            <div class="game-card game-card-vr">
+                                <div class="game-card-icon">
+<pre class="game-ascii">┌───────┐
+│ ◉   ◉ │
+│  VR   │
+│  ═══  │
+└───────┘</pre>
+                                </div>
+                                <div class="game-card-info">
+                                    <span class="game-name">vr-escape-room</span>
+                                    <span class="game-platform">[Oculus VR]</span>
+                                    <div class="game-desc">Immersive VR escape room with spatial puzzles and minigames</div>
+                                    <div class="game-status">demo coming soon</div>
+                                </div>
+                            </div>
+                            <div class="game-card game-card-web">
+                                <div class="game-card-icon">
+<pre class="game-ascii">┌───────┐
+│ → → → │
+│ ↑ AI  │
+│ → ↓ ← │
+└───────┘</pre>
+                                </div>
+                                <div class="game-card-info">
+                                    <span class="game-name">crowd-sim</span>
+                                    <span class="game-platform">[Web]</span>
+                                    <div class="game-desc">NavMesh AI pedestrians navigating a live traffic intersection</div>
+                                    <div class="game-status"><a href="https://nemily.github.io/traffic/" class="link" target="_blank" rel="noopener">▶ play demo</a></div>
+                                </div>
+                            </div>
+                            <div class="game-card game-card-ios">
+                                <div class="game-card-icon">
+<pre class="game-ascii">┌───────┐
+│  🧋   │
+│  iOS  │
+│  ♡♡♡  │
+└───────┘</pre>
+                                </div>
+                                <div class="game-card-info">
+                                    <span class="game-name">killer-boba</span>
+                                    <span class="game-platform">[iOS]</span>
+                                    <div class="game-desc">Mobile game featuring everyone's favorite tea drink</div>
+                                    <div class="game-status">coming soon</div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="game-item">
-                            <span class="game-name">vr-escape-room</span>
-                            <span class="game-platform">[Oculus VR]</span><br>
-                            <span class="game-desc">Escape room with puzzles and minigames</span>
-                        </div>
-                        <div class="game-item">
-                            <span class="game-name">crowd-sim</span>
-                            <span class="game-platform">[Web]</span><br>
-                            <span class="game-desc">Watch NavMesh AI pedestrians navigate an intersection</span>
-                        </div>
-                        <br><span class="comment"># playable demos coming soon</span>
                     </div>
 
                     <div class="terminal-line input-line">
@@ -250,10 +310,99 @@
                     </div>
                     <div class="output">
                         <span class="comment"># let's connect</span><br><br>
-                        <a href="mailto:emilyn@berkeley.edu" class="link">email</a> ·
-                        <a href="https://github.com/nEmily" class="link" target="_blank" rel="noopener">github</a> ·
-                        <a href="https://linkedin.com/in/nguyen-emily" class="link" target="_blank" rel="noopener">linkedin</a> ·
-                        <a href="/assets/resume.pdf" class="link" target="_blank" rel="noopener">resume</a>
+                        <div class="contact-linkedin-cta">
+                            <span class="cta-label">→</span>
+                            <a href="https://linkedin.com/in/nguyen-emily" class="link link-linkedin" target="_blank" rel="noopener">linkedin.com/in/nguyen-emily</a>
+                            <span class="cta-note">— best way to reach me</span>
+                        </div>
+                        <br>
+                        <div class="contact-row">
+                            <span class="contact-key">email</span>
+                            <span class="contact-sep">  </span>
+                            <a href="mailto:emilyn@berkeley.edu" class="link">emilyn@berkeley.edu</a>
+                        </div>
+                        <div class="contact-row">
+                            <span class="contact-key">github</span>
+                            <span class="contact-sep"> </span>
+                            <a href="https://github.com/nEmily" class="link" target="_blank" rel="noopener">github.com/nEmily</a>
+                        </div>
+                        <div class="contact-row">
+                            <span class="contact-key">resume</span>
+                            <span class="contact-sep"> </span>
+                            <a href="/assets/resume.pdf" class="link" target="_blank" rel="noopener">resume.pdf ↗</a>
+                        </div>
+                    </div>
+
+                    <div class="terminal-line input-line">
+                        <span class="prompt">></span>
+                        <span class="cursor"></span>
+                    </div>
+                </section>
+                <!-- Experience Tab -->
+                <section id="tab-experience" class="tab-content">
+                    <div class="terminal-line">
+                        <span class="prompt">></span>
+                        <span class="command">cat experience.txt</span>
+                    </div>
+                    <div class="output">
+                        <span class="comment"># work experience</span><br><br>
+                        <div class="exp-item">
+                            <div class="exp-header">
+                                <span class="exp-company">Meta</span>
+                                <span class="exp-sep"> / </span>
+                                <span class="exp-title">Senior Software Engineer — Reality Labs</span>
+                            </div>
+                            <div class="exp-dates">2022 – present</div>
+                            <div class="exp-desc">
+                                Test infrastructure for wearable devices. AI-powered developer tooling:<br>
+                                LLM IDE plugins, agent pipeline for auto-generating wiki docs from code changes.<br>
+                                Led 3-engineer testing team; surfaced 72 bugs pre-release.
+                            </div>
+                            <div class="project-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">CI/CD</span>
+                                <span class="tag">LLM tooling</span>
+                                <span class="tag">Test Infrastructure</span>
+                            </div>
+                        </div>
+                        <div class="exp-item">
+                            <div class="exp-header">
+                                <span class="exp-company">Dolby</span>
+                                <span class="exp-sep"> / </span>
+                                <span class="exp-title">Senior Software Engineer — Atmos SDK</span>
+                            </div>
+                            <div class="exp-dates">2021 – 2022</div>
+                            <div class="exp-desc">
+                                Shipped the Dolby Atmos Plugin for Unreal Engine with Epic Games.<br>
+                                Python interfaces for real-time audio C++/C SDK.<br>
+                                Optimized CI/CD pipelines — 33% faster builds.
+                            </div>
+                            <div class="project-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">C++</span>
+                                <span class="tag">Unreal Engine</span>
+                                <span class="tag">CI/CD</span>
+                            </div>
+                        </div>
+                        <div class="exp-item">
+                            <div class="exp-header">
+                                <span class="exp-company">UC Berkeley CS</span>
+                                <span class="exp-sep"> / </span>
+                                <span class="exp-title">B.S. Computer Science</span>
+                            </div>
+                            <div class="exp-dates">2017 – 2021</div>
+                            <div class="exp-desc">
+                                B.S. Computer Science. TA, VR/XR course facilitator.<br>
+                                Taught Unity + C# to students building immersive experiences.
+                            </div>
+                            <div class="project-tags">
+                                <span class="tag">Unity</span>
+                                <span class="tag">C#</span>
+                                <span class="tag">Teaching</span>
+                            </div>
+                        </div>
+                        <br>
+                        <span class="comment"># open to new opportunities — </span><a href="https://linkedin.com/in/nguyen-emily" class="link" target="_blank" rel="noopener">linkedin.com/in/nguyen-emily</a>
                     </div>
 
                     <div class="terminal-line input-line">

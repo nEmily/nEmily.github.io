@@ -549,6 +549,157 @@ body {
 }
 
 /* =============================================================================
+   FEATURED PROJECT
+   ============================================================================= */
+
+.project-featured {
+    position: relative;
+    border-left: 2px solid;
+    padding-left: 0.75rem;
+    margin-bottom: 1.25rem;
+}
+
+.featured-badge {
+    font-size: 0.75rem;
+    opacity: 0.7;
+    margin-bottom: 0.15rem;
+    letter-spacing: 0.5px;
+}
+
+/* =============================================================================
+   GAMES SHOWCASE
+   ============================================================================= */
+
+.game-showcase {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 0.75rem;
+    margin-top: 0.25rem;
+}
+
+.game-card {
+    display: flex;
+    gap: 0.75rem;
+    border-radius: 6px;
+    padding: 0.65rem 0.75rem;
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+.game-card-icon {
+    flex-shrink: 0;
+}
+
+.game-ascii {
+    font-size: 0.7rem;
+    line-height: 1.2;
+    margin: 0;
+    opacity: 0.85;
+}
+
+.game-card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.game-card-info .game-name {
+    font-weight: bold;
+}
+
+.game-card-info .game-desc {
+    font-size: 0.85rem;
+    opacity: 0.75;
+    line-height: 1.4;
+}
+
+.game-status {
+    font-size: 0.78rem;
+    opacity: 0.6;
+    margin-top: 0.15rem;
+}
+
+.game-status .link {
+    opacity: 1;
+    font-size: 0.82rem;
+}
+
+/* =============================================================================
+   CONTACT
+   ============================================================================= */
+
+.contact-linkedin-cta {
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+    padding: 0.4rem 0;
+}
+
+.cta-label {
+    opacity: 0.9;
+}
+
+.cta-note {
+    opacity: 0.55;
+    font-size: 0.88rem;
+}
+
+.link-linkedin {
+    font-weight: bold;
+}
+
+.contact-row {
+    display: flex;
+    gap: 0;
+    margin-bottom: 0.2rem;
+}
+
+.contact-key {
+    min-width: 6ch;
+}
+
+.contact-sep {
+    min-width: 1.5ch;
+}
+
+/* =============================================================================
+   EXPERIENCE
+   ============================================================================= */
+
+.exp-item {
+    margin-bottom: 1.25rem;
+}
+
+.exp-header {
+    margin-bottom: 0.1rem;
+}
+
+.exp-company {
+    font-weight: bold;
+}
+
+.exp-sep {
+    opacity: 0.4;
+}
+
+.exp-title {
+    opacity: 0.85;
+}
+
+.exp-dates {
+    font-size: 0.82rem;
+    opacity: 0.55;
+    margin-bottom: 0.3rem;
+}
+
+.exp-desc {
+    opacity: 0.8;
+    line-height: 1.55;
+    margin-bottom: 0.35rem;
+    font-size: 0.92rem;
+}
+
+/* =============================================================================
    RESPONSIVE
    ============================================================================= */
 

@@ -34,7 +34,7 @@
     const fileSystem = {
         '~': {
             type: 'dir',
-            children: ['about.txt', 'skills/', 'projects/', 'games/', 'contact.txt', 'resume.pdf']
+            children: ['about.txt', 'experience.txt', 'skills/', 'projects/', 'games/', 'contact.txt', 'resume.pdf']
         },
         '~/about.txt': {
             type: 'file',
@@ -120,6 +120,27 @@ Tags: Unity, C#, VR`
 
 github:   github.com/nEmily
 linkedin: linkedin.com/in/nguyen-emily`
+        },
+        '~/experience.txt': {
+            type: 'file',
+            content: `<span class="comment"># work experience</span>
+
+<span class="highlight">Meta</span> — Senior Software Engineer, Reality Labs  <span class="comment">2022–present</span>
+  Test infrastructure for wearable devices. AI-powered developer tooling:
+  LLM IDE plugins, agent pipeline for auto-generating wiki docs from code.
+  Led 3-engineer testing team; surfaced 72 bugs pre-release.
+  Tags: Python, CI/CD, LLM tooling, Test Infrastructure
+
+<span class="highlight">Dolby Laboratories</span> — Senior Software Engineer  <span class="comment">2021–2022</span>
+  Shipped Dolby Atmos Plugin for Unreal Engine with Epic Games.
+  Python interfaces for real-time audio C++/C SDK.
+  Optimized CI/CD pipelines — 33% faster builds.
+  Tags: Python, C++, Unreal Engine, CI/CD
+
+<span class="highlight">UC Berkeley</span> — B.S. Computer Science  <span class="comment">2017–2021</span>
+  TA and VR/XR course facilitator. Taught Unity + C# to students.
+
+Open to new opportunities → linkedin.com/in/nguyen-emily`
         },
         '~/resume.pdf': {
             type: 'file',

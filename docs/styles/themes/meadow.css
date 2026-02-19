@@ -192,11 +192,88 @@
     color: var(--accent-butter);
 }
 
+/* Featured project */
+.project-featured {
+    border-left-color: var(--accent-mint);
+    background: rgba(152, 212, 187, 0.04);
+    border-radius: 0 4px 4px 0;
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+}
+
+.featured-badge {
+    color: var(--accent-mint);
+}
+
+/* Games showcase */
 .game-name {
     color: var(--accent-butter);
 }
 
 .game-platform {
+    color: var(--accent-lavender);
+}
+
+.game-card-rpg {
+    background: rgba(201, 184, 232, 0.07);
+    border-color: rgba(201, 184, 232, 0.18);
+}
+
+.game-card-rpg .game-ascii {
+    color: var(--accent-lavender);
+}
+
+.game-card-vr {
+    background: rgba(152, 212, 187, 0.07);
+    border-color: rgba(152, 212, 187, 0.18);
+}
+
+.game-card-vr .game-ascii {
+    color: var(--accent-mint);
+}
+
+.game-card-web {
+    background: rgba(249, 228, 183, 0.07);
+    border-color: rgba(249, 228, 183, 0.18);
+}
+
+.game-card-web .game-ascii {
+    color: var(--accent-butter);
+}
+
+.game-card-ios {
+    background: rgba(255, 181, 167, 0.07);
+    border-color: rgba(255, 181, 167, 0.18);
+}
+
+.game-card-ios .game-ascii {
+    color: var(--accent-peach);
+}
+
+/* Contact */
+.contact-key {
+    color: var(--accent-butter);
+}
+
+.link-linkedin {
+    color: var(--accent-mint);
+    border-bottom-color: var(--accent-mint);
+}
+
+.cta-label {
+    color: var(--accent-mint);
+}
+
+/* Experience */
+.exp-company {
+    color: var(--accent-butter);
+}
+
+.exp-title {
+    color: var(--text-light);
+}
+
+.exp-dates {
     color: var(--accent-lavender);
 }
 
