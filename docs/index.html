@@ -6,23 +6,23 @@
     <title>~/emilynguyen</title>
 
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Emily Nguyen - Software Engineer specializing in developer tooling, CI/CD, and AI-integrated engineering workflows. UC Berkeley CS grad, currently at Meta.">
-    <meta name="keywords" content="Emily Nguyen, software engineer, developer tooling, CI/CD, AI tooling, LLM, Meta, Reality Labs, UC Berkeley, portfolio">
+    <meta name="description" content="Emily Nguyen — swe @ meta | uc berkeley cs. builds autonomous AI agents that ship code overnight. interactive kanban portfolio.">
+    <meta name="keywords" content="Emily Nguyen, software engineer, autonomous agents, AI tooling, Claude Code, orchestration, Meta, UC Berkeley, portfolio">
     <meta name="author" content="Emily Nguyen">
     <meta name="robots" content="index, follow">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://nemily.github.io/">
-    <meta property="og:title" content="Emily Nguyen - Software Engineer">
-    <meta property="og:description" content="UC Berkeley CS grad building CI/CD systems, test frameworks, and AI-powered dev tools at Meta. Interactive terminal portfolio.">
+    <meta property="og:title" content="Emily Nguyen — swe @ meta | uc berkeley cs">
+    <meta property="og:description" content="builds autonomous AI agents that ship code overnight. interactive kanban portfolio.">
     <meta property="og:image" content="https://nemily.github.io/assets/og-image.jpg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://nemily.github.io/">
-    <meta property="twitter:title" content="Emily Nguyen - Software Engineer">
-    <meta property="twitter:description" content="UC Berkeley CS grad building CI/CD systems, test frameworks, and AI-powered dev tools at Meta. Interactive terminal portfolio.">
+    <meta property="twitter:title" content="Emily Nguyen — swe @ meta | uc berkeley cs">
+    <meta property="twitter:description" content="builds autonomous AI agents that ship code overnight. interactive kanban portfolio.">
     <meta property="twitter:image" content="https://nemily.github.io/assets/og-image.jpg">
 
     <!-- Theme Color -->
@@ -107,7 +107,11 @@
 
             <!-- Tab Bar -->
             <nav class="tab-bar" role="tablist">
-                <button class="tab active" role="tab" aria-selected="true" data-tab="home">
+                <button class="tab active" role="tab" aria-selected="true" data-tab="board">
+                    <span class="tab-label">~/board</span>
+                    <span class="tab-close" aria-label="Close tab">×</span>
+                </button>
+                <button class="tab" role="tab" aria-selected="false" data-tab="home">
                     <span class="tab-label">~/home</span>
                     <span class="tab-close" aria-label="Close tab">×</span>
                 </button>
@@ -132,8 +136,126 @@
 
             <!-- Terminal Content -->
             <main class="terminal">
+                <!-- Board Tab (hero) -->
+                <section id="tab-board" class="tab-content active">
+                    <div class="terminal-line">
+                        <span class="prompt">></span>
+                        <span class="command">cat board.md</span>
+                    </div>
+                    <div class="output">
+                        <span class="comment"># projects — what's shipping, what's building, what's next</span>
+                    </div>
+
+                    <div class="kanban-board">
+                        <!-- SHIPPED column -->
+                        <div class="kanban-col">
+                            <div class="kanban-col-header">
+                                <span class="kanban-col-dot dot-shipped"></span>
+                                <span class="kanban-col-title">shipped</span>
+                                <span class="kanban-col-count">4</span>
+                            </div>
+                            <div class="kanban-cards">
+                                <a class="kanban-card" href="https://nemily.github.io/roundhouse/" target="_blank" rel="noopener">
+                                    <div class="kcard-name">roundhouse</div>
+                                    <div class="kcard-desc">party game PWA for game night. 8 players, one phone, hot takes mode</div>
+                                    <div class="kcard-footer">
+                                        <span class="kcard-tag">PWA</span>
+                                        <span class="kcard-tag">game</span>
+                                        <span class="kcard-link">↗ play</span>
+                                    </div>
+                                </a>
+                                <a class="kanban-card" href="https://nemily.github.io/impostor-game/" target="_blank" rel="noopener">
+                                    <div class="kcard-name">impostor-game</div>
+                                    <div class="kcard-desc">social deduction party game. find the impostor before they find you</div>
+                                    <div class="kcard-footer">
+                                        <span class="kcard-tag">PWA</span>
+                                        <span class="kcard-tag">game</span>
+                                        <span class="kcard-link">↗ play</span>
+                                    </div>
+                                </a>
+                                <a class="kanban-card" href="https://nemily.github.io/one-night-werewolf/" target="_blank" rel="noopener">
+                                    <div class="kcard-name">one-night-werewolf</div>
+                                    <div class="kcard-desc">werewolf for when you only have 10 minutes and everyone's already suspicious</div>
+                                    <div class="kcard-footer">
+                                        <span class="kcard-tag">PWA</span>
+                                        <span class="kcard-tag">game</span>
+                                        <span class="kcard-link">↗ play</span>
+                                    </div>
+                                </a>
+                                <a class="kanban-card" href="https://github.com/nEmily/thirdwheel" target="_blank" rel="noopener">
+                                    <div class="kcard-name">thirdwheel</div>
+                                    <div class="kcard-desc">discord bot for my household. AI inbox, reminders, chaos management</div>
+                                    <div class="kcard-footer">
+                                        <span class="kcard-tag">discord</span>
+                                        <span class="kcard-tag">bot</span>
+                                        <span class="kcard-link">↗ github</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- BUILDING column -->
+                        <div class="kanban-col">
+                            <div class="kanban-col-header">
+                                <span class="kanban-col-dot dot-building"></span>
+                                <span class="kanban-col-title">building</span>
+                                <span class="kanban-col-count">2</span>
+                            </div>
+                            <div class="kanban-cards">
+                                <a class="kanban-card" href="https://github.com/nEmily/splitsheet" target="_blank" rel="noopener">
+                                    <div class="kcard-name">splitsheet</div>
+                                    <div class="kcard-desc">snap a receipt, split it with friends, send venmo charges. that's it</div>
+                                    <div class="kcard-footer">
+                                        <span class="kcard-tag">OCR</span>
+                                        <span class="kcard-tag">mobile</span>
+                                        <span class="kcard-link">↗ github</span>
+                                    </div>
+                                </a>
+                                <a class="kanban-card" href="https://github.com/nEmily/dude-were-so-cooked" target="_blank" rel="noopener">
+                                    <div class="kcard-name">dude-were-so-cooked</div>
+                                    <div class="kcard-desc">AI-curated news digest. agents decide what's actually worth your attention</div>
+                                    <div class="kcard-footer">
+                                        <span class="kcard-tag">AI</span>
+                                        <span class="kcard-tag">agents</span>
+                                        <span class="kcard-link">↗ github</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- IDEA column -->
+                        <div class="kanban-col">
+                            <div class="kanban-col-header">
+                                <span class="kanban-col-dot dot-idea"></span>
+                                <span class="kanban-col-title">idea</span>
+                                <span class="kanban-col-count">1</span>
+                            </div>
+                            <div class="kanban-cards">
+                                <a class="kanban-card" href="https://github.com/nEmily/dreamweaver" target="_blank" rel="noopener">
+                                    <div class="kcard-name">dreamweaver</div>
+                                    <div class="kcard-desc">dream journal with warm nocturnal colors. the only app i actually look forward to opening</div>
+                                    <div class="kcard-footer">
+                                        <span class="kcard-tag">journal</span>
+                                        <span class="kcard-tag">mobile</span>
+                                        <span class="kcard-link">↗ github</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="kanban-footer-note">
+                        <span class="comment"># AI agents manage this board and ship code overnight. i review in the morning.</span>
+                    </div>
+
+                    <div class="terminal-line input-line">
+                        <span class="prompt">></span>
+                        <span class="cursor"></span>
+                    </div>
+                </section>
+
                 <!-- Home Tab -->
-                <section id="tab-home" class="tab-content active">
+                <section id="tab-home" class="tab-content">
                     <pre class="ascii-art" aria-label="Emily Nguyen - software engineer, game dev, educator">   ╭─────────────────────────────────────────────────────╮
    │  software engineer  ·  game dev  ·  educator       │
    ╰─────────────────────────────────────────────────────╯</pre>
@@ -144,12 +266,12 @@
                     </div>
                     <div class="output">
                         <span class="comment"># hello world</span><br><br>
-                        I'm <span class="highlight">Emily Nguyen</span>, a UC Berkeley CS grad with 5+ years<br>
-                        building CI/CD systems, test frameworks, and LLM-powered automation.<br>
-                        Currently at Meta working on test infrastructure for Reality Labs.<br><br>
-                        I build autonomous coding agents and AI-integrated dev workflows —<br>
-                        multi-agent orchestration, hook-based tooling, pre-push code review gates,<br>
-                        and persistent cross-session agent memory. Claude Code power user.<br><br>
+                        <span class="highlight">swe @ meta | uc berkeley cs</span><br><br>
+                        I build autonomous AI agents that manage a kanban board, dispatch<br>
+                        workers across projects, and ship code while I sleep. I wake up,<br>
+                        review what my team did overnight, and merge the good stuff.<br><br>
+                        also: party games for game night, a discord bot for my household,<br>
+                        and a receipt splitter for when someone always orders the lobster.<br><br>
                         <span class="comment"># quick links</span><br>
                         <a href="/assets/resume.pdf" class="link" target="_blank" rel="noopener">resume.pdf</a> ·
                         <a href="https://linkedin.com/in/nguyen-emily" class="link" target="_blank" rel="noopener">linkedin</a> ·

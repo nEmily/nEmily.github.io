@@ -14,10 +14,12 @@
 
     // Directory paths for each tab (for terminal-style navigation)
     const tabPaths = {
+        'board': '~',
         'home': '~',
         'projects': '~/projects',
         'games': '~/games',
-        'contact': '~'
+        'contact': '~',
+        'experience': '~'
     };
 
     // Counter for new terminal tabs
@@ -25,10 +27,12 @@
 
     // Tab name mapping for window title
     const tabTitles = {
+        'board': 'emily — board',
         'home': 'emily — home',
         'projects': 'emily — projects',
         'games': 'emily — games',
-        'contact': 'emily — contact'
+        'contact': 'emily — contact',
+        'experience': 'emily — experience'
     };
 
     /**
@@ -56,7 +60,7 @@
         }
 
         // Update browser title
-        document.title = `~/${tabId === 'home' ? 'emilynguyen' : tabId}`;
+        document.title = `~/${tabId === 'home' || tabId === 'board' ? 'emilynguyen' : tabId}`;
 
         // Focus the input in the new tab
         setTimeout(() => {
@@ -356,8 +360,17 @@
 
     window.addEventListener('hashchange', handleHashChange);
 
-    // Initialize from URL hash if present
+    // Initialize from URL hash if present, otherwise sync title to active tab
     handleHashChange();
+
+    // If no hash, update title/state to match whichever tab has .active in HTML
+    if (!window.location.hash) {
+        const activeTab = getActiveTab();
+        if (activeTab && windowTitle) {
+            windowTitle.textContent = tabTitles[activeTab] || `emily — ${activeTab}`;
+            document.title = `~/${activeTab === 'home' || activeTab === 'board' ? 'emilynguyen' : activeTab}`;
+        }
+    }
 
     // Expose tab manager API for other scripts
     window.tabManager = {

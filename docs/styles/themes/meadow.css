@@ -278,6 +278,85 @@
 }
 
 /* =============================================================================
+   KANBAN BOARD - Meadow theme
+   ============================================================================= */
+
+.dot-shipped {
+    background: var(--accent-mint);
+    box-shadow: 0 0 5px rgba(152, 212, 187, 0.5);
+}
+
+.dot-building {
+    background: var(--accent-butter);
+    box-shadow: 0 0 5px rgba(249, 228, 183, 0.5);
+}
+
+.dot-idea {
+    background: var(--accent-lavender);
+    box-shadow: 0 0 5px rgba(201, 184, 232, 0.4);
+}
+
+/* Shipped column cards */
+.kanban-col:nth-child(1) .kanban-card {
+    background: rgba(152, 212, 187, 0.04);
+}
+
+.kanban-col:nth-child(1) .kanban-card:hover {
+    background: rgba(152, 212, 187, 0.08);
+    box-shadow: 0 2px 8px rgba(152, 212, 187, 0.08);
+}
+
+.kanban-col:nth-child(1) .kcard-name {
+    color: var(--accent-mint);
+}
+
+.kanban-col:nth-child(1) .kcard-tag {
+    background: rgba(152, 212, 187, 0.12);
+    color: var(--accent-mint);
+    border: 1px solid rgba(152, 212, 187, 0.2);
+}
+
+/* Building column cards */
+.kanban-col:nth-child(2) .kanban-card {
+    background: rgba(249, 228, 183, 0.04);
+}
+
+.kanban-col:nth-child(2) .kanban-card:hover {
+    background: rgba(249, 228, 183, 0.08);
+    box-shadow: 0 2px 8px rgba(249, 228, 183, 0.08);
+}
+
+.kanban-col:nth-child(2) .kcard-name {
+    color: var(--accent-butter);
+}
+
+.kanban-col:nth-child(2) .kcard-tag {
+    background: rgba(249, 228, 183, 0.12);
+    color: var(--accent-butter);
+    border: 1px solid rgba(249, 228, 183, 0.2);
+}
+
+/* Idea column cards */
+.kanban-col:nth-child(3) .kanban-card {
+    background: rgba(201, 184, 232, 0.04);
+}
+
+.kanban-col:nth-child(3) .kanban-card:hover {
+    background: rgba(201, 184, 232, 0.08);
+    box-shadow: 0 2px 8px rgba(201, 184, 232, 0.08);
+}
+
+.kanban-col:nth-child(3) .kcard-name {
+    color: var(--accent-lavender);
+}
+
+.kanban-col:nth-child(3) .kcard-tag {
+    background: rgba(201, 184, 232, 0.12);
+    color: var(--accent-lavender);
+    border: 1px solid rgba(201, 184, 232, 0.2);
+}
+
+/* =============================================================================
    RESTORE BUTTON
    ============================================================================= */
 

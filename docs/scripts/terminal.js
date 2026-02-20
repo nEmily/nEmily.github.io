@@ -34,25 +34,47 @@
     const fileSystem = {
         '~': {
             type: 'dir',
-            children: ['about.txt', 'status.txt', 'experience.txt', 'skills/', 'projects/', 'games/', 'contact.txt', 'resume.pdf']
+            children: ['about.txt', 'board.md', 'status.txt', 'experience.txt', 'skills/', 'projects/', 'games/', 'contact.txt', 'resume.pdf']
         },
         '~/about.txt': {
             type: 'file',
             content: `<span class="comment"># hello world</span>
 
-I'm <span class="highlight">Emily Nguyen</span>, a UC Berkeley CS grad with 5+ years
-building CI/CD systems, test frameworks, and LLM-powered automation.
-Currently at Meta working on test infrastructure for Reality Labs.
+<span class="highlight">swe @ meta | uc berkeley cs</span>
 
-Building autonomous coding agents and AI-integrated dev tools.`
+I build autonomous AI agents that manage a kanban board, dispatch
+workers across projects, and ship code while I sleep. I wake up,
+review what my team did overnight, and merge the good stuff.
+
+also: party games for game night, a discord bot for my household,
+and a receipt splitter for when someone always orders the lobster.`
+        },
+        '~/board.md': {
+            type: 'file',
+            content: `<span class="comment"># projects board</span>
+
+<span class="highlight">shipped</span>
+  roundhouse          party game PWA — nemily.github.io/roundhouse
+  impostor-game       social deduction — nemily.github.io/impostor-game
+  one-night-werewolf  quick werewolf — nemily.github.io/one-night-werewolf
+  thirdwheel          discord bot for my household
+
+<span class="highlight">building</span>
+  splitsheet          OCR receipt splitter
+  dude-were-so-cooked AI-curated news digest
+
+<span class="highlight">idea</span>
+  dreamweaver         dream journal, warm nocturnal theme
+
+<span class="comment"># AI agents manage this board and ship code overnight. i review in the morning.</span>`
         },
         '~/status.txt': {
             type: 'file',
             content: `<span class="comment"># what i'm working on</span>
 
-<span class="highlight">AI orchestration</span>        multi-agent task graphs, persistent cross-session memory
-<span class="highlight">autonomous agents</span>       hook-based Claude Code orchestrator, pre-push review gates
-<span class="highlight">developer tooling</span>       real-time agent status in terminal tabs, pixel-art visualizer
+<span class="highlight">splitsheet</span>              OCR receipt splitter — building
+<span class="highlight">dude-were-so-cooked</span>     AI-curated news digest — building
+<span class="highlight">AI orchestration</span>        agents manage the board, dispatch workers, ship PRs
 
 <span class="comment"># currently playing</span>
 
@@ -84,7 +106,64 @@ open to new opportunities → type <span class="command">linkedin</span> to conn
         },
         '~/projects': {
             type: 'dir',
-            children: ['ai-powered-dev-tooling/', 'pixietown/', 'dolby-atmos-unreal/', 'arkangel/', 'vr-escape-room/']
+            children: ['roundhouse/', 'impostor-game/', 'one-night-werewolf/', 'thirdwheel/', 'splitsheet/', 'dude-were-so-cooked/', 'dreamweaver/', 'ai-powered-dev-tooling/', 'pixietown/']
+        },
+        '~/projects/roundhouse': {
+            type: 'dir',
+            content: `roundhouse
+party game PWA for game night. 8 players, one phone, hot takes mode.
+ships at: nemily.github.io/roundhouse
+
+Tags: PWA, JavaScript, game`
+        },
+        '~/projects/impostor-game': {
+            type: 'dir',
+            content: `impostor-game
+social deduction party game. find the impostor before they find you.
+ships at: nemily.github.io/impostor-game
+
+Tags: PWA, JavaScript, game`
+        },
+        '~/projects/one-night-werewolf': {
+            type: 'dir',
+            content: `one-night-werewolf
+werewolf for when you only have 10 minutes and everyone's already suspicious.
+ships at: nemily.github.io/one-night-werewolf
+
+Tags: PWA, JavaScript, game`
+        },
+        '~/projects/thirdwheel': {
+            type: 'dir',
+            content: `thirdwheel
+discord bot for my household. AI inbox, reminders, chaos management.
+github: github.com/nEmily/thirdwheel
+
+Tags: discord, bot, AI, JavaScript`
+        },
+        '~/projects/splitsheet': {
+            type: 'dir',
+            content: `splitsheet
+snap a receipt, split it with friends, send venmo charges. that's it.
+github: github.com/nEmily/splitsheet
+
+Tags: OCR, mobile, React Native`
+        },
+        '~/projects/dude-were-so-cooked': {
+            type: 'dir',
+            content: `dude-were-so-cooked
+AI-curated news digest. agents decide what's actually worth your attention.
+github: github.com/nEmily/dude-were-so-cooked
+
+Tags: AI, agents, news`
+        },
+        '~/projects/dreamweaver': {
+            type: 'dir',
+            content: `dreamweaver
+dream journal with warm nocturnal colors.
+the only app i actually look forward to opening every morning.
+github: github.com/nEmily/dreamweaver
+
+Tags: journal, mobile, React Native`
         },
         '~/projects/ai-powered-dev-tooling': {
             type: 'dir',
@@ -489,6 +568,20 @@ Open to new opportunities → linkedin.com/in/nguyen-emily`
     commands.hey = commands.hi;
     commands.cv = commands.resume;
 
+    // Board shortcut — switches to the ~/board tab
+    commands.board = {
+        description: 'Open the project kanban board',
+        usage: 'board',
+        execute: () => {
+            setTimeout(() => {
+                if (window.tabManager) {
+                    window.tabManager.switchTab('board');
+                }
+            }, 100);
+            return 'Switching to ~/board...';
+        }
+    };
+
     // Status shortcut — shows ~/status.txt inline
     commands.status = {
         description: 'Show current status and what I\'m working on',
@@ -694,32 +787,38 @@ Try <span class="command">claude</span> instead. 😉`
         const responses = [
             {
                 patterns: ['who are you', 'about you', 'tell me about yourself', 'introduce yourself'],
-                response: `I'm Emily Nguyen, a software engineer specializing in developer tooling, CI/CD infrastructure, and AI-integrated engineering workflows.
+                response: `swe @ meta | uc berkeley cs
 
-UC Berkeley CS grad with 5+ years of experience. Currently at Meta building test infrastructure for Reality Labs. Before that, Dolby Laboratories — shipped the Dolby Atmos Plugin for Unreal Engine with Epic Games.
+I build autonomous AI agents that manage a kanban board, dispatch workers across projects, and ship code while I sleep. I wake up, review what my team did overnight, and merge the good stuff.
 
-I'm also into game dev and autonomous coding agents.`
+also: party games for game night, a discord bot for my household, and a receipt splitter for when someone always orders the lobster.`
             },
             {
                 patterns: ['what do you do', 'your job', 'your work', 'current role', 'where do you work'],
-                response: `I'm a Senior Software Engineer at Meta, working on test infrastructure and release tooling for Reality Labs.
+                response: `swe @ meta, working on test infrastructure for Reality Labs.
 
-My work includes:
-• Building AI-powered developer tools (LLM IDE plugins, agent pipelines)
-• Designing end-to-end test automation for wearable devices
-• CI/CD systems, quality gating, and release qualification`
+outside of that: I build autonomous AI agents that manage a kanban board, dispatch workers across projects, and ship code overnight. I review in the morning.
+
+the projects are real — roundhouse runs at actual game nights, thirdwheel is in my household discord, splitsheet is for when we go out.`
             },
             {
                 patterns: ['projects', 'what have you built', 'portfolio', 'your work'],
-                response: `Here are some things I've worked on:
+                response: `Check the <span class="command">~/board</span> tab — that's the live view.
 
-<span class="highlight">AI-Powered Developer Tooling</span> - LLM orchestration framework, multi-agent system, pre-push review gate
-<span class="highlight">Pixietown</span> - Multi-agent orchestration visualizer with pixel-art frontend
-<span class="highlight">Dolby Atmos for Unreal</span> - Cross-platform audio SDK, shipped with Epic Games
-<span class="highlight">ArkAngel</span> - 2D adventure RPG with dialogue system
-<span class="highlight">VR Escape Room</span> - Interactive puzzle game for Oculus
+shipped:
+<span class="highlight">roundhouse</span>          party game PWA for game night
+<span class="highlight">impostor-game</span>       social deduction party game
+<span class="highlight">one-night-werewolf</span>  10-minute werewolf
+<span class="highlight">thirdwheel</span>          discord bot for my household
 
-Type 'ls projects/' to see more, or 'cat ~/projects/[name]' for details.`
+building:
+<span class="highlight">splitsheet</span>          OCR receipt splitter
+<span class="highlight">dude-were-so-cooked</span> AI-curated news digest
+
+idea:
+<span class="highlight">dreamweaver</span>         dream journal, warm nocturnal colors
+
+Type 'ls projects/' or 'cat ~/projects/[name]' for details.`
             },
             {
                 patterns: ['skills', 'languages', 'tech stack', 'technologies', 'what can you code'],
@@ -751,6 +850,16 @@ At Dolby, I also worked closely with game studios and Epic Games on audio techno
                 response: `I graduated from <span class="highlight">UC Berkeley</span> with a B.S. in Computer Science in 2020.
 
 While there, I was also a teaching assistant and XR/VR course facilitator.`
+            },
+            {
+                patterns: ['kanban', 'board', 'overnight', 'agents ship', 'while you sleep'],
+                response: `my AI agents manage a kanban board (shipped / building / idea), dispatch workers across projects, and push PRs while I sleep.
+
+I wake up, review what the team did overnight, and merge the good stuff. one of them once refactored something I'd been meaning to fix for three months and didn't even mention it.
+
+the orchestrator has opinions. it pushes back. it's fine. mostly.
+
+→ type <span class="command">board</span> to see the live project board`
             },
             {
                 patterns: ['ai', 'llm', 'machine learning', 'agent', 'claude', 'prompt', 'orchestrat'],
