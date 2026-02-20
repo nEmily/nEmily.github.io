@@ -34,7 +34,7 @@
     const fileSystem = {
         '~': {
             type: 'dir',
-            children: ['about.txt', 'experience.txt', 'skills/', 'projects/', 'games/', 'contact.txt', 'resume.pdf']
+            children: ['about.txt', 'status.txt', 'experience.txt', 'skills/', 'projects/', 'games/', 'contact.txt', 'resume.pdf']
         },
         '~/about.txt': {
             type: 'file',
@@ -46,9 +46,25 @@ Currently at Meta working on test infrastructure for Reality Labs.
 
 Building autonomous coding agents and AI-integrated dev tools.`
         },
+        '~/status.txt': {
+            type: 'file',
+            content: `<span class="comment"># what i'm working on</span>
+
+<span class="highlight">AI orchestration</span>        multi-agent task graphs, persistent cross-session memory
+<span class="highlight">autonomous agents</span>       hook-based Claude Code orchestrator, pre-push review gates
+<span class="highlight">developer tooling</span>       real-time agent status in terminal tabs, pixel-art visualizer
+
+<span class="comment"># currently playing</span>
+
+Rune Factory 4 · Stardew Valley · Hollow Knight
+
+<span class="comment"># status</span>
+
+open to new opportunities → type <span class="command">linkedin</span> to connect`
+        },
         '~/skills': {
             type: 'dir',
-            children: ['languages/', 'frameworks/', 'tools/']
+            children: ['languages/', 'frameworks/', 'tools/', 'ai/']
         },
         '~/skills/languages': {
             type: 'dir',
@@ -61,6 +77,10 @@ Building autonomous coding agents and AI-integrated dev tools.`
         '~/skills/tools': {
             type: 'dir',
             children: ['git', 'gitlab-ci', 'docker', 'aws', 'claude-code', 'llm-tooling']
+        },
+        '~/skills/ai': {
+            type: 'dir',
+            children: ['claude-code', 'prompt-engineering', 'multi-agent', 'llm-orchestration', 'tool-use', 'hook-automation']
         },
         '~/projects': {
             type: 'dir',
@@ -166,7 +186,7 @@ Open to new opportunities → linkedin.com/in/nguyen-emily`
                 }
 
                 const coreCommands = ['ls', 'cat', 'cd', 'pwd', 'clear', 'help'];
-                const navCommands = ['open', 'github', 'linkedin', 'email'];
+                const navCommands = ['resume', 'open', 'github', 'linkedin', 'email'];
                 const funCommands = ['ask', 'search', 'theme', 'coffee', 'fortune', 'cowsay', 'neofetch', 'party'];
                 const utilCommands = ['history', 'date', 'exit', 'whoami', 'echo'];
 
@@ -350,6 +370,15 @@ Open to new opportunities → linkedin.com/in/nguyen-emily`
             }
         },
 
+        resume: {
+            description: 'Open resume PDF',
+            usage: 'resume',
+            execute: () => {
+                window.open('/assets/resume.pdf', '_blank');
+                return 'Opening resume.pdf...\n<span class="comment"># tip: also available at the desktop icon or ~/contact</span>';
+            }
+        },
+
         theme: {
             description: 'Change color theme',
             usage: 'theme [meadow|rainy]',
@@ -458,6 +487,14 @@ Open to new opportunities → linkedin.com/in/nguyen-emily`
     commands['?'] = commands.help;
     commands.hello = commands.hi;
     commands.hey = commands.hi;
+    commands.cv = commands.resume;
+
+    // Status shortcut — shows ~/status.txt inline
+    commands.status = {
+        description: 'Show current status and what I\'m working on',
+        usage: 'status',
+        execute: () => fileSystem['~/status.txt'].content
+    };
 
     // ==========================================================================
     // EASTER EGGS
@@ -686,14 +723,18 @@ Type 'ls projects/' to see more, or 'cat ~/projects/[name]' for details.`
             },
             {
                 patterns: ['skills', 'languages', 'tech stack', 'technologies', 'what can you code'],
-                response: `<span class="comment"># languages</span>
+                response: `<span class="comment"># AI & LLM tooling  ← primary focus</span>
+Claude Code, prompt engineering, LLM orchestration, multi-agent frameworks
+tool-use pipelines, hook-based automation, persistent agent memory
+
+<span class="comment"># languages</span>
 Python, TypeScript, JavaScript, C++, C#, Java
 
 <span class="comment"># frameworks & tools</span>
 FastAPI, Node.js, Playwright, asyncio, NumPy, Pandas
+Git, GitLab CI/CD, Docker, AWS
 
-<span class="comment"># infrastructure & ai tooling</span>
-Git, GitLab CI/CD, Docker, AWS, Claude Code, LLM tooling, prompt engineering`
+Type 'ls ~/skills/ai/' to see the full AI toolkit.`
             },
             {
                 patterns: ['games', 'game dev', 'video games', 'game development'],
@@ -712,12 +753,26 @@ At Dolby, I also worked closely with game studios and Epic Games on audio techno
 While there, I was also a teaching assistant and XR/VR course facilitator.`
             },
             {
-                patterns: ['ai', 'llm', 'machine learning', 'agent', 'claude', 'prompt'],
-                response: `I've been building AI-powered developer tooling since 2025 — hook-based orchestration, multi-agent frameworks, automated code review gates using LLMs, and prompt-engineered iteration loops.
+                patterns: ['ai', 'llm', 'machine learning', 'agent', 'claude', 'prompt', 'orchestrat'],
+                response: `AI is my primary focus area right now. Current work:
 
-At Meta, I also built an AI agent pipeline that automatically generates team wiki docs from code changes.
+<span class="highlight">multi-agent orchestration</span> — task graphs, dispatching, persistent cross-session memory
+<span class="highlight">hook-based automation</span> — Claude Code hooks for pre-push review gates, status indicators
+<span class="highlight">autonomous coding agents</span> — agents that plan, execute, and validate end-to-end
 
-This portfolio itself was built with Claude Code, including some of the automation infrastructure running behind it.`
+At Meta, I built an AI agent pipeline that auto-generates team wiki docs from code changes.
+
+This portfolio itself was built with Claude Code. Type <span class="command">status</span> to see what I'm building now.`
+            },
+            {
+                patterns: ['status', 'working on', 'current project', 'right now', 'lately'],
+                response: `Right now I'm building:
+
+• <span class="highlight">AI orchestration systems</span> — multi-agent task graphs with persistent memory
+• <span class="highlight">Autonomous coding agents</span> — hook-based Claude Code workflows
+• <span class="highlight">Developer tooling</span> — real-time agent status, pixel-art visualizer (Pixietown)
+
+Type <span class="command">cat ~/status.txt</span> for the full picture.`
             },
             {
                 patterns: ['contact', 'reach you', 'hire', 'get in touch', 'email'],
