@@ -8,7 +8,7 @@
     "name": "Emily Nguyen",
     "location": "Seattle, WA",
     "roles": ["software engineer", "developer tooling", "ai workflows"],
-    "bio": "UC Berkeley CS grad with 5+ years building CI/CD systems, test frameworks, and LLM-powered automation at scale. Currently at Meta working on test infrastructure for Reality Labs. Building autonomous coding agents and developer tools for faster shipping.",
+    "bio": "swe @ meta | uc berkeley cs. builds autonomous AI agents that ship code overnight. party games for game night. tools for friends.",
     "status": "open to opportunities"
   },
 
@@ -57,9 +57,9 @@
 
   "projects": [
     {
-      "name": "AI-Powered Developer Tooling",
-      "description": "LLM tool-use automation system for autonomous coding agents — hook-based orchestration, real-time terminal status indicators, dual-agent pre-push code review gate, and a multi-agent framework with persistent cross-session memory.",
-      "tags": ["TypeScript", "JavaScript", "Claude Code", "LLM", "Orchestration"],
+      "name": "AI Agent Orchestrator",
+      "description": "the system that manages my kanban board and ships code overnight. dispatches AI workers across projects, reviews its own PRs, and sends me a report in the morning.",
+      "tags": ["TypeScript", "Claude Code", "Orchestration", "Agents"],
       "type": "personal"
     },
     {

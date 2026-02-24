@@ -42,8 +42,8 @@
 
 <span class="highlight">swe @ meta | uc berkeley cs</span>
 
-I build autonomous AI agents that manage a kanban board, dispatch
-workers across projects, and ship code while I sleep. I wake up,
+i build autonomous AI agents that manage a kanban board, dispatch
+workers across projects, and ship code while i sleep. i wake up,
 review what my team did overnight, and merge the good stuff.
 
 also: party games for game night, a discord bot for my household,
