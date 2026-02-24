@@ -31,7 +31,7 @@
       "company": "Meta Reality Labs",
       "team": "Build Test Release",
       "dates": "Jul 2024 – Present",
-      "description": "CI/CD infrastructure and test automation for wearable devices — built the device lab from scratch, 30+ devices across 2 racks. Defined the release quality framework that surfaced 72 bugs pre-release. Built AI developer tooling: LLM IDE plugins for automated task setup, and an agent pipeline that writes team docs from code changes. Led a 3-engineer testing team. Won an engineering award for pioneering release testing.",
+      "description": "CI/CD infrastructure and test automation for wearable devices — built the device lab from scratch, 30+ devices across 2 racks. Defined the release quality framework that surfaced 72 bugs pre-release. Built a Claude IDE plugin for the team, an MCP server for internal job and task data, and a daily codemod runner that generates wiki docs from code diffs using LLMs. Led a 3-engineer testing team. Won an engineering award for pioneering release testing.",
       "tags": ["Python", "JavaScript", "CI/CD", "LLM tooling", "Test Infrastructure"]
     },
     {
