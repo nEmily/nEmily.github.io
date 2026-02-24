@@ -28,24 +28,40 @@
   "experience": [
     {
       "title": "Senior Software Engineer",
-      "company": "Meta",
-      "dates": "2024 - Present",
-      "description": "Built AI-powered developer tooling including LLM IDE plugins and an AI agent pipeline that auto-generates team wiki docs from code changes. Designed end-to-end test automation pipelines for embedded wearable devices and led a 3-engineer testing team, surfacing 72 bugs pre-release.",
-      "tags": ["Python", "CI/CD", "LLM tooling", "Test Infrastructure"]
+      "company": "Meta Reality Labs",
+      "team": "Build Test Release",
+      "dates": "Jul 2024 – Present",
+      "description": "CI/CD infrastructure and test automation for wearable devices — built the device lab from scratch, 30+ devices across 2 racks. Defined the release quality framework that surfaced 72 bugs pre-release. Built AI developer tooling: LLM IDE plugins for automated task setup, and an agent pipeline that writes team docs from code changes. Led a 3-engineer testing team. Won an engineering award for pioneering release testing.",
+      "tags": ["Python", "JavaScript", "CI/CD", "LLM tooling", "Test Infrastructure"]
     },
     {
       "title": "Senior Software Engineer",
       "company": "Dolby Laboratories",
-      "dates": "2021 - 2023",
-      "description": "Released the Dolby Atmos Plugin for Unreal Engine with a team of 12, in collaboration with Epic Games. Built Python interfaces for a real-time audio C++/C SDK and optimized CI/CD pipelines, improving speed by 33%.",
-      "tags": ["Python", "C++", "Unreal Engine", "CI/CD"]
+      "team": "Games, Audio, Test",
+      "dates": "Jan 2021 – Dec 2023",
+      "description": "Shipped the Dolby Atmos Plugin for Unreal Engine in collaboration with Epic Games. First test-focused engineer on the team — designed the QA framework, automated 300+ integration tests, and sped up CI pipelines by 33%. Built Python interfaces for a real-time audio C++/C SDK.",
+      "tags": ["Python", "C++", "Unreal Engine", "CI/CD", "Test Automation"]
+    },
+    {
+      "title": "Software Developer",
+      "company": "Lokafy",
+      "dates": "Jun – Aug 2018",
+      "description": "Built a QuickPay payment system: transaction links on demand, real-time transaction views, Stripe API backend. Designed and built the customer-facing UI in CSS/HTML with Django.",
+      "tags": ["Python", "Django", "Stripe API", "SQL"]
     },
     {
       "title": "Code Coach",
       "company": "the Coder School",
-      "dates": "2019 - 2021",
-      "description": "Taught programming to students ages 7-16 in personalized sessions. Led nine week-long camps with 12-14 students each.",
-      "tags": ["Teaching", "Python", "Scratch", "Java"]
+      "dates": "Jul 2019 – Jan 2021",
+      "description": "Taught programming to students ages 7–16 in one-on-one sessions. Led nine week-long camps with 12–14 students each — every camper shipped something by the end.",
+      "tags": ["Teaching", "Python", "Scratch", "Java", "C#"]
+    },
+    {
+      "title": "XR/VR Course Facilitator",
+      "company": "UC Berkeley",
+      "dates": "Jan – May 2020",
+      "description": "Facilitated a VR development course for UC Berkeley students — Unity, C#, hands-on labs, and a final project.",
+      "tags": ["Unity", "C#", "VR", "Teaching"]
     }
   ],
 
