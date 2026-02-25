@@ -290,7 +290,8 @@
     box-shadow: 0 0 5px rgba(160, 196, 216, 0.5);
 }
 
-.theme-rainy .dot-idea {
+.theme-rainy .dot-idea,
+.theme-rainy .dot-planning {
     background: var(--accent-wisteria);
     box-shadow: 0 0 5px rgba(168, 160, 208, 0.4);
 }

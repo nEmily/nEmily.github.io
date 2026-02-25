@@ -1,0 +1,429 @@
+/* =============================================================================
+   KANAGAWA THEME - kanagawabones color scheme (matches Emily's WezTerm)
+   Deep indigo-gray, warm cream text, sakura pink + mint accents
+   Default theme for this prototype
+   ============================================================================= */
+
+:root {
+    /* Base colors — kanagawabones indigo-gray palette */
+    --bg-deep: #1a1a22;         /* darkest indigo — desktop backdrop */
+    --bg-mid: #2a2a37;          /* tab bar, inactive areas */
+    --bg-panel: #222230;        /* window outer shell */
+    --terminal-bg: #1a1a22;     /* terminal body */
+    --terminal-border: #3a3a4e;
+
+    /* Accent palette — restrained, 2-3 colors */
+    --accent-sakura: #e8a0bf;   /* sakura/rose pink — primary accent */
+    --accent-mint: #a0d4c4;     /* mint — secondary accent */
+    --accent-gold: #c8a97a;     /* muted warm gold — for names/labels */
+
+    /* Text colors */
+    --text-cream: #dcd7ba;      /* main text — warm cream */
+    --text-muted: #727169;      /* comments, secondary */
+    --text-dim: #54536d;        /* very muted, separators */
+
+    /* Semantic colors */
+    --cursor-color: var(--accent-sakura);
+    --prompt-color: var(--accent-sakura);
+    --command-color: var(--accent-mint);
+    --link-color: var(--accent-mint);
+    --highlight-color: var(--accent-sakura);
+    --comment-color: var(--text-muted);
+    --tag-color: var(--accent-mint);
+    --tag-bg: rgba(160, 212, 196, 0.10);
+    --tag-border: rgba(160, 212, 196, 0.20);
+}
+
+/* =============================================================================
+   BACKDROP — Dark indigo, subtle depth
+   No bright watercolor. Terminal should dominate.
+   ============================================================================= */
+
+.theme-kanagawa .backdrop {
+    background:
+        /* Subtle plum/indigo bloom at corners */
+        radial-gradient(ellipse 70% 60% at 5% 95%, rgba(80, 60, 100, 0.35) 0%, transparent 55%),
+        radial-gradient(ellipse 60% 50% at 95% 5%, rgba(60, 50, 90, 0.3) 0%, transparent 50%),
+
+        /* Very faint sakura warmth at top */
+        radial-gradient(ellipse 80% 35% at 50% 0%, rgba(232, 160, 191, 0.06) 0%, transparent 60%),
+
+        /* Deep base gradient */
+        linear-gradient(160deg,
+            #13131a 0%,
+            #16161f 20%,
+            #1a1a25 40%,
+            #1c1c28 60%,
+            #181820 80%,
+            #141419 100%
+        );
+}
+
+/* Paper texture is already applied via backdrop::after in backdrop.css — works on dark too */
+
+/* =============================================================================
+   WINDOW FRAME — Minimal, WezTerm-like
+   ============================================================================= */
+
+.theme-kanagawa .window-frame {
+    background: var(--bg-panel);
+    border: 1px solid #3a3a50;
+    border-radius: 8px;
+    box-shadow:
+        0 24px 64px rgba(0, 0, 0, 0.6),
+        0 8px 24px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(255, 255, 255, 0.04) inset;
+
+    /* Wider and taller — terminal should dominate the viewport */
+    width: 920px;
+    min-height: 75vh;
+    max-height: calc(100vh - 2rem);
+    margin-top: 1vh;
+    margin-left: 3%;
+}
+
+/* Title Bar — minimal, no macOS-gradient, just a thin dark bar */
+.theme-kanagawa .title-bar {
+    background: #1e1e2a;
+    border-bottom: 1px solid #2e2e3e;
+    padding: 0.35rem 0.9rem;
+}
+
+.theme-kanagawa .title-text {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    letter-spacing: 0.3px;
+    text-shadow: none;
+}
+
+/* Window buttons — flat dots, kanagawa palette */
+.theme-kanagawa .btn-close    { background: #e06c75; border-color: rgba(0,0,0,0.2); }
+.theme-kanagawa .btn-minimize { background: #e5c07b; border-color: rgba(0,0,0,0.2); }
+.theme-kanagawa .btn-maximize { background: #98c379; border-color: rgba(0,0,0,0.2); }
+
+/* =============================================================================
+   TAB BAR — WezTerm-style
+   Active tab has a pink top-bar indicator (like WezTerm's thinking status)
+   ============================================================================= */
+
+.theme-kanagawa .tab-bar {
+    background: var(--bg-mid);
+    border-bottom: 1px solid #1e1e2a;
+    gap: 1px;
+}
+
+.theme-kanagawa .tab {
+    color: var(--text-muted);
+    border-radius: 0;
+    padding: 0.4rem 1rem;
+    position: relative;
+    margin-right: 0;
+    border-right: 1px solid rgba(255,255,255,0.04);
+}
+
+/* Active tab: mint top bar (mimics WezTerm's idle/done state) */
+.theme-kanagawa .tab.active {
+    color: var(--text-cream);
+    background: var(--terminal-bg);
+    border-right-color: transparent;
+}
+
+.theme-kanagawa .tab.active::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--accent-mint);
+    border-radius: 0;
+}
+
+.theme-kanagawa .tab:hover:not(.active) {
+    color: var(--text-cream);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.theme-kanagawa .tab-add {
+    color: var(--text-dim);
+    border-radius: 0;
+}
+
+.theme-kanagawa .tab-add:hover {
+    color: var(--text-muted);
+    background: rgba(255,255,255,0.04);
+}
+
+.theme-kanagawa .tab-close {
+    color: inherit;
+}
+
+.theme-kanagawa .tab-close:hover {
+    color: var(--accent-sakura);
+}
+
+/* =============================================================================
+   TERMINAL
+   ============================================================================= */
+
+.theme-kanagawa .terminal {
+    background: var(--terminal-bg);
+    color: var(--text-cream);
+}
+
+.theme-kanagawa .ascii-art {
+    color: var(--accent-mint);
+    opacity: 0.7;
+}
+
+.theme-kanagawa .prompt {
+    color: var(--prompt-color);
+}
+
+.theme-kanagawa .command {
+    color: var(--command-color);
+}
+
+.theme-kanagawa .comment {
+    color: var(--comment-color);
+    font-style: italic;
+}
+
+.theme-kanagawa .highlight {
+    color: var(--highlight-color);
+}
+
+.theme-kanagawa .cursor {
+    background: var(--cursor-color);
+    width: 2px;     /* slim bar cursor, like WezTerm */
+    border-radius: 1px;
+}
+
+/* Tags */
+.theme-kanagawa .tag {
+    background: var(--tag-bg);
+    color: var(--tag-color);
+    border: 1px solid var(--tag-border);
+}
+
+/* Links */
+.theme-kanagawa .link {
+    color: var(--link-color);
+    border-bottom: 1px dashed rgba(160, 212, 196, 0.4);
+}
+
+.theme-kanagawa .link:hover {
+    color: var(--accent-sakura);
+    border-color: rgba(232, 160, 191, 0.5);
+}
+
+/* Projects */
+.theme-kanagawa .project-name {
+    color: var(--accent-gold);
+}
+
+/* Featured project */
+.theme-kanagawa .project-featured {
+    border-left-color: var(--accent-mint);
+    background: rgba(160, 212, 196, 0.04);
+    border-radius: 0 4px 4px 0;
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+}
+
+.theme-kanagawa .featured-badge {
+    color: var(--accent-mint);
+}
+
+/* Games showcase */
+.theme-kanagawa .game-name {
+    color: var(--accent-gold);
+}
+
+.theme-kanagawa .game-platform {
+    color: var(--text-muted);
+}
+
+.theme-kanagawa .game-card-rpg {
+    background: rgba(232, 160, 191, 0.05);
+    border-color: rgba(232, 160, 191, 0.15);
+}
+
+.theme-kanagawa .game-card-rpg .game-ascii {
+    color: var(--accent-sakura);
+}
+
+.theme-kanagawa .game-card-vr {
+    background: rgba(160, 212, 196, 0.05);
+    border-color: rgba(160, 212, 196, 0.15);
+}
+
+.theme-kanagawa .game-card-vr .game-ascii {
+    color: var(--accent-mint);
+}
+
+.theme-kanagawa .game-card-web {
+    background: rgba(200, 169, 122, 0.05);
+    border-color: rgba(200, 169, 122, 0.15);
+}
+
+.theme-kanagawa .game-card-web .game-ascii {
+    color: var(--accent-gold);
+}
+
+.theme-kanagawa .game-card-ios {
+    background: rgba(232, 160, 191, 0.05);
+    border-color: rgba(232, 160, 191, 0.15);
+}
+
+.theme-kanagawa .game-card-ios .game-ascii {
+    color: var(--accent-sakura);
+}
+
+/* Contact */
+.theme-kanagawa .contact-key {
+    color: var(--accent-gold);
+}
+
+.theme-kanagawa .link-linkedin {
+    color: var(--accent-mint);
+    border-bottom-color: rgba(160, 212, 196, 0.4);
+}
+
+.theme-kanagawa .cta-label {
+    color: var(--accent-mint);
+}
+
+/* Experience */
+.theme-kanagawa .exp-company {
+    color: var(--accent-gold);
+}
+
+.theme-kanagawa .exp-title {
+    color: var(--text-cream);
+}
+
+.theme-kanagawa .exp-dates {
+    color: var(--text-muted);
+}
+
+/* =============================================================================
+   KANBAN BOARD — Kanagawa theme
+   shipped = mint, building = sakura, planning = muted gold
+   ============================================================================= */
+
+.theme-kanagawa .dot-shipped {
+    background: var(--accent-mint);
+    box-shadow: 0 0 6px rgba(160, 212, 196, 0.5);
+}
+
+.theme-kanagawa .dot-building {
+    background: var(--accent-sakura);
+    box-shadow: 0 0 6px rgba(232, 160, 191, 0.5);
+}
+
+.theme-kanagawa .dot-planning {
+    background: var(--accent-gold);
+    box-shadow: 0 0 6px rgba(200, 169, 122, 0.4);
+}
+
+/* Shipped column — mint tint */
+.theme-kanagawa .kanban-col:nth-child(1) .kanban-card {
+    background: rgba(160, 212, 196, 0.04);
+    border-color: rgba(160, 212, 196, 0.10);
+}
+
+.theme-kanagawa .kanban-col:nth-child(1) .kanban-card:hover {
+    background: rgba(160, 212, 196, 0.08);
+    border-color: rgba(160, 212, 196, 0.20);
+    box-shadow: 0 2px 10px rgba(160, 212, 196, 0.08);
+}
+
+.theme-kanagawa .kanban-col:nth-child(1) .kcard-name {
+    color: var(--accent-mint);
+}
+
+.theme-kanagawa .kanban-col:nth-child(1) .kcard-tag {
+    background: rgba(160, 212, 196, 0.10);
+    color: var(--accent-mint);
+    border: 1px solid rgba(160, 212, 196, 0.18);
+}
+
+/* Building column — sakura tint */
+.theme-kanagawa .kanban-col:nth-child(2) .kanban-card {
+    background: rgba(232, 160, 191, 0.04);
+    border-color: rgba(232, 160, 191, 0.10);
+}
+
+.theme-kanagawa .kanban-col:nth-child(2) .kanban-card:hover {
+    background: rgba(232, 160, 191, 0.08);
+    border-color: rgba(232, 160, 191, 0.20);
+    box-shadow: 0 2px 10px rgba(232, 160, 191, 0.08);
+}
+
+.theme-kanagawa .kanban-col:nth-child(2) .kcard-name {
+    color: var(--accent-sakura);
+}
+
+.theme-kanagawa .kanban-col:nth-child(2) .kcard-tag {
+    background: rgba(232, 160, 191, 0.10);
+    color: var(--accent-sakura);
+    border: 1px solid rgba(232, 160, 191, 0.18);
+}
+
+/* Planning column — gold tint */
+.theme-kanagawa .kanban-col:nth-child(3) .kanban-card {
+    background: rgba(200, 169, 122, 0.04);
+    border-color: rgba(200, 169, 122, 0.10);
+}
+
+.theme-kanagawa .kanban-col:nth-child(3) .kanban-card:hover {
+    background: rgba(200, 169, 122, 0.08);
+    border-color: rgba(200, 169, 122, 0.20);
+    box-shadow: 0 2px 10px rgba(200, 169, 122, 0.08);
+}
+
+.theme-kanagawa .kanban-col:nth-child(3) .kcard-name {
+    color: var(--accent-gold);
+}
+
+.theme-kanagawa .kanban-col:nth-child(3) .kcard-tag {
+    background: rgba(200, 169, 122, 0.10);
+    color: var(--accent-gold);
+    border: 1px solid rgba(200, 169, 122, 0.18);
+}
+
+/* =============================================================================
+   RESTORE BUTTON
+   ============================================================================= */
+
+.theme-kanagawa .restore-btn {
+    background: var(--bg-mid);
+    color: var(--text-cream);
+    border: 1px solid var(--terminal-border);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.theme-kanagawa .restore-btn:hover {
+    background: #303040;
+    transform: translateX(-50%) translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* =============================================================================
+   DESKTOP ICONS
+   ============================================================================= */
+
+.theme-kanagawa .icon-label {
+    color: var(--text-cream);
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+.theme-kanagawa .desktop-icon:hover {
+    background: rgba(160, 212, 196, 0.12);
+}
+
+.theme-kanagawa .desktop-icon.selected {
+    background: rgba(160, 212, 196, 0.18);
+    outline: 2px solid rgba(160, 212, 196, 0.35);
+}

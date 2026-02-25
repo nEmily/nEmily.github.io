@@ -819,6 +819,13 @@ body {
     font-size: 0.82rem;
 }
 
+/* Project subsection label */
+.project-subsection-label {
+    margin-top: 1.25rem;
+    margin-bottom: 0.4rem;
+    font-size: 0.82rem;
+}
+
 /* =============================================================================
    RESPONSIVE
    ============================================================================= */

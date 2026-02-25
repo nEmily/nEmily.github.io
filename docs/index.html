@@ -26,7 +26,7 @@
     <meta property="twitter:image" content="https://nemily.github.io/assets/og-image.jpg">
 
     <!-- Theme Color -->
-    <meta name="theme-color" content="#2D2A24">
+    <meta name="theme-color" content="#1a1a22">
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="./favicon.svg">
@@ -41,6 +41,7 @@
     <link rel="stylesheet" href="styles/backdrop.css">
     <link rel="stylesheet" href="styles/themes/meadow.css">
     <link rel="stylesheet" href="styles/themes/rainy.css">
+    <link rel="stylesheet" href="styles/themes/kanagawa.css">
 </head>
 <body>
     <div class="backdrop"></div>
@@ -50,14 +51,15 @@
         <button class="desktop-icon" id="icon-terminal" aria-label="Open Terminal">
             <span class="icon-image">
                 <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="4" y="8" width="40" height="32" rx="4" fill="#2D2A24"/>
-                    <rect x="4" y="8" width="40" height="8" rx="4" fill="#8B7355"/>
-                    <rect x="4" y="12" width="40" height="4" fill="#8B7355"/>
-                    <circle cx="10" cy="12" r="2" fill="#FFB5A7"/>
-                    <circle cx="16" cy="12" r="2" fill="#F9E4B7"/>
-                    <circle cx="22" cy="12" r="2" fill="#98D4BB"/>
-                    <polygon points="10,24 16,28 10,32" fill="#FFB5A7"/>
-                    <rect x="20" y="23" width="8" height="10" fill="#98D4BB"/>
+                    <rect x="4" y="8" width="40" height="32" rx="3" fill="#1a1a22"/>
+                    <rect x="4" y="8" width="40" height="7" rx="3" fill="#2a2a37"/>
+                    <rect x="4" y="12" width="40" height="3" fill="#2a2a37"/>
+                    <circle cx="10" cy="11.5" r="1.8" fill="#e06c75"/>
+                    <circle cx="15.5" cy="11.5" r="1.8" fill="#e5c07b"/>
+                    <circle cx="21" cy="11.5" r="1.8" fill="#98c379"/>
+                    <polygon points="10,24 16,28 10,32" fill="#e8a0bf"/>
+                    <rect x="20" y="23" width="8" height="2" rx="1" fill="#a0d4c4"/>
+                    <rect x="20" y="27" width="5" height="2" rx="1" fill="#a0d4c4"/>
                 </svg>
             </span>
             <span class="icon-label">Terminal</span>
@@ -65,13 +67,13 @@
         <a class="desktop-icon" href="/assets/resume.pdf" target="_blank" aria-label="Open Resume">
             <span class="icon-image">
                 <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 4h18l10 10v30a2 2 0 01-2 2H12a2 2 0 01-2-2V6a2 2 0 012-2z" fill="#F5EDE4"/>
-                    <path d="M30 4v10h10" fill="#E5DDD4"/>
-                    <path d="M30 4l10 10h-8a2 2 0 01-2-2V4z" fill="#D5CCC4"/>
-                    <rect x="16" y="20" width="16" height="2" rx="1" fill="#8B7355"/>
-                    <rect x="16" y="26" width="12" height="2" rx="1" fill="#A89888"/>
-                    <rect x="16" y="32" width="14" height="2" rx="1" fill="#A89888"/>
-                    <rect x="16" y="38" width="10" height="2" rx="1" fill="#A89888"/>
+                    <path d="M12 4h18l10 10v30a2 2 0 01-2 2H12a2 2 0 01-2-2V6a2 2 0 012-2z" fill="#222230"/>
+                    <path d="M30 4v10h10" fill="#2a2a37"/>
+                    <path d="M30 4l10 10h-8a2 2 0 01-2-2V4z" fill="#3a3a50"/>
+                    <rect x="16" y="20" width="16" height="2" rx="1" fill="#dcd7ba"/>
+                    <rect x="16" y="26" width="12" height="2" rx="1" fill="#727169"/>
+                    <rect x="16" y="32" width="14" height="2" rx="1" fill="#727169"/>
+                    <rect x="16" y="38" width="10" height="2" rx="1" fill="#727169"/>
                 </svg>
             </span>
             <span class="icon-label">Resume</span>
@@ -94,7 +96,8 @@
             <div class="resize-handle resize-nw" data-resize="nw"></div>
             <div class="resize-handle resize-se" data-resize="se"></div>
             <div class="resize-handle resize-sw" data-resize="sw"></div>
-            <!-- Title Bar -->
+
+            <!-- Title Bar — minimal WezTerm style -->
             <div class="title-bar">
                 <div class="window-buttons">
                     <button class="btn btn-close" id="btn-close" aria-label="Close"></button>
@@ -105,7 +108,7 @@
                 <div class="title-spacer"></div>
             </div>
 
-            <!-- Tab Bar -->
+            <!-- Tab Bar — WezTerm style -->
             <nav class="tab-bar" role="tablist">
                 <button class="tab active" role="tab" aria-selected="true" data-tab="board">
                     <span class="tab-label">~/board</span>
@@ -152,7 +155,7 @@
                             <div class="kanban-col-header">
                                 <span class="kanban-col-dot dot-shipped"></span>
                                 <span class="kanban-col-title">shipped</span>
-                                <span class="kanban-col-count">4</span>
+                                <span class="kanban-col-count">5</span>
                             </div>
                             <div class="kanban-cards">
                                 <a class="kanban-card" href="https://nemily.github.io/roundhouse/" target="_blank" rel="noopener">
@@ -183,6 +186,15 @@
                                     </div>
                                 </div>
                                 <div class="kanban-card">
+                                    <div class="kcard-name">killer-boba</div>
+                                    <div class="kcard-desc">someone's boba is poisoned. figure out whose before you drink</div>
+                                    <div class="kcard-footer">
+                                        <span class="kcard-tag">PWA</span>
+                                        <span class="kcard-tag">game</span>
+                                        <span class="kcard-link">coming soon</span>
+                                    </div>
+                                </div>
+                                <div class="kanban-card">
                                     <div class="kcard-name">thirdwheel</div>
                                     <div class="kcard-desc">discord bot for my household. AI inbox, reminders, chaos management</div>
                                     <div class="kcard-footer">
@@ -199,9 +211,18 @@
                             <div class="kanban-col-header">
                                 <span class="kanban-col-dot dot-building"></span>
                                 <span class="kanban-col-title">building</span>
-                                <span class="kanban-col-count">2</span>
+                                <span class="kanban-col-count">3</span>
                             </div>
                             <div class="kanban-cards">
+                                <div class="kanban-card">
+                                    <div class="kcard-name">dude-were-so-cooked</div>
+                                    <div class="kcard-desc">AI-curated news digest. agents decide what's actually worth your attention</div>
+                                    <div class="kcard-footer">
+                                        <span class="kcard-tag">AI</span>
+                                        <span class="kcard-tag">agents</span>
+                                        <span class="kcard-link">↗ github</span>
+                                    </div>
+                                </div>
                                 <div class="kanban-card">
                                     <div class="kcard-name">splitsheet</div>
                                     <div class="kcard-desc">snap a receipt, split it with friends, send venmo charges. that's it</div>
@@ -211,24 +232,24 @@
                                         <span class="kcard-link">coming soon</span>
                                     </div>
                                 </div>
-                                <a class="kanban-card" href="https://github.com/nEmily/dude-were-so-cooked" target="_blank" rel="noopener">
-                                    <div class="kcard-name">dude-were-so-cooked</div>
-                                    <div class="kcard-desc">AI-curated news digest. agents decide what's actually worth your attention</div>
+                                <div class="kanban-card">
+                                    <div class="kcard-name">ace-interview</div>
+                                    <div class="kcard-desc">practice technical interviews with an AI that actually pushes back</div>
                                     <div class="kcard-footer">
                                         <span class="kcard-tag">AI</span>
-                                        <span class="kcard-tag">agents</span>
-                                        <span class="kcard-link">↗ github</span>
+                                        <span class="kcard-tag">web</span>
+                                        <span class="kcard-link">coming soon</span>
                                     </div>
-                                </a>
+                                </div>
                             </div>
                         </div>
 
-                        <!-- IDEA column -->
+                        <!-- PLANNING column -->
                         <div class="kanban-col">
                             <div class="kanban-col-header">
-                                <span class="kanban-col-dot dot-idea"></span>
-                                <span class="kanban-col-title">idea</span>
-                                <span class="kanban-col-count">1</span>
+                                <span class="kanban-col-dot dot-planning"></span>
+                                <span class="kanban-col-title">planning</span>
+                                <span class="kanban-col-count">2</span>
                             </div>
                             <div class="kanban-cards">
                                 <div class="kanban-card">
@@ -237,6 +258,15 @@
                                     <div class="kcard-footer">
                                         <span class="kcard-tag">journal</span>
                                         <span class="kcard-tag">mobile</span>
+                                        <span class="kcard-link">coming soon</span>
+                                    </div>
+                                </div>
+                                <div class="kanban-card">
+                                    <div class="kcard-name">pixietown</div>
+                                    <div class="kcard-desc">pixel-art visualizer for live multi-agent orchestration state</div>
+                                    <div class="kcard-footer">
+                                        <span class="kcard-tag">Python</span>
+                                        <span class="kcard-tag">WebSocket</span>
                                         <span class="kcard-link">coming soon</span>
                                     </div>
                                 </div>
@@ -267,11 +297,11 @@
                     <div class="output">
                         <span class="comment"># hello world</span><br><br>
                         <span class="highlight">swe @ meta | uc berkeley cs</span><br><br>
-                        i build autonomous AI agents that manage a kanban board, dispatch<br>
-                        workers across projects, and ship code while i sleep. i wake up,<br>
-                        review what my team did overnight, and merge the good stuff.<br><br>
-                        also: party games for game night, a discord bot for my household,<br>
-                        and a receipt splitter for when someone always orders the lobster.<br><br>
+                        i like to build stuff i actually want to use.<br><br>
+                        party games for game night. bots for my household.<br>
+                        tools that automate the tedious stuff so i can focus<br>
+                        on the parts that are actually interesting.<br><br>
+                        if i'm annoyed by something often enough, i'll just fix it.<br><br>
                         <span class="comment"># quick links</span><br>
                         <a href="/assets/resume.pdf" class="link" target="_blank" rel="noopener">resume.pdf</a> ·
                         <a href="https://linkedin.com/in/nguyen-emily" class="link" target="_blank" rel="noopener">linkedin</a> ·
@@ -459,6 +489,7 @@
                         <span class="cursor"></span>
                     </div>
                 </section>
+
                 <!-- Experience Tab -->
                 <section id="tab-experience" class="tab-content">
                     <div class="terminal-line">

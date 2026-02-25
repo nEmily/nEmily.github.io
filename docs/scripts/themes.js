@@ -1,14 +1,14 @@
 /**
  * THEMES.JS - Theme switching functionality
- * Handles switching between meadow and rainy themes with localStorage persistence
+ * Handles switching between kanagawa (default), meadow and rainy themes with localStorage persistence
  */
 
 (function() {
     'use strict';
 
     const STORAGE_KEY = 'emily-theme';
-    const THEMES = ['meadow', 'rainy'];
-    const DEFAULT_THEME = 'meadow';
+    const THEMES = ['kanagawa', 'meadow', 'rainy'];
+    const DEFAULT_THEME = 'kanagawa';
 
     /**
      * Get the current theme from localStorage or default
@@ -20,7 +20,7 @@
 
     /**
      * Apply a theme to the document
-     * @param {string} themeName - 'meadow' or 'rainy'
+     * @param {string} themeName - 'kanagawa', 'meadow', or 'rainy'
      */
     function setTheme(themeName) {
         if (!THEMES.includes(themeName)) {
@@ -35,7 +35,7 @@
             html.classList.remove(`theme-${t}`);
         });
 
-        // Add the new theme class (meadow is default, no class needed)
+        // Add the new theme class (kanagawa is default, meadow falls back to no class)
         if (themeName !== 'meadow') {
             html.classList.add(`theme-${themeName}`);
         }

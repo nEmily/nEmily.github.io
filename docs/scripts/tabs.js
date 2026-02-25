@@ -35,6 +35,7 @@
         'experience': 'emily — experience'
     };
 
+
     /**
      * Switch to a specific tab
      * @param {string} tabId - The tab identifier
@@ -60,7 +61,7 @@
         }
 
         // Update browser title
-        document.title = `~/${tabId === 'home' || tabId === 'board' ? 'emilynguyen' : tabId}`;
+        document.title = `~/${(tabId === 'home' || tabId === 'board') ? 'emilynguyen' : tabId}`;
 
         // Focus the input in the new tab
         setTimeout(() => {
