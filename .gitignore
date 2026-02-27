@@ -1,2 +1,6 @@
 .DS_Store
 .claude/
+me.jpg
+node_modules/
+avatar-playground.html
+test-*.js
