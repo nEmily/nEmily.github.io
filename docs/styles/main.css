@@ -450,6 +450,18 @@ body {
     margin-bottom: 0.75rem;
 }
 
+/* Avatar */
+.avatar {
+    float: right;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center 15%;
+    margin: 0 0 0.5rem 1rem;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
 /* ASCII Art */
 .ascii-art {
     white-space: pre;
@@ -826,6 +838,12 @@ body {
 
     .exp-desc {
         font-size: 0.82rem;
+    }
+
+    /* Avatar: smaller on mobile */
+    .avatar {
+        width: 72px;
+        height: 72px;
     }
 
     /* Contact: ensure rows don't overflow */

@@ -204,6 +204,11 @@
     color: var(--accent-mint);
 }
 
+/* Avatar */
+.theme-rainy .avatar {
+    border-color: rgba(232, 160, 181, 0.3);
+}
+
 /* Contact */
 .theme-rainy .contact-key {
     color: var(--accent-sky);
