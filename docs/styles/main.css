@@ -428,6 +428,7 @@ body {
 /* Tab Content */
 .tab-content {
     display: none;
+    position: relative;
 }
 
 .tab-content.active {
@@ -450,16 +451,21 @@ body {
     margin-bottom: 0.75rem;
 }
 
-/* Avatar */
+.output-dynamic {
+    white-space: pre-wrap;
+}
+
+/* Avatar base (contact card etc.) */
 .avatar {
-    float: right;
-    width: 100px;
-    height: 100px;
     border-radius: 50%;
     object-fit: cover;
-    object-position: center 15%;
-    margin: 0 0 0.5rem 1rem;
+    object-position: center 32%;
     border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.avatar-sm {
+    width: 40px;
+    height: 40px;
 }
 
 /* ASCII Art */
@@ -481,34 +487,18 @@ body {
 }
 
 .input-text {
-    flex: 1;
     outline: none;
     border: none;
     background: transparent;
     font-family: inherit;
     font-size: inherit;
     color: inherit;
-    caret-color: transparent;
+    caret-color: var(--cursor-color, #c8c093);
     min-width: 1px;
 }
 
 .input-text:empty::before {
     content: '';
-}
-
-/* Cursor */
-.cursor {
-    display: inline-block;
-    width: 8px;
-    height: 1.1em;
-    animation: blink 1s infinite;
-    vertical-align: middle;
-    margin-left: 2px;
-}
-
-@keyframes blink {
-    0%, 50% { opacity: 1; }
-    51%, 100% { opacity: 0; }
 }
 
 @keyframes rainbow {
@@ -840,13 +830,7 @@ body {
         font-size: 0.82rem;
     }
 
-    /* Avatar: smaller on mobile */
-    .avatar {
-        width: 72px;
-        height: 72px;
-    }
-
-    /* Contact: ensure rows don't overflow */
+/* Contact: ensure rows don't overflow */
     .contact-row {
         flex-wrap: wrap;
         word-break: break-all;

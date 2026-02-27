@@ -40,14 +40,14 @@
             type: 'file',
             content: `<span class="comment"># hello world</span>
 
-<span class="highlight">swe @ meta | uc berkeley cs</span>
+<span class="highlight">Hi, I'm Emily!</span>
 
-i build autonomous AI agents that manage a kanban board, dispatch
-workers across projects, and ship code while i sleep. i wake up,
-review what my team did overnight, and merge the good stuff.
+UC Berkeley CS grad with 5+ years of software engineering
+experience. Currently at Meta building dev tooling for
+Reality Labs Research wearables — CI/CD, test infrastructure,
+and AI agent tooling.
 
-also: party games for game night, a discord bot for my household,
-and a receipt splitter for when someone always orders the lobster.`
+I like to build things I use.`
         },
         '~/status.txt': {
             type: 'file',
@@ -180,10 +180,13 @@ Link: https://news.dolby.com/en-WW/227541-dolby-releases-native-dolby-vision-and
         },
         '~/contact.txt': {
             type: 'file',
-            content: `# let's connect
+            content: `<span class="comment"># let's connect</span>
 
-github:   github.com/nEmily
-linkedin: linkedin.com/in/nguyen-emily`
+→ <a href="https://linkedin.com/in/nguyen-emily" class="link link-linkedin" target="_blank" rel="noopener">linkedin.com/in/nguyen-emily</a> — best way to reach me
+
+<span class="contact-key">email</span>   <a href="mailto:emilyn@berkeley.edu" class="link">emilyn@berkeley.edu</a>
+<span class="contact-key">github</span>  <a href="https://github.com/nEmily" class="link" target="_blank" rel="noopener">github.com/nEmily</a>
+<span class="contact-key">resume</span>  <a href="/assets/resume.pdf" class="link" target="_blank" rel="noopener">resume.pdf ↗</a>`
         },
         '~/experience.txt': {
             type: 'file',
@@ -914,6 +917,19 @@ Or use 'search [keyword]' to find specific content.`;
     // HELPER FUNCTIONS
     // ==========================================================================
 
+    function commonPrefix(strings) {
+        if (strings.length === 0) return '';
+        let prefix = strings[0];
+        for (let i = 1; i < strings.length; i++) {
+            while (!strings[i].toLowerCase().startsWith(prefix.toLowerCase())) {
+                prefix = prefix.slice(0, -1);
+                if (!prefix) return '';
+            }
+        }
+        // Return the prefix using the case from the first match
+        return prefix;
+    }
+
     function resolvePath(inputPath) {
         if (!inputPath || inputPath === '.') {
             return state.currentPath;
@@ -978,7 +994,6 @@ Or use 'search [keyword]' to find specific content.`;
         line.innerHTML = `
             <span class="prompt">${CONFIG.prompt}</span>
             <span class="input-text" contenteditable="true" spellcheck="false"></span>
-            <span class="cursor"></span>
         `;
         return line;
     }
@@ -987,7 +1002,7 @@ Or use 'search [keyword]' to find specific content.`;
         if (text === null) return; // null means no output (e.g., clear)
 
         const output = document.createElement('div');
-        output.className = 'output';
+        output.className = 'output output-dynamic';
         output.innerHTML = text;
 
         const inputLine = terminal.querySelector('.input-line');
@@ -1083,6 +1098,57 @@ Or use 'search [keyword]' to find specific content.`;
                 if (matches.length === 1) {
                     inputEl.textContent = matches[0] + ' ';
                     placeCaretAtEnd(inputEl);
+                } else if (matches.length > 1) {
+                    const terminal = getActiveTerminal();
+                    addOutput(matches.join('  '), terminal);
+                    const common = commonPrefix(matches);
+                    if (common.length > lastPart.length) {
+                        inputEl.textContent = common;
+                        placeCaretAtEnd(inputEl);
+                    }
+                }
+            } else {
+                // File/directory path completion
+                const partial = lastPart;
+                let parentPath, prefix;
+
+                if (partial.includes('/')) {
+                    const lastSlash = partial.lastIndexOf('/');
+                    const dirPart = partial.substring(0, lastSlash) || (partial.startsWith('~/') ? '~' : '');
+                    parentPath = dirPart ? resolvePath(dirPart) : state.currentPath;
+                    prefix = partial.substring(lastSlash + 1);
+                } else {
+                    parentPath = state.currentPath;
+                    prefix = partial;
+                }
+
+                const parentNode = fileSystem[parentPath];
+                if (parentNode && parentNode.children) {
+                    const matches = parentNode.children.filter(c =>
+                        c.replace(/\/$/, '').toLowerCase().startsWith(prefix.toLowerCase())
+                    );
+                    if (matches.length === 1) {
+                        const basePath = partial.includes('/')
+                            ? partial.substring(0, partial.lastIndexOf('/') + 1)
+                            : '';
+                        parts[parts.length - 1] = basePath + matches[0];
+                        // Add trailing space for files (not dirs)
+                        if (!matches[0].endsWith('/')) parts[parts.length - 1] += ' ';
+                        inputEl.textContent = parts.join(' ');
+                        placeCaretAtEnd(inputEl);
+                    } else if (matches.length > 1) {
+                        const terminal = getActiveTerminal();
+                        addOutput(matches.join('  '), terminal);
+                        const common = commonPrefix(matches);
+                        if (common.length > prefix.length) {
+                            const basePath = partial.includes('/')
+                                ? partial.substring(0, partial.lastIndexOf('/') + 1)
+                                : '';
+                            parts[parts.length - 1] = basePath + common;
+                            inputEl.textContent = parts.join(' ');
+                            placeCaretAtEnd(inputEl);
+                        }
+                    }
                 }
             }
         }

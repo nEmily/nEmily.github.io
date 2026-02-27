@@ -193,12 +193,6 @@
     color: var(--highlight-color);
 }
 
-.theme-kanagawa .cursor {
-    background: var(--cursor-color);
-    width: 2px;     /* slim bar cursor, like WezTerm */
-    border-radius: 1px;
-}
-
 /* Tags */
 .theme-kanagawa .tag {
     background: var(--tag-bg);

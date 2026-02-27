@@ -164,10 +164,6 @@
     color: var(--highlight-color);
 }
 
-.theme-rainy .cursor {
-    background: var(--cursor-color);
-}
-
 /* Tags */
 .theme-rainy .tag {
     background: var(--tag-bg);

@@ -165,10 +165,6 @@
     color: var(--highlight-color);
 }
 
-.theme-meadow .cursor {
-    background: var(--cursor-color);
-}
-
 /* Tags */
 .theme-meadow .tag {
     background: var(--tag-bg);

@@ -9,7 +9,6 @@
     // DOM Elements
     const tabBar = document.querySelector('.tab-bar');
     const terminal = document.querySelector('.terminal');
-    const windowTitle = document.getElementById('window-title');
     const addTabBtn = document.querySelector('.tab-add');
 
     // Directory paths for each tab (for terminal-style navigation)
@@ -22,15 +21,6 @@
 
     // Counter for new terminal tabs
     let terminalCounter = 0;
-
-    // Tab name mapping for window title
-    const tabTitles = {
-        'home': 'emily — home',
-        'projects': 'emily — projects',
-        'contact': 'emily — contact',
-        'experience': 'emily — experience'
-    };
-
 
     /**
      * Switch to a specific tab
@@ -53,12 +43,6 @@
         // Reset scroll position
         if (terminal) {
             terminal.scrollTop = 0;
-        }
-
-        // Update window title
-        const title = tabTitles[tabId] || `emily — ${tabId}`;
-        if (windowTitle) {
-            windowTitle.textContent = title;
         }
 
         // Update browser title
@@ -368,8 +352,7 @@
     // If no hash, update title/state to match whichever tab has .active in HTML
     if (!window.location.hash) {
         const activeTab = getActiveTab();
-        if (activeTab && windowTitle) {
-            windowTitle.textContent = tabTitles[activeTab] || `emily — ${activeTab}`;
+        if (activeTab) {
             document.title = `~/${activeTab === 'home' ? 'emilynguyen' : activeTab}`;
         }
     }
