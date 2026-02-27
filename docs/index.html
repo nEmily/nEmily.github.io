@@ -114,6 +114,10 @@
                     <span class="tab-label">~/board</span>
                     <span class="tab-close" aria-label="Close tab">×</span>
                 </button>
+                <button class="tab" role="tab" aria-selected="false" data-tab="experience">
+                    <span class="tab-label">~/experience</span>
+                    <span class="tab-close" aria-label="Close tab">×</span>
+                </button>
                 <button class="tab" role="tab" aria-selected="false" data-tab="home">
                     <span class="tab-label">~/home</span>
                     <span class="tab-close" aria-label="Close tab">×</span>
@@ -128,10 +132,6 @@
                 </button>
                 <button class="tab" role="tab" aria-selected="false" data-tab="contact">
                     <span class="tab-label">~/contact</span>
-                    <span class="tab-close" aria-label="Close tab">×</span>
-                </button>
-                <button class="tab" role="tab" aria-selected="false" data-tab="experience">
-                    <span class="tab-label">~/experience</span>
                     <span class="tab-close" aria-label="Close tab">×</span>
                 </button>
                 <button class="tab-add" aria-label="New tab">+</button>
@@ -284,6 +284,112 @@
                     </div>
                 </section>
 
+                <!-- Experience Tab -->
+                <section id="tab-experience" class="tab-content">
+                    <div class="terminal-line">
+                        <span class="prompt">></span>
+                        <span class="command">cat experience.txt</span>
+                    </div>
+                    <div class="output">
+                        <span class="comment"># work experience</span><br><br>
+                        <div class="exp-item">
+                            <div class="exp-header">
+                                <span class="exp-company">Meta Reality Labs</span>
+                                <span class="exp-sep"> / </span>
+                                <span class="exp-title">Senior Software Engineer — Build Test Release</span>
+                            </div>
+                            <div class="exp-dates">Jul 2024 – present</div>
+                            <div class="exp-desc">
+                                CI/CD and test automation for wearable devices — built the device lab from scratch, 30+ devices across 2 racks. Defined the release quality framework that surfaced 72 bugs pre-release. Built a Claude IDE plugin for the team, an MCP server for internal job and task data, and a daily codemod runner that generates wiki docs from code diffs using LLMs. Led a 3-engineer testing team. Won an engineering award for pioneering release testing.
+                            </div>
+                            <div class="project-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">CI/CD</span>
+                                <span class="tag">LLM tooling</span>
+                                <span class="tag">Test Infrastructure</span>
+                            </div>
+                        </div>
+                        <div class="exp-item">
+                            <div class="exp-header">
+                                <span class="exp-company">Dolby Laboratories</span>
+                                <span class="exp-sep"> / </span>
+                                <span class="exp-title">Senior Software Engineer — Games, Audio, Test</span>
+                            </div>
+                            <div class="exp-dates">Jan 2021 – Dec 2023</div>
+                            <div class="exp-desc">
+                                Shipped the Dolby Atmos Plugin for Unreal Engine in collaboration with Epic Games. First test-focused engineer on the team — designed the QA framework, automated 300+ tests, and sped up CI pipelines by 33%. Python interfaces for a real-time audio C++/C SDK.
+                            </div>
+                            <div class="project-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">C++</span>
+                                <span class="tag">Unreal Engine</span>
+                                <span class="tag">CI/CD</span>
+                                <span class="tag">Test Automation</span>
+                            </div>
+                        </div>
+                        <div class="exp-item">
+                            <div class="exp-header">
+                                <span class="exp-company">Lokafy</span>
+                                <span class="exp-sep"> / </span>
+                                <span class="exp-title">Software Developer</span>
+                            </div>
+                            <div class="exp-dates">Jun – Aug 2018</div>
+                            <div class="exp-desc">
+                                Built a QuickPay payment system — transaction links on demand, real-time transaction views. Stripe API backend in Python/SQL; customer-facing UI in HTML/CSS with Django.
+                            </div>
+                            <div class="project-tags">
+                                <span class="tag">Python</span>
+                                <span class="tag">Django</span>
+                                <span class="tag">Stripe API</span>
+                                <span class="tag">SQL</span>
+                            </div>
+                        </div>
+                        <div class="exp-item">
+                            <div class="exp-header">
+                                <span class="exp-company">the Coder School</span>
+                                <span class="exp-sep"> / </span>
+                                <span class="exp-title">Code Coach</span>
+                            </div>
+                            <div class="exp-dates">Jul 2019 – Jan 2021</div>
+                            <div class="exp-desc">
+                                Taught programming to students ages 7–16 in one-on-one sessions. Led nine week-long camps with 12–14 students — every camper shipped something by the end.
+                            </div>
+                            <div class="project-tags">
+                                <span class="tag">Teaching</span>
+                                <span class="tag">Python</span>
+                                <span class="tag">Scratch</span>
+                                <span class="tag">Java</span>
+                                <span class="tag">C#</span>
+                            </div>
+                        </div>
+                        <div class="exp-item">
+                            <div class="exp-header">
+                                <span class="exp-company">UC Berkeley</span>
+                                <span class="exp-sep"> / </span>
+                                <span class="exp-title">XR/VR Course Facilitator</span>
+                            </div>
+                            <div class="exp-dates">Jan – May 2020</div>
+                            <div class="exp-desc">
+                                Facilitated a VR development course — Unity, C#, hands-on labs, and a final project.
+                            </div>
+                            <div class="project-tags">
+                                <span class="tag">Unity</span>
+                                <span class="tag">C#</span>
+                                <span class="tag">VR</span>
+                                <span class="tag">Teaching</span>
+                            </div>
+                        </div>
+                        <br>
+                        <span class="comment"># open to new opportunities — </span><a href="https://linkedin.com/in/nguyen-emily" class="link" target="_blank" rel="noopener">linkedin.com/in/nguyen-emily</a>
+                    </div>
+
+                    <div class="terminal-line input-line">
+                        <span class="prompt">></span>
+                        <span class="cursor"></span>
+                    </div>
+                </section>
+
                 <!-- Home Tab -->
                 <section id="tab-home" class="tab-content">
                     <pre class="ascii-art" aria-label="Emily Nguyen - software engineer, game dev, educator">   ╭─────────────────────────────────────────────────────╮
@@ -297,11 +403,12 @@
                     <div class="output">
                         <span class="comment"># hello world</span><br><br>
                         <span class="highlight">swe @ meta | uc berkeley cs</span><br><br>
-                        i like to build stuff i actually want to use.<br><br>
-                        party games for game night. bots for my household.<br>
-                        tools that automate the tedious stuff so i can focus<br>
-                        on the parts that are actually interesting.<br><br>
-                        if i'm annoyed by something often enough, i'll just fix it.<br><br>
+                        i build things i actually want to use.<br>
+                        mostly because i got annoyed and decided to just fix it.<br><br>
+                        my agents do a lot of the work now.<br>
+                        i review in the morning.<br><br>
+                        also into: game nights, cozy games, teaching people things,<br>
+                        and the occasional unhinged side project at 2am.<br><br>
                         <span class="comment"># quick links</span><br>
                         <a href="/assets/resume.pdf" class="link" target="_blank" rel="noopener">resume.pdf</a> ·
                         <a href="https://linkedin.com/in/nguyen-emily" class="link" target="_blank" rel="noopener">linkedin</a> ·
@@ -318,55 +425,15 @@
                 <section id="tab-projects" class="tab-content">
                     <div class="terminal-line">
                         <span class="prompt">></span>
-                        <span class="command">ls projects/</span>
+                        <span class="command">cat projects.txt</span>
                     </div>
                     <div class="output">
-                        <div class="project-item project-featured">
-                            <div class="featured-badge">★ featured</div>
-                            <span class="project-name">ai-agent-orchestrator/</span>
-                            <span class="project-desc">— the system that manages my kanban board and ships code overnight. dispatches AI workers across projects, reviews its own PRs, and sends me a report in the morning. built on Claude Code.</span>
-                            <div class="project-tags">
-                                <span class="tag">TypeScript</span>
-                                <span class="tag">Claude Code</span>
-                                <span class="tag">Orchestration</span>
-                                <span class="tag">Agents</span>
-                            </div>
-                        </div>
-                        <div class="project-item">
-                            <span class="project-name">pixietown/</span>
-                            <span class="project-desc">— Multi-agent orchestration visualizer with real-time state management. Python bridge polls task state files and broadcasts agent activity over WebSocket to a pixel-art frontend.</span>
-                            <div class="project-tags">
-                                <span class="tag">Python</span>
-                                <span class="tag">JavaScript</span>
-                                <span class="tag">WebSocket</span>
-                                <span class="tag">Multi-agent</span>
-                            </div>
-                        </div>
-                        <div class="project-item">
-                            <span class="project-name">dolby-atmos-unreal/</span>
-                            <span class="project-desc">— Cross-platform real-time audio SDK plugin for Unreal Engine, released in collaboration with Epic Games</span>
-                            <div class="project-tags">
-                                <span class="tag">C++</span>
-                                <span class="tag">Unreal</span>
-                                <span class="tag">Audio</span>
-                            </div>
-                        </div>
-                        <div class="project-item">
-                            <span class="project-name">arkangel/</span>
-                            <span class="project-desc">— 2D adventure RPG with branching dialogue and minigames</span>
-                            <div class="project-tags">
-                                <span class="tag">Unity</span>
-                                <span class="tag">C#</span>
-                            </div>
-                        </div>
-                        <div class="project-item">
-                            <span class="project-name">vr-escape-room/</span>
-                            <span class="project-desc">— Interactive VR escape room with puzzles, built for Oculus</span>
-                            <div class="project-tags">
-                                <span class="tag">Unity</span>
-                                <span class="tag">VR</span>
-                            </div>
-                        </div>
+                        <span class="comment"># what i'm working on</span><br><br>
+                        the real answer is on the <span class="highlight">~/board</span> tab.<br>
+                        live kanban — shipped, building, planning.<br>
+                        it updates as things actually happen.<br><br>
+                        <span class="comment"># → cd ../board</span><br><br>
+                        <a href="#" class="link" onclick="window.tabManager && window.tabManager.switchTab('board'); return false;">switch to ~/board ↗</a>
                     </div>
 
                     <div class="terminal-line input-line">
@@ -482,112 +549,6 @@
                             <span class="contact-sep"> </span>
                             <a href="/assets/resume.pdf" class="link" target="_blank" rel="noopener">resume.pdf ↗</a>
                         </div>
-                    </div>
-
-                    <div class="terminal-line input-line">
-                        <span class="prompt">></span>
-                        <span class="cursor"></span>
-                    </div>
-                </section>
-
-                <!-- Experience Tab -->
-                <section id="tab-experience" class="tab-content">
-                    <div class="terminal-line">
-                        <span class="prompt">></span>
-                        <span class="command">cat experience.txt</span>
-                    </div>
-                    <div class="output">
-                        <span class="comment"># work experience</span><br><br>
-                        <div class="exp-item">
-                            <div class="exp-header">
-                                <span class="exp-company">Meta Reality Labs</span>
-                                <span class="exp-sep"> / </span>
-                                <span class="exp-title">Senior Software Engineer — Build Test Release</span>
-                            </div>
-                            <div class="exp-dates">Jul 2024 – present</div>
-                            <div class="exp-desc">
-                                CI/CD and test automation for wearable devices — built the device lab from scratch, 30+ devices across 2 racks. Defined the release quality framework that surfaced 72 bugs pre-release. Built a Claude IDE plugin for the team, an MCP server for internal job and task data, and a daily codemod runner that generates wiki docs from code diffs using LLMs. Led a 3-engineer testing team. Won an engineering award for pioneering release testing.
-                            </div>
-                            <div class="project-tags">
-                                <span class="tag">Python</span>
-                                <span class="tag">JavaScript</span>
-                                <span class="tag">CI/CD</span>
-                                <span class="tag">LLM tooling</span>
-                                <span class="tag">Test Infrastructure</span>
-                            </div>
-                        </div>
-                        <div class="exp-item">
-                            <div class="exp-header">
-                                <span class="exp-company">Dolby Laboratories</span>
-                                <span class="exp-sep"> / </span>
-                                <span class="exp-title">Senior Software Engineer — Games, Audio, Test</span>
-                            </div>
-                            <div class="exp-dates">Jan 2021 – Dec 2023</div>
-                            <div class="exp-desc">
-                                Shipped the Dolby Atmos Plugin for Unreal Engine in collaboration with Epic Games. First test-focused engineer on the team — designed the QA framework, automated 300+ tests, and sped up CI pipelines by 33%. Python interfaces for a real-time audio C++/C SDK.
-                            </div>
-                            <div class="project-tags">
-                                <span class="tag">Python</span>
-                                <span class="tag">C++</span>
-                                <span class="tag">Unreal Engine</span>
-                                <span class="tag">CI/CD</span>
-                                <span class="tag">Test Automation</span>
-                            </div>
-                        </div>
-                        <div class="exp-item">
-                            <div class="exp-header">
-                                <span class="exp-company">Lokafy</span>
-                                <span class="exp-sep"> / </span>
-                                <span class="exp-title">Software Developer</span>
-                            </div>
-                            <div class="exp-dates">Jun – Aug 2018</div>
-                            <div class="exp-desc">
-                                Built a QuickPay payment system — transaction links on demand, real-time transaction views. Stripe API backend in Python/SQL; customer-facing UI in HTML/CSS with Django.
-                            </div>
-                            <div class="project-tags">
-                                <span class="tag">Python</span>
-                                <span class="tag">Django</span>
-                                <span class="tag">Stripe API</span>
-                                <span class="tag">SQL</span>
-                            </div>
-                        </div>
-                        <div class="exp-item">
-                            <div class="exp-header">
-                                <span class="exp-company">the Coder School</span>
-                                <span class="exp-sep"> / </span>
-                                <span class="exp-title">Code Coach</span>
-                            </div>
-                            <div class="exp-dates">Jul 2019 – Jan 2021</div>
-                            <div class="exp-desc">
-                                Taught programming to students ages 7–16 in one-on-one sessions. Led nine week-long camps with 12–14 students — every camper shipped something by the end.
-                            </div>
-                            <div class="project-tags">
-                                <span class="tag">Teaching</span>
-                                <span class="tag">Python</span>
-                                <span class="tag">Scratch</span>
-                                <span class="tag">Java</span>
-                                <span class="tag">C#</span>
-                            </div>
-                        </div>
-                        <div class="exp-item">
-                            <div class="exp-header">
-                                <span class="exp-company">UC Berkeley</span>
-                                <span class="exp-sep"> / </span>
-                                <span class="exp-title">XR/VR Course Facilitator</span>
-                            </div>
-                            <div class="exp-dates">Jan – May 2020</div>
-                            <div class="exp-desc">
-                                Facilitated a VR development course — Unity, C#, hands-on labs, and a final project.
-                            </div>
-                            <div class="project-tags">
-                                <span class="tag">Unity</span>
-                                <span class="tag">C#</span>
-                                <span class="tag">VR</span>
-                                <span class="tag">Teaching</span>
-                            </div>
-                        </div>
-                        <br>
-                        <span class="comment"># open to new opportunities — </span><a href="https://linkedin.com/in/nguyen-emily" class="link" target="_blank" rel="noopener">linkedin.com/in/nguyen-emily</a>
                     </div>
 
                     <div class="terminal-line input-line">
