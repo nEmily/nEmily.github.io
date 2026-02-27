@@ -14,10 +14,8 @@
 
     // Directory paths for each tab (for terminal-style navigation)
     const tabPaths = {
-        'board': '~',
         'home': '~',
         'projects': '~/projects',
-        'games': '~/games',
         'contact': '~',
         'experience': '~'
     };
@@ -27,10 +25,8 @@
 
     // Tab name mapping for window title
     const tabTitles = {
-        'board': 'emily — board',
         'home': 'emily — home',
         'projects': 'emily — projects',
-        'games': 'emily — games',
         'contact': 'emily — contact',
         'experience': 'emily — experience'
     };
@@ -54,6 +50,11 @@
             content.classList.toggle('active', isActive);
         });
 
+        // Reset scroll position
+        if (terminal) {
+            terminal.scrollTop = 0;
+        }
+
         // Update window title
         const title = tabTitles[tabId] || `emily — ${tabId}`;
         if (windowTitle) {
@@ -61,7 +62,7 @@
         }
 
         // Update browser title
-        document.title = `~/${(tabId === 'home' || tabId === 'board') ? 'emilynguyen' : tabId}`;
+        document.title = `~/${tabId === 'home' ? 'emilynguyen' : tabId}`;
 
         // Focus the input in the new tab
         setTimeout(() => {
@@ -369,7 +370,7 @@
         const activeTab = getActiveTab();
         if (activeTab && windowTitle) {
             windowTitle.textContent = tabTitles[activeTab] || `emily — ${activeTab}`;
-            document.title = `~/${activeTab === 'home' || activeTab === 'board' ? 'emilynguyen' : activeTab}`;
+            document.title = `~/${activeTab === 'home' ? 'emilynguyen' : activeTab}`;
         }
     }
 

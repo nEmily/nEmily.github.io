@@ -34,7 +34,7 @@
     const fileSystem = {
         '~': {
             type: 'dir',
-            children: ['about.txt', 'board.md', 'status.txt', 'experience.txt', 'skills/', 'projects/', 'games/', 'contact.txt', 'resume.pdf']
+            children: ['about.txt', 'status.txt', 'experience.txt', 'skills/', 'projects/', 'contact.txt', 'resume.pdf']
         },
         '~/about.txt': {
             type: 'file',
@@ -48,25 +48,6 @@ review what my team did overnight, and merge the good stuff.
 
 also: party games for game night, a discord bot for my household,
 and a receipt splitter for when someone always orders the lobster.`
-        },
-        '~/board.md': {
-            type: 'file',
-            content: `<span class="comment"># projects board</span>
-
-<span class="highlight">shipped</span>
-  roundhouse          party game PWA — nemily.github.io/roundhouse
-  impostor-game       social deduction — nemily.github.io/impostor-game
-  one-night-werewolf  quick werewolf — nemily.github.io/one-night-werewolf
-  thirdwheel          discord bot for my household
-
-<span class="highlight">building</span>
-  splitsheet          OCR receipt splitter
-  dude-were-so-cooked AI-curated news digest
-
-<span class="highlight">idea</span>
-  dreamweaver         dream journal, warm nocturnal theme
-
-<span class="comment"># AI agents manage this board and ship code overnight. i review in the morning.</span>`
         },
         '~/status.txt': {
             type: 'file',
@@ -106,7 +87,7 @@ open to new opportunities → type <span class="command">linkedin</span> to conn
         },
         '~/projects': {
             type: 'dir',
-            children: ['roundhouse/', 'impostor-game/', 'one-night-werewolf/', 'thirdwheel/', 'splitsheet/', 'dude-were-so-cooked/', 'dreamweaver/', 'ai-powered-dev-tooling/', 'pixietown/']
+            children: ['roundhouse/', 'impostor-game/', 'crowd-sim/', 'thirdwheel/', 'one-night-werewolf/', 'killer-boba/', 'splitsheet/', 'dude-were-so-cooked/', 'ace-interview/']
         },
         '~/projects/roundhouse': {
             type: 'dir',
@@ -156,14 +137,27 @@ github: github.com/nEmily/dude-were-so-cooked
 
 Tags: AI, agents, news`
         },
-        '~/projects/dreamweaver': {
+        '~/projects/crowd-sim': {
             type: 'dir',
-            content: `dreamweaver
-dream journal with warm nocturnal colors.
-the only app i actually look forward to opening every morning.
-github: github.com/nEmily/dreamweaver
+            content: `crowd-sim
+NavMesh AI pedestrians navigating a live traffic intersection.
+demo: nemily.github.io/traffic
 
-Tags: journal, mobile, React Native`
+Tags: AI, simulation, web`
+        },
+        '~/projects/killer-boba': {
+            type: 'dir',
+            content: `killer-boba
+someone's boba is poisoned. figure out whose before you drink.
+
+Tags: PWA, game`
+        },
+        '~/projects/ace-interview': {
+            type: 'dir',
+            content: `ace-interview
+practice technical interviews with an AI that actually pushes back.
+
+Tags: AI, web`
         },
         '~/projects/ai-powered-dev-tooling': {
             type: 'dir',
@@ -175,15 +169,6 @@ Multi-agent framework with persistent cross-session memory
 
 Tags: TypeScript, JavaScript, Claude Code, LLM, Orchestration`
         },
-        '~/projects/pixietown': {
-            type: 'dir',
-            content: `Pixietown
-Multi-agent orchestration visualizer with real-time state management
-Python bridge polls task state files and broadcasts over WebSocket
-Pixel-art frontend renders live orchestration status
-
-Tags: Python, JavaScript, WebSocket, Multi-agent`
-        },
         '~/projects/dolby-atmos-unreal': {
             type: 'dir',
             content: `Dolby Atmos Plugin for Unreal Engine
@@ -192,26 +177,6 @@ Released in collaboration with Epic Games
 
 Tags: C++, Unreal, Audio
 Link: https://news.dolby.com/en-WW/227541-dolby-releases-native-dolby-vision-and-dolby-atmos-plug-ins-for-unreal-engine`
-        },
-        '~/projects/arkangel': {
-            type: 'dir',
-            content: `ArkAngel
-2D top-down adventure RPG
-Features dialogue branching and minigames
-
-Tags: Unity, C#, Game Dev`
-        },
-        '~/projects/vr-escape-room': {
-            type: 'dir',
-            content: `VR Escape Room
-Interactive escape room with puzzles and minigames
-Built for Oculus VR
-
-Tags: Unity, C#, VR`
-        },
-        '~/games': {
-            type: 'dir',
-            children: ['arkangel/', 'vr-escape-room/', 'crowd-sim/']
         },
         '~/contact.txt': {
             type: 'file',
@@ -568,17 +533,17 @@ Open to new opportunities → linkedin.com/in/nguyen-emily`
     commands.hey = commands.hi;
     commands.cv = commands.resume;
 
-    // Board shortcut — switches to the ~/board tab
+    // Board shortcut — redirects to ~/projects tab
     commands.board = {
-        description: 'Open the project kanban board',
+        description: 'Open the projects tab',
         usage: 'board',
         execute: () => {
             setTimeout(() => {
                 if (window.tabManager) {
-                    window.tabManager.switchTab('board');
+                    window.tabManager.switchTab('projects');
                 }
             }, 100);
-            return 'Switching to ~/board...';
+            return 'Switching to ~/projects...';
         }
     };
 
@@ -803,20 +768,18 @@ the projects are real — roundhouse runs at actual game nights, thirdwheel is i
             },
             {
                 patterns: ['projects', 'what have you built', 'portfolio', 'your work'],
-                response: `Check the <span class="command">~/board</span> tab — that's the live view.
+                response: `Check the <span class="command">~/projects</span> tab for the full list.
 
 shipped:
 <span class="highlight">roundhouse</span>          party game PWA for game night
 <span class="highlight">impostor-game</span>       social deduction party game
-<span class="highlight">one-night-werewolf</span>  10-minute werewolf
+<span class="highlight">crowd-sim</span>           NavMesh AI pedestrian sim
 <span class="highlight">thirdwheel</span>          discord bot for my household
 
 building:
 <span class="highlight">splitsheet</span>          OCR receipt splitter
 <span class="highlight">dude-were-so-cooked</span> AI-curated news digest
-
-idea:
-<span class="highlight">dreamweaver</span>         dream journal, warm nocturnal colors
+<span class="highlight">ace-interview</span>       AI interview practice
 
 Type 'ls projects/' or 'cat ~/projects/[name]' for details.`
             },
@@ -837,11 +800,11 @@ Type 'ls ~/skills/ai/' to see the full AI toolkit.`
             },
             {
                 patterns: ['games', 'game dev', 'video games', 'game development'],
-                response: `I love making games! I've built:
+                response: `I love making games! Check out the <span class="command">~/projects</span> tab — most of my shipped work is party games:
 
-• <span class="highlight">VR Escape Room</span> - Puzzle game for Oculus with minigames
-• <span class="highlight">ArkAngel</span> - 2D RPG with branching dialogue
-• <span class="highlight">Crowd Simulation</span> - AI pedestrian behavior study
+• <span class="highlight">roundhouse</span> - party game PWA, 8 players, one phone
+• <span class="highlight">impostor-game</span> - social deduction party game
+• <span class="highlight">crowd-sim</span> - NavMesh AI pedestrian simulation
 
 At Dolby, I also worked closely with game studios and Epic Games on audio technology.`
             },
@@ -859,7 +822,7 @@ I wake up, review what the team did overnight, and merge the good stuff. one of 
 
 the orchestrator has opinions. it pushes back. it's fine. mostly.
 
-→ type <span class="command">board</span> to see the live project board`
+→ check the <span class="command">~/projects</span> tab to see what's shipped and what's building`
             },
             {
                 patterns: ['ai', 'llm', 'machine learning', 'agent', 'claude', 'prompt', 'orchestrat'],

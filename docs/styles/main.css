@@ -567,60 +567,14 @@ body {
 }
 
 /* =============================================================================
-   GAMES SHOWCASE
+   PROJECT GRID
    ============================================================================= */
 
-.game-showcase {
+.project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 0.75rem;
-    margin-top: 0.25rem;
-}
-
-.game-card {
-    display: flex;
-    gap: 0.75rem;
-    border-radius: 6px;
-    padding: 0.65rem 0.75rem;
-    border: 1px solid rgba(255,255,255,0.08);
-}
-
-.game-card-icon {
-    flex-shrink: 0;
-}
-
-.game-ascii {
-    font-size: 0.7rem;
-    line-height: 1.2;
-    margin: 0;
-    opacity: 0.85;
-}
-
-.game-card-info {
-    display: flex;
-    flex-direction: column;
-    gap: 0.2rem;
-}
-
-.game-card-info .game-name {
-    font-weight: bold;
-}
-
-.game-card-info .game-desc {
-    font-size: 0.85rem;
-    opacity: 0.75;
-    line-height: 1.4;
-}
-
-.game-status {
-    font-size: 0.78rem;
-    opacity: 0.6;
-    margin-top: 0.15rem;
-}
-
-.game-status .link {
-    opacity: 1;
-    font-size: 0.82rem;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 0.5rem;
+    margin: 0.5rem 0 0.75rem;
 }
 
 /* =============================================================================
@@ -700,63 +654,8 @@ body {
 }
 
 /* =============================================================================
-   KANBAN BOARD
+   KANBAN CARDS (reused in project grid)
    ============================================================================= */
-
-.kanban-board {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0.75rem;
-    margin: 0.5rem 0 0.75rem;
-}
-
-.kanban-col {
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-    min-width: 0;
-}
-
-.kanban-col-header {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    padding: 0.25rem 0.1rem;
-    margin-bottom: 0.15rem;
-    font-size: 0.78rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    opacity: 0.75;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-    padding-bottom: 0.4rem;
-}
-
-.kanban-col-dot {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    flex-shrink: 0;
-}
-
-.kanban-col-title {
-    flex: 1;
-    font-weight: 500;
-}
-
-.kanban-col-count {
-    font-size: 0.72rem;
-    opacity: 0.5;
-    background: rgba(255, 255, 255, 0.07);
-    border-radius: 10px;
-    padding: 0 0.4rem;
-    line-height: 1.6;
-}
-
-.kanban-cards {
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-}
 
 .kanban-card {
     display: block;
@@ -814,11 +713,6 @@ body {
     opacity: 0.8;
 }
 
-.kanban-footer-note {
-    margin: 0.25rem 0 0.5rem;
-    font-size: 0.82rem;
-}
-
 /* Project subsection label */
 .project-subsection-label {
     margin-top: 1.25rem;
@@ -841,11 +735,6 @@ body {
         margin-top: 1vh;
         max-width: 100%;
         max-height: calc(100vh - 3rem);
-    }
-
-    .kanban-board {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 0.5rem;
     }
 
     .kcard-desc {
@@ -916,28 +805,6 @@ body {
         font-size: 0.85rem;
     }
 
-    /* Kanban: stack columns, cards go horizontal within each column */
-    .kanban-board {
-        grid-template-columns: 1fr;
-        gap: 0.75rem;
-    }
-
-    .kanban-col-header {
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    .kanban-cards {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-        gap: 0.4rem;
-    }
-
-    /* Kanban footer note: wrap gracefully */
-    .kanban-footer-note {
-        font-size: 0.75rem;
-        word-break: break-word;
-    }
-
     /* Experience: break header onto two lines on narrow screens */
     .exp-header {
         display: flex;
@@ -959,16 +826,6 @@ body {
 
     .exp-desc {
         font-size: 0.82rem;
-    }
-
-    /* Game showcase: single column on narrow screens */
-    .game-showcase {
-        grid-template-columns: 1fr;
-    }
-
-    /* Smaller game ASCII art */
-    .game-ascii {
-        font-size: 0.62rem;
     }
 
     /* Contact: ensure rows don't overflow */
@@ -993,11 +850,6 @@ body {
     .terminal {
         font-size: 0.82rem;
         padding: 0.5rem 0.6rem;
-    }
-
-    /* Kanban cards: single column on very small screens */
-    .kanban-cards {
-        grid-template-columns: 1fr;
     }
 
     .kcard-desc {

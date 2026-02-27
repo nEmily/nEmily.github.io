@@ -6,7 +6,7 @@
     <title>~/emilynguyen</title>
 
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Emily Nguyen — swe @ meta | uc berkeley cs. builds autonomous AI agents that ship code overnight. interactive kanban portfolio.">
+    <meta name="description" content="Emily Nguyen — swe @ meta | uc berkeley cs. builds autonomous AI agents that ship code overnight. interactive terminal portfolio.">
     <meta name="keywords" content="Emily Nguyen, software engineer, autonomous agents, AI tooling, Claude Code, orchestration, Meta, UC Berkeley, portfolio">
     <meta name="author" content="Emily Nguyen">
     <meta name="robots" content="index, follow">
@@ -15,14 +15,14 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://nemily.github.io/">
     <meta property="og:title" content="Emily Nguyen — swe @ meta | uc berkeley cs">
-    <meta property="og:description" content="builds autonomous AI agents that ship code overnight. interactive kanban portfolio.">
+    <meta property="og:description" content="builds autonomous AI agents that ship code overnight. interactive terminal portfolio.">
     <meta property="og:image" content="https://nemily.github.io/assets/og-image.jpg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://nemily.github.io/">
     <meta property="twitter:title" content="Emily Nguyen — swe @ meta | uc berkeley cs">
-    <meta property="twitter:description" content="builds autonomous AI agents that ship code overnight. interactive kanban portfolio.">
+    <meta property="twitter:description" content="builds autonomous AI agents that ship code overnight. interactive terminal portfolio.">
     <meta property="twitter:image" content="https://nemily.github.io/assets/og-image.jpg">
 
     <!-- Theme Color -->
@@ -114,20 +114,12 @@
                     <span class="tab-label">~/home</span>
                     <span class="tab-close" aria-label="Close tab">×</span>
                 </button>
-                <button class="tab" role="tab" aria-selected="false" data-tab="board">
-                    <span class="tab-label">~/board</span>
-                    <span class="tab-close" aria-label="Close tab">×</span>
-                </button>
-                <button class="tab" role="tab" aria-selected="false" data-tab="experience">
-                    <span class="tab-label">~/experience</span>
-                    <span class="tab-close" aria-label="Close tab">×</span>
-                </button>
                 <button class="tab" role="tab" aria-selected="false" data-tab="projects">
                     <span class="tab-label">~/projects</span>
                     <span class="tab-close" aria-label="Close tab">×</span>
                 </button>
-                <button class="tab" role="tab" aria-selected="false" data-tab="games">
-                    <span class="tab-label">~/games</span>
+                <button class="tab" role="tab" aria-selected="false" data-tab="experience">
+                    <span class="tab-label">~/experience</span>
                     <span class="tab-close" aria-label="Close tab">×</span>
                 </button>
                 <button class="tab" role="tab" aria-selected="false" data-tab="contact">
@@ -139,151 +131,6 @@
 
             <!-- Terminal Content -->
             <main class="terminal">
-                <!-- Board Tab (hero) -->
-                <section id="tab-board" class="tab-content">
-                    <div class="terminal-line">
-                        <span class="prompt">></span>
-                        <span class="command">cat board.md</span>
-                    </div>
-                    <div class="output">
-                        <span class="comment"># projects — what's shipping, what's building, what's next</span>
-                    </div>
-
-                    <div class="kanban-board">
-                        <!-- SHIPPED column -->
-                        <div class="kanban-col">
-                            <div class="kanban-col-header">
-                                <span class="kanban-col-dot dot-shipped"></span>
-                                <span class="kanban-col-title">shipped</span>
-                                <span class="kanban-col-count">5</span>
-                            </div>
-                            <div class="kanban-cards">
-                                <a class="kanban-card" href="https://nemily.github.io/roundhouse/" target="_blank" rel="noopener">
-                                    <div class="kcard-name">roundhouse</div>
-                                    <div class="kcard-desc">party game PWA for game night. 8 players, one phone, hot takes mode</div>
-                                    <div class="kcard-footer">
-                                        <span class="kcard-tag">PWA</span>
-                                        <span class="kcard-tag">game</span>
-                                        <span class="kcard-link">↗ play</span>
-                                    </div>
-                                </a>
-                                <a class="kanban-card" href="https://nemily.github.io/impostor-game/" target="_blank" rel="noopener">
-                                    <div class="kcard-name">impostor-game</div>
-                                    <div class="kcard-desc">social deduction party game. find the impostor before they find you</div>
-                                    <div class="kcard-footer">
-                                        <span class="kcard-tag">PWA</span>
-                                        <span class="kcard-tag">game</span>
-                                        <span class="kcard-link">↗ play</span>
-                                    </div>
-                                </a>
-                                <div class="kanban-card">
-                                    <div class="kcard-name">one-night-werewolf</div>
-                                    <div class="kcard-desc">werewolf for when you only have 10 minutes and everyone's already suspicious</div>
-                                    <div class="kcard-footer">
-                                        <span class="kcard-tag">PWA</span>
-                                        <span class="kcard-tag">game</span>
-                                        <span class="kcard-link">coming soon</span>
-                                    </div>
-                                </div>
-                                <div class="kanban-card">
-                                    <div class="kcard-name">killer-boba</div>
-                                    <div class="kcard-desc">someone's boba is poisoned. figure out whose before you drink</div>
-                                    <div class="kcard-footer">
-                                        <span class="kcard-tag">PWA</span>
-                                        <span class="kcard-tag">game</span>
-                                        <span class="kcard-link">coming soon</span>
-                                    </div>
-                                </div>
-                                <div class="kanban-card">
-                                    <div class="kcard-name">thirdwheel</div>
-                                    <div class="kcard-desc">discord bot for my household. AI inbox, reminders, chaos management</div>
-                                    <div class="kcard-footer">
-                                        <span class="kcard-tag">discord</span>
-                                        <span class="kcard-tag">bot</span>
-                                        <span class="kcard-link">private</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- BUILDING column -->
-                        <div class="kanban-col">
-                            <div class="kanban-col-header">
-                                <span class="kanban-col-dot dot-building"></span>
-                                <span class="kanban-col-title">building</span>
-                                <span class="kanban-col-count">3</span>
-                            </div>
-                            <div class="kanban-cards">
-                                <div class="kanban-card">
-                                    <div class="kcard-name">dude-were-so-cooked</div>
-                                    <div class="kcard-desc">AI-curated news digest. agents decide what's actually worth your attention</div>
-                                    <div class="kcard-footer">
-                                        <span class="kcard-tag">AI</span>
-                                        <span class="kcard-tag">agents</span>
-                                        <span class="kcard-link">↗ github</span>
-                                    </div>
-                                </div>
-                                <div class="kanban-card">
-                                    <div class="kcard-name">splitsheet</div>
-                                    <div class="kcard-desc">snap a receipt, split it with friends, send venmo charges. that's it</div>
-                                    <div class="kcard-footer">
-                                        <span class="kcard-tag">OCR</span>
-                                        <span class="kcard-tag">mobile</span>
-                                        <span class="kcard-link">coming soon</span>
-                                    </div>
-                                </div>
-                                <div class="kanban-card">
-                                    <div class="kcard-name">ace-interview</div>
-                                    <div class="kcard-desc">practice technical interviews with an AI that actually pushes back</div>
-                                    <div class="kcard-footer">
-                                        <span class="kcard-tag">AI</span>
-                                        <span class="kcard-tag">web</span>
-                                        <span class="kcard-link">coming soon</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- PLANNING column -->
-                        <div class="kanban-col">
-                            <div class="kanban-col-header">
-                                <span class="kanban-col-dot dot-planning"></span>
-                                <span class="kanban-col-title">planning</span>
-                                <span class="kanban-col-count">2</span>
-                            </div>
-                            <div class="kanban-cards">
-                                <div class="kanban-card">
-                                    <div class="kcard-name">dreamweaver</div>
-                                    <div class="kcard-desc">dream journal with warm nocturnal colors. the only app i actually look forward to opening</div>
-                                    <div class="kcard-footer">
-                                        <span class="kcard-tag">journal</span>
-                                        <span class="kcard-tag">mobile</span>
-                                        <span class="kcard-link">coming soon</span>
-                                    </div>
-                                </div>
-                                <div class="kanban-card">
-                                    <div class="kcard-name">pixietown</div>
-                                    <div class="kcard-desc">pixel-art visualizer for live multi-agent orchestration state</div>
-                                    <div class="kcard-footer">
-                                        <span class="kcard-tag">Python</span>
-                                        <span class="kcard-tag">WebSocket</span>
-                                        <span class="kcard-link">coming soon</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="kanban-footer-note">
-                        <span class="comment"># AI agents manage this board and ship code overnight. i review in the morning.</span>
-                    </div>
-
-                    <div class="terminal-line input-line">
-                        <span class="prompt">></span>
-                        <span class="cursor"></span>
-                    </div>
-                </section>
-
                 <!-- Experience Tab -->
                 <section id="tab-experience" class="tab-content">
                     <div class="terminal-line">
@@ -426,87 +273,93 @@
                         <span class="command">cat projects.txt</span>
                     </div>
                     <div class="output">
-                        <span class="comment"># what i'm working on</span><br><br>
-                        the real answer is on the <span class="highlight">~/board</span> tab.<br>
-                        live kanban — shipped, building, planning.<br>
-                        it updates as things actually happen.<br><br>
-                        <span class="comment"># → cd ../board</span><br><br>
-                        <a href="#" class="link" onclick="window.tabManager && window.tabManager.switchTab('board'); return false;">switch to ~/board ↗</a>
-                    </div>
+                        <span class="comment"># shipped</span>
 
-                    <div class="terminal-line input-line">
-                        <span class="prompt">></span>
-                        <span class="cursor"></span>
-                    </div>
-                </section>
+                        <div class="project-grid">
+                            <a class="kanban-card" href="https://nemily.github.io/roundhouse/" target="_blank" rel="noopener">
+                                <div class="kcard-name">roundhouse</div>
+                                <div class="kcard-desc">party game PWA for game night. 8 players, one phone, hot takes mode</div>
+                                <div class="kcard-footer">
+                                    <span class="kcard-tag">PWA</span>
+                                    <span class="kcard-tag">game</span>
+                                    <span class="kcard-link">↗ play</span>
+                                </div>
+                            </a>
+                            <a class="kanban-card" href="https://nemily.github.io/impostor-game/" target="_blank" rel="noopener">
+                                <div class="kcard-name">impostor-game</div>
+                                <div class="kcard-desc">social deduction party game. find the impostor before they find you</div>
+                                <div class="kcard-footer">
+                                    <span class="kcard-tag">PWA</span>
+                                    <span class="kcard-tag">game</span>
+                                    <span class="kcard-link">↗ play</span>
+                                </div>
+                            </a>
+                            <a class="kanban-card" href="https://nemily.github.io/traffic/" target="_blank" rel="noopener">
+                                <div class="kcard-name">crowd-sim</div>
+                                <div class="kcard-desc">NavMesh AI pedestrians navigating a live traffic intersection</div>
+                                <div class="kcard-footer">
+                                    <span class="kcard-tag">AI</span>
+                                    <span class="kcard-tag">sim</span>
+                                    <span class="kcard-link">↗ play demo</span>
+                                </div>
+                            </a>
+                            <div class="kanban-card">
+                                <div class="kcard-name">thirdwheel</div>
+                                <div class="kcard-desc">discord bot for my household. AI inbox, reminders, chaos management</div>
+                                <div class="kcard-footer">
+                                    <span class="kcard-tag">discord</span>
+                                    <span class="kcard-tag">bot</span>
+                                    <span class="kcard-link">private</span>
+                                </div>
+                            </div>
+                            <div class="kanban-card">
+                                <div class="kcard-name">one-night-werewolf</div>
+                                <div class="kcard-desc">werewolf for when you only have 10 minutes and everyone's already suspicious</div>
+                                <div class="kcard-footer">
+                                    <span class="kcard-tag">PWA</span>
+                                    <span class="kcard-tag">game</span>
+                                    <span class="kcard-link">coming soon</span>
+                                </div>
+                            </div>
+                            <div class="kanban-card">
+                                <div class="kcard-name">killer-boba</div>
+                                <div class="kcard-desc">someone's boba is poisoned. figure out whose before you drink</div>
+                                <div class="kcard-footer">
+                                    <span class="kcard-tag">PWA</span>
+                                    <span class="kcard-tag">game</span>
+                                    <span class="kcard-link">coming soon</span>
+                                </div>
+                            </div>
+                        </div>
 
-                <!-- Games Tab -->
-                <section id="tab-games" class="tab-content">
-                    <div class="terminal-line">
-                        <span class="prompt">></span>
-                        <span class="command">ls games/</span>
-                    </div>
-                    <div class="output">
-                        <span class="comment"># games I've made</span><br><br>
-                        <div class="game-showcase">
-                            <div class="game-card game-card-rpg">
-                                <div class="game-card-icon">
-<pre class="game-ascii">┌───────┐
-│ ⚔ ♠  │
-│  RPG  │
-│ ♥ 🗡  │
-└───────┘</pre>
-                                </div>
-                                <div class="game-card-info">
-                                    <span class="game-name">arkangel</span>
-                                    <span class="game-platform">[PC]</span>
-                                    <div class="game-desc">2D top-down adventure RPG with branching dialogue system and minigames</div>
-                                    <div class="game-status">demo coming soon</div>
+                        <span class="comment"># building</span>
+
+                        <div class="project-grid">
+                            <div class="kanban-card">
+                                <div class="kcard-name">dude-were-so-cooked</div>
+                                <div class="kcard-desc">AI-curated news digest. agents decide what's actually worth your attention</div>
+                                <div class="kcard-footer">
+                                    <span class="kcard-tag">AI</span>
+                                    <span class="kcard-tag">agents</span>
+                                    <span class="kcard-link">↗ github</span>
                                 </div>
                             </div>
-                            <div class="game-card game-card-vr">
-                                <div class="game-card-icon">
-<pre class="game-ascii">┌───────┐
-│ ◉   ◉ │
-│  VR   │
-│  ═══  │
-└───────┘</pre>
-                                </div>
-                                <div class="game-card-info">
-                                    <span class="game-name">vr-escape-room</span>
-                                    <span class="game-platform">[Oculus VR]</span>
-                                    <div class="game-desc">Immersive VR escape room with spatial puzzles and minigames</div>
-                                    <div class="game-status">demo coming soon</div>
+                            <div class="kanban-card">
+                                <div class="kcard-name">splitsheet</div>
+                                <div class="kcard-desc">snap a receipt, split it with friends, send venmo charges. that's it</div>
+                                <div class="kcard-footer">
+                                    <span class="kcard-tag">OCR</span>
+                                    <span class="kcard-tag">mobile</span>
+                                    <span class="kcard-link">coming soon</span>
                                 </div>
                             </div>
-                            <div class="game-card game-card-web">
-                                <div class="game-card-icon">
-<pre class="game-ascii">┌───────┐
-│ → → → │
-│ ↑ AI  │
-│ → ↓ ← │
-└───────┘</pre>
-                                </div>
-                                <div class="game-card-info">
-                                    <span class="game-name">crowd-sim</span>
-                                    <span class="game-platform">[Web]</span>
-                                    <div class="game-desc">NavMesh AI pedestrians navigating a live traffic intersection</div>
-                                    <div class="game-status"><a href="https://nemily.github.io/traffic/" class="link" target="_blank" rel="noopener">▶ play demo</a></div>
-                                </div>
-                            </div>
-                            <div class="game-card game-card-ios">
-                                <div class="game-card-icon">
-<pre class="game-ascii">┌───────┐
-│  🧋   │
-│  iOS  │
-│  ♡♡♡  │
-└───────┘</pre>
-                                </div>
-                                <div class="game-card-info">
-                                    <span class="game-name">killer-boba</span>
-                                    <span class="game-platform">[iOS]</span>
-                                    <div class="game-desc">Mobile game featuring everyone's favorite tea drink</div>
-                                    <div class="game-status">coming soon</div>
+                            <div class="kanban-card">
+                                <div class="kcard-name">ace-interview</div>
+                                <div class="kcard-desc">practice technical interviews with an AI that actually pushes back</div>
+                                <div class="kcard-footer">
+                                    <span class="kcard-tag">AI</span>
+                                    <span class="kcard-tag">web</span>
+                                    <span class="kcard-link">coming soon</span>
                                 </div>
                             </div>
                         </div>

@@ -205,51 +205,6 @@
     color: var(--accent-mint);
 }
 
-/* Games showcase */
-.theme-meadow .game-name {
-    color: var(--accent-butter);
-}
-
-.theme-meadow .game-platform {
-    color: var(--accent-lavender);
-}
-
-.theme-meadow .game-card-rpg {
-    background: rgba(201, 184, 232, 0.07);
-    border-color: rgba(201, 184, 232, 0.18);
-}
-
-.theme-meadow .game-card-rpg .game-ascii {
-    color: var(--accent-lavender);
-}
-
-.theme-meadow .game-card-vr {
-    background: rgba(152, 212, 187, 0.07);
-    border-color: rgba(152, 212, 187, 0.18);
-}
-
-.theme-meadow .game-card-vr .game-ascii {
-    color: var(--accent-mint);
-}
-
-.theme-meadow .game-card-web {
-    background: rgba(249, 228, 183, 0.07);
-    border-color: rgba(249, 228, 183, 0.18);
-}
-
-.theme-meadow .game-card-web .game-ascii {
-    color: var(--accent-butter);
-}
-
-.theme-meadow .game-card-ios {
-    background: rgba(255, 181, 167, 0.07);
-    border-color: rgba(255, 181, 167, 0.18);
-}
-
-.theme-meadow .game-card-ios .game-ascii {
-    color: var(--accent-peach);
-}
-
 /* Contact */
 .theme-meadow .contact-key {
     color: var(--accent-butter);
@@ -278,83 +233,26 @@
 }
 
 /* =============================================================================
-   KANBAN BOARD - Meadow theme
+   PROJECT CARDS - Meadow theme
    ============================================================================= */
 
-.theme-meadow .dot-shipped {
-    background: var(--accent-mint);
-    box-shadow: 0 0 5px rgba(152, 212, 187, 0.5);
-}
-
-.theme-meadow .dot-building {
-    background: var(--accent-butter);
-    box-shadow: 0 0 5px rgba(249, 228, 183, 0.5);
-}
-
-.theme-meadow .dot-idea,
-.theme-meadow .dot-planning {
-    background: var(--accent-lavender);
-    box-shadow: 0 0 5px rgba(201, 184, 232, 0.4);
-}
-
-/* Shipped column cards */
-.theme-meadow .kanban-col:nth-child(1) .kanban-card {
+.theme-meadow .kanban-card {
     background: rgba(152, 212, 187, 0.04);
 }
 
-.theme-meadow .kanban-col:nth-child(1) .kanban-card:hover {
+.theme-meadow .kanban-card:hover {
     background: rgba(152, 212, 187, 0.08);
     box-shadow: 0 2px 8px rgba(152, 212, 187, 0.08);
 }
 
-.theme-meadow .kanban-col:nth-child(1) .kcard-name {
+.theme-meadow .kcard-name {
     color: var(--accent-mint);
 }
 
-.theme-meadow .kanban-col:nth-child(1) .kcard-tag {
+.theme-meadow .kcard-tag {
     background: rgba(152, 212, 187, 0.12);
     color: var(--accent-mint);
     border: 1px solid rgba(152, 212, 187, 0.2);
-}
-
-/* Building column cards */
-.theme-meadow .kanban-col:nth-child(2) .kanban-card {
-    background: rgba(249, 228, 183, 0.04);
-}
-
-.theme-meadow .kanban-col:nth-child(2) .kanban-card:hover {
-    background: rgba(249, 228, 183, 0.08);
-    box-shadow: 0 2px 8px rgba(249, 228, 183, 0.08);
-}
-
-.theme-meadow .kanban-col:nth-child(2) .kcard-name {
-    color: var(--accent-butter);
-}
-
-.theme-meadow .kanban-col:nth-child(2) .kcard-tag {
-    background: rgba(249, 228, 183, 0.12);
-    color: var(--accent-butter);
-    border: 1px solid rgba(249, 228, 183, 0.2);
-}
-
-/* Planning column cards */
-.theme-meadow .kanban-col:nth-child(3) .kanban-card {
-    background: rgba(201, 184, 232, 0.04);
-}
-
-.theme-meadow .kanban-col:nth-child(3) .kanban-card:hover {
-    background: rgba(201, 184, 232, 0.08);
-    box-shadow: 0 2px 8px rgba(201, 184, 232, 0.08);
-}
-
-.theme-meadow .kanban-col:nth-child(3) .kcard-name {
-    color: var(--accent-lavender);
-}
-
-.theme-meadow .kanban-col:nth-child(3) .kcard-tag {
-    background: rgba(201, 184, 232, 0.12);
-    color: var(--accent-lavender);
-    border: 1px solid rgba(201, 184, 232, 0.2);
 }
 
 /* =============================================================================

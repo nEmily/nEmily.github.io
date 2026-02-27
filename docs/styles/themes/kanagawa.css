@@ -235,51 +235,6 @@
     color: var(--accent-mint);
 }
 
-/* Games showcase */
-.theme-kanagawa .game-name {
-    color: var(--accent-gold);
-}
-
-.theme-kanagawa .game-platform {
-    color: var(--text-muted);
-}
-
-.theme-kanagawa .game-card-rpg {
-    background: rgba(232, 160, 191, 0.05);
-    border-color: rgba(232, 160, 191, 0.15);
-}
-
-.theme-kanagawa .game-card-rpg .game-ascii {
-    color: var(--accent-sakura);
-}
-
-.theme-kanagawa .game-card-vr {
-    background: rgba(160, 212, 196, 0.05);
-    border-color: rgba(160, 212, 196, 0.15);
-}
-
-.theme-kanagawa .game-card-vr .game-ascii {
-    color: var(--accent-mint);
-}
-
-.theme-kanagawa .game-card-web {
-    background: rgba(200, 169, 122, 0.05);
-    border-color: rgba(200, 169, 122, 0.15);
-}
-
-.theme-kanagawa .game-card-web .game-ascii {
-    color: var(--accent-gold);
-}
-
-.theme-kanagawa .game-card-ios {
-    background: rgba(232, 160, 191, 0.05);
-    border-color: rgba(232, 160, 191, 0.15);
-}
-
-.theme-kanagawa .game-card-ios .game-ascii {
-    color: var(--accent-sakura);
-}
-
 /* Contact */
 .theme-kanagawa .contact-key {
     color: var(--accent-gold);
@@ -308,89 +263,28 @@
 }
 
 /* =============================================================================
-   KANBAN BOARD — Kanagawa theme
-   shipped = mint, building = sakura, planning = muted gold
+   PROJECT CARDS — Kanagawa theme
    ============================================================================= */
 
-.theme-kanagawa .dot-shipped {
-    background: var(--accent-mint);
-    box-shadow: 0 0 6px rgba(160, 212, 196, 0.5);
-}
-
-.theme-kanagawa .dot-building {
-    background: var(--accent-sakura);
-    box-shadow: 0 0 6px rgba(232, 160, 191, 0.5);
-}
-
-.theme-kanagawa .dot-planning {
-    background: var(--accent-gold);
-    box-shadow: 0 0 6px rgba(200, 169, 122, 0.4);
-}
-
-/* Shipped column — mint tint */
-.theme-kanagawa .kanban-col:nth-child(1) .kanban-card {
+.theme-kanagawa .kanban-card {
     background: rgba(160, 212, 196, 0.04);
     border-color: rgba(160, 212, 196, 0.10);
 }
 
-.theme-kanagawa .kanban-col:nth-child(1) .kanban-card:hover {
+.theme-kanagawa .kanban-card:hover {
     background: rgba(160, 212, 196, 0.08);
     border-color: rgba(160, 212, 196, 0.20);
     box-shadow: 0 2px 10px rgba(160, 212, 196, 0.08);
 }
 
-.theme-kanagawa .kanban-col:nth-child(1) .kcard-name {
+.theme-kanagawa .kcard-name {
     color: var(--accent-mint);
 }
 
-.theme-kanagawa .kanban-col:nth-child(1) .kcard-tag {
+.theme-kanagawa .kcard-tag {
     background: rgba(160, 212, 196, 0.10);
     color: var(--accent-mint);
     border: 1px solid rgba(160, 212, 196, 0.18);
-}
-
-/* Building column — sakura tint */
-.theme-kanagawa .kanban-col:nth-child(2) .kanban-card {
-    background: rgba(232, 160, 191, 0.04);
-    border-color: rgba(232, 160, 191, 0.10);
-}
-
-.theme-kanagawa .kanban-col:nth-child(2) .kanban-card:hover {
-    background: rgba(232, 160, 191, 0.08);
-    border-color: rgba(232, 160, 191, 0.20);
-    box-shadow: 0 2px 10px rgba(232, 160, 191, 0.08);
-}
-
-.theme-kanagawa .kanban-col:nth-child(2) .kcard-name {
-    color: var(--accent-sakura);
-}
-
-.theme-kanagawa .kanban-col:nth-child(2) .kcard-tag {
-    background: rgba(232, 160, 191, 0.10);
-    color: var(--accent-sakura);
-    border: 1px solid rgba(232, 160, 191, 0.18);
-}
-
-/* Planning column — gold tint */
-.theme-kanagawa .kanban-col:nth-child(3) .kanban-card {
-    background: rgba(200, 169, 122, 0.04);
-    border-color: rgba(200, 169, 122, 0.10);
-}
-
-.theme-kanagawa .kanban-col:nth-child(3) .kanban-card:hover {
-    background: rgba(200, 169, 122, 0.08);
-    border-color: rgba(200, 169, 122, 0.20);
-    box-shadow: 0 2px 10px rgba(200, 169, 122, 0.08);
-}
-
-.theme-kanagawa .kanban-col:nth-child(3) .kcard-name {
-    color: var(--accent-gold);
-}
-
-.theme-kanagawa .kanban-col:nth-child(3) .kcard-tag {
-    background: rgba(200, 169, 122, 0.10);
-    color: var(--accent-gold);
-    border: 1px solid rgba(200, 169, 122, 0.18);
 }
 
 /* =============================================================================
