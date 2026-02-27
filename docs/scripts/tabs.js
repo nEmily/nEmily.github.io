@@ -46,7 +46,7 @@
         }
 
         // Update browser title
-        document.title = `~/${tabId === 'home' ? 'emilynguyen' : tabId}`;
+        document.title = '~/emilynguyen';
 
         // Focus the input in the new tab
         setTimeout(() => {
@@ -353,7 +353,7 @@
     if (!window.location.hash) {
         const activeTab = getActiveTab();
         if (activeTab) {
-            document.title = `~/${activeTab === 'home' ? 'emilynguyen' : activeTab}`;
+            document.title = '~/emilynguyen';
         }
     }
 

@@ -398,7 +398,7 @@ body {
    ============================================================================= */
 
 .terminal {
-    padding: 1rem 1.25rem;
+    padding: 1rem 1.25rem 1.5rem;
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.95rem;
     line-height: 1.5;

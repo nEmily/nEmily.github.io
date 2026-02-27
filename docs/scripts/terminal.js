@@ -184,7 +184,6 @@ Link: https://news.dolby.com/en-WW/227541-dolby-releases-native-dolby-vision-and
 
 → <a href="https://linkedin.com/in/nguyen-emily" class="link link-linkedin" target="_blank" rel="noopener">linkedin.com/in/nguyen-emily</a> — best way to reach me
 
-<span class="contact-key">email</span>   <a href="mailto:emilyn@berkeley.edu" class="link">emilyn@berkeley.edu</a>
 <span class="contact-key">github</span>  <a href="https://github.com/nEmily" class="link" target="_blank" rel="noopener">github.com/nEmily</a>
 <span class="contact-key">resume</span>  <a href="/assets/resume.pdf" class="link" target="_blank" rel="noopener">resume.pdf ↗</a>`
         },
@@ -233,7 +232,7 @@ Open to new opportunities → linkedin.com/in/nguyen-emily`
                 }
 
                 const coreCommands = ['ls', 'cat', 'cd', 'pwd', 'clear', 'help'];
-                const navCommands = ['resume', 'open', 'github', 'linkedin', 'email'];
+                const navCommands = ['resume', 'open', 'github', 'linkedin'];
                 const funCommands = ['ask', 'search', 'theme', 'coffee', 'fortune', 'cowsay', 'neofetch', 'party'];
                 const utilCommands = ['history', 'date', 'exit', 'whoami', 'echo'];
 
@@ -490,15 +489,6 @@ Open to new opportunities → linkedin.com/in/nguyen-emily`
             execute: () => {
                 window.open('https://linkedin.com/in/nguyen-emily', '_blank');
                 return 'Opening LinkedIn...';
-            }
-        },
-
-        email: {
-            description: 'Send an email',
-            usage: 'email',
-            execute: () => {
-                window.location.href = 'mailto:emilyn@berkeley.edu';
-                return 'Opening mail client...';
             }
         },
 
