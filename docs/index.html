@@ -110,16 +110,16 @@
 
             <!-- Tab Bar — WezTerm style -->
             <nav class="tab-bar" role="tablist">
-                <button class="tab active" role="tab" aria-selected="true" data-tab="board">
+                <button class="tab active" role="tab" aria-selected="true" data-tab="home">
+                    <span class="tab-label">~/home</span>
+                    <span class="tab-close" aria-label="Close tab">×</span>
+                </button>
+                <button class="tab" role="tab" aria-selected="false" data-tab="board">
                     <span class="tab-label">~/board</span>
                     <span class="tab-close" aria-label="Close tab">×</span>
                 </button>
                 <button class="tab" role="tab" aria-selected="false" data-tab="experience">
                     <span class="tab-label">~/experience</span>
-                    <span class="tab-close" aria-label="Close tab">×</span>
-                </button>
-                <button class="tab" role="tab" aria-selected="false" data-tab="home">
-                    <span class="tab-label">~/home</span>
                     <span class="tab-close" aria-label="Close tab">×</span>
                 </button>
                 <button class="tab" role="tab" aria-selected="false" data-tab="projects">
@@ -140,7 +140,7 @@
             <!-- Terminal Content -->
             <main class="terminal">
                 <!-- Board Tab (hero) -->
-                <section id="tab-board" class="tab-content active">
+                <section id="tab-board" class="tab-content">
                     <div class="terminal-line">
                         <span class="prompt">></span>
                         <span class="command">cat board.md</span>
@@ -391,7 +391,7 @@
                 </section>
 
                 <!-- Home Tab -->
-                <section id="tab-home" class="tab-content">
+                <section id="tab-home" class="tab-content active">
                     <pre class="ascii-art" aria-label="Emily Nguyen - software engineer, game dev, educator">   ╭─────────────────────────────────────────────────────╮
    │  software engineer  ·  game dev  ·  educator       │
    ╰─────────────────────────────────────────────────────╯</pre>
@@ -402,13 +402,11 @@
                     </div>
                     <div class="output">
                         <span class="comment"># hello world</span><br><br>
-                        <span class="highlight">swe @ meta | uc berkeley cs</span><br><br>
-                        i build things i actually want to use.<br>
-                        mostly because i got annoyed and decided to just fix it.<br><br>
-                        my agents do a lot of the work now.<br>
-                        i review in the morning.<br><br>
-                        also into: game nights, cozy games, teaching people things,<br>
-                        and the occasional unhinged side project at 2am.<br><br>
+                        I'm Emily Nguyen, a UC Berkeley CS grad with 5+ years of<br>
+                        software engineering experience. Currently at Meta building<br>
+                        dev tooling for Reality Labs Research wearables — CI/CD,<br>
+                        test infrastructure, and AI agent tooling.<br><br>
+                        I like to build things I use.<br><br>
                         <span class="comment"># quick links</span><br>
                         <a href="/assets/resume.pdf" class="link" target="_blank" rel="noopener">resume.pdf</a> ·
                         <a href="https://linkedin.com/in/nguyen-emily" class="link" target="_blank" rel="noopener">linkedin</a> ·
