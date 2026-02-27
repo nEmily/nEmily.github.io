@@ -35,10 +35,8 @@
             html.classList.remove(`theme-${t}`);
         });
 
-        // Add the new theme class (kanagawa is default, meadow falls back to no class)
-        if (themeName !== 'meadow') {
-            html.classList.add(`theme-${themeName}`);
-        }
+        // Add the new theme class
+        html.classList.add(`theme-${themeName}`);
 
         // Save to localStorage
         localStorage.setItem(STORAGE_KEY, themeName);

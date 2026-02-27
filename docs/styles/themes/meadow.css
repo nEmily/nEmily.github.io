@@ -1,9 +1,9 @@
 /* =============================================================================
    MEADOW THEME - Warm sunshine watercolor
-   Default theme: cozy browns, mint, peach, butter, lavender
+   Cozy browns, mint, peach, butter, lavender
    ============================================================================= */
 
-:root {
+:root.theme-meadow {
     /* Base colors */
     --bg-cream: #FDF8F3;
     --bg-soft: #F5EDE4;
@@ -38,7 +38,7 @@
    BACKDROP - Sunshine meadow watercolor
    ============================================================================= */
 
-.backdrop {
+.theme-meadow .backdrop {
     background:
         /* Warm sunlight from top-right */
         radial-gradient(ellipse 80% 60% at 85% 15%, rgba(255, 248, 220, 0.95) 0%, transparent 50%),
@@ -72,7 +72,7 @@
    WINDOW FRAME
    ============================================================================= */
 
-.window-frame {
+.theme-meadow .window-frame {
     background: var(--bg-soft);
     border: 2px solid var(--terminal-border);
     box-shadow:
@@ -82,56 +82,56 @@
 }
 
 /* Title Bar */
-.title-bar {
+.theme-meadow .title-bar {
     background: linear-gradient(180deg, #A08060 0%, #8B7355 100%);
     border-bottom: 1px solid #6B5344;
 }
 
-.title-text {
+.theme-meadow .title-text {
     color: var(--bg-cream);
     text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
 }
 
-.btn-close { background: var(--accent-peach); }
-.btn-minimize { background: var(--accent-butter); }
-.btn-maximize { background: var(--accent-mint); }
+.theme-meadow .btn-close { background: var(--accent-peach); }
+.theme-meadow .btn-minimize { background: var(--accent-butter); }
+.theme-meadow .btn-maximize { background: var(--accent-mint); }
 
 /* =============================================================================
    TAB BAR
    ============================================================================= */
 
-.tab-bar {
+.theme-meadow .tab-bar {
     background: #3D3A34;
     border-bottom: 1px solid #4D4A44;
 }
 
-.tab {
+.theme-meadow .tab {
     color: #8B8578;
 }
 
-.tab:hover {
+.theme-meadow .tab:hover {
     color: var(--text-light);
     background: #4D4A44;
 }
 
-.tab.active {
+.theme-meadow .tab.active {
     color: var(--accent-mint);
     background: var(--terminal-bg);
 }
 
-.tab-add {
+.theme-meadow .tab-add {
     color: #8B8578;
 }
 
-.tab-add:hover {
+.theme-meadow .tab-add:hover {
     color: var(--text-light);
 }
 
-.tab-close {
+.theme-meadow .tab-close {
     color: inherit;
 }
 
-.tab-close:hover {
+.theme-meadow .tab-close:hover {
     color: var(--accent-peach);
 }
 
@@ -139,61 +139,61 @@
    TERMINAL
    ============================================================================= */
 
-.terminal {
+.theme-meadow .terminal {
     background: var(--terminal-bg);
     color: var(--text-light);
 }
 
-.ascii-art {
+.theme-meadow .ascii-art {
     color: var(--accent-mint);
 }
 
-.prompt {
+.theme-meadow .prompt {
     color: var(--prompt-color);
 }
 
-.command {
+.theme-meadow .command {
     color: var(--command-color);
 }
 
-.comment {
+.theme-meadow .comment {
     color: var(--comment-color);
     font-style: italic;
 }
 
-.highlight {
+.theme-meadow .highlight {
     color: var(--highlight-color);
 }
 
-.cursor {
+.theme-meadow .cursor {
     background: var(--cursor-color);
 }
 
 /* Tags */
-.tag {
+.theme-meadow .tag {
     background: var(--tag-bg);
     color: var(--tag-color);
     border: 1px solid var(--tag-border);
 }
 
 /* Links */
-.link {
+.theme-meadow .link {
     color: var(--link-color);
     border-bottom: 1px dashed var(--link-color);
 }
 
-.link:hover {
+.theme-meadow .link:hover {
     color: var(--accent-peach);
     border-color: var(--accent-peach);
 }
 
 /* Projects */
-.project-name {
+.theme-meadow .project-name {
     color: var(--accent-butter);
 }
 
 /* Featured project */
-.project-featured {
+.theme-meadow .project-featured {
     border-left-color: var(--accent-mint);
     background: rgba(152, 212, 187, 0.04);
     border-radius: 0 4px 4px 0;
@@ -201,79 +201,79 @@
     padding-bottom: 0.4rem;
 }
 
-.featured-badge {
+.theme-meadow .featured-badge {
     color: var(--accent-mint);
 }
 
 /* Games showcase */
-.game-name {
+.theme-meadow .game-name {
     color: var(--accent-butter);
 }
 
-.game-platform {
+.theme-meadow .game-platform {
     color: var(--accent-lavender);
 }
 
-.game-card-rpg {
+.theme-meadow .game-card-rpg {
     background: rgba(201, 184, 232, 0.07);
     border-color: rgba(201, 184, 232, 0.18);
 }
 
-.game-card-rpg .game-ascii {
+.theme-meadow .game-card-rpg .game-ascii {
     color: var(--accent-lavender);
 }
 
-.game-card-vr {
+.theme-meadow .game-card-vr {
     background: rgba(152, 212, 187, 0.07);
     border-color: rgba(152, 212, 187, 0.18);
 }
 
-.game-card-vr .game-ascii {
+.theme-meadow .game-card-vr .game-ascii {
     color: var(--accent-mint);
 }
 
-.game-card-web {
+.theme-meadow .game-card-web {
     background: rgba(249, 228, 183, 0.07);
     border-color: rgba(249, 228, 183, 0.18);
 }
 
-.game-card-web .game-ascii {
+.theme-meadow .game-card-web .game-ascii {
     color: var(--accent-butter);
 }
 
-.game-card-ios {
+.theme-meadow .game-card-ios {
     background: rgba(255, 181, 167, 0.07);
     border-color: rgba(255, 181, 167, 0.18);
 }
 
-.game-card-ios .game-ascii {
+.theme-meadow .game-card-ios .game-ascii {
     color: var(--accent-peach);
 }
 
 /* Contact */
-.contact-key {
+.theme-meadow .contact-key {
     color: var(--accent-butter);
 }
 
-.link-linkedin {
+.theme-meadow .link-linkedin {
     color: var(--accent-mint);
     border-bottom-color: var(--accent-mint);
 }
 
-.cta-label {
+.theme-meadow .cta-label {
     color: var(--accent-mint);
 }
 
 /* Experience */
-.exp-company {
+.theme-meadow .exp-company {
     color: var(--accent-butter);
 }
 
-.exp-title {
+.theme-meadow .exp-title {
     color: var(--text-light);
 }
 
-.exp-dates {
+.theme-meadow .exp-dates {
     color: var(--accent-lavender);
 }
 
@@ -281,77 +281,77 @@
    KANBAN BOARD - Meadow theme
    ============================================================================= */
 
-.dot-shipped {
+.theme-meadow .dot-shipped {
     background: var(--accent-mint);
     box-shadow: 0 0 5px rgba(152, 212, 187, 0.5);
 }
 
-.dot-building {
+.theme-meadow .dot-building {
     background: var(--accent-butter);
     box-shadow: 0 0 5px rgba(249, 228, 183, 0.5);
 }
 
-.dot-idea,
-.dot-planning {
+.theme-meadow .dot-idea,
+.theme-meadow .dot-planning {
     background: var(--accent-lavender);
     box-shadow: 0 0 5px rgba(201, 184, 232, 0.4);
 }
 
 /* Shipped column cards */
-.kanban-col:nth-child(1) .kanban-card {
+.theme-meadow .kanban-col:nth-child(1) .kanban-card {
     background: rgba(152, 212, 187, 0.04);
 }
 
-.kanban-col:nth-child(1) .kanban-card:hover {
+.theme-meadow .kanban-col:nth-child(1) .kanban-card:hover {
     background: rgba(152, 212, 187, 0.08);
     box-shadow: 0 2px 8px rgba(152, 212, 187, 0.08);
 }
 
-.kanban-col:nth-child(1) .kcard-name {
+.theme-meadow .kanban-col:nth-child(1) .kcard-name {
     color: var(--accent-mint);
 }
 
-.kanban-col:nth-child(1) .kcard-tag {
+.theme-meadow .kanban-col:nth-child(1) .kcard-tag {
     background: rgba(152, 212, 187, 0.12);
     color: var(--accent-mint);
     border: 1px solid rgba(152, 212, 187, 0.2);
 }
 
 /* Building column cards */
-.kanban-col:nth-child(2) .kanban-card {
+.theme-meadow .kanban-col:nth-child(2) .kanban-card {
     background: rgba(249, 228, 183, 0.04);
 }
 
-.kanban-col:nth-child(2) .kanban-card:hover {
+.theme-meadow .kanban-col:nth-child(2) .kanban-card:hover {
     background: rgba(249, 228, 183, 0.08);
     box-shadow: 0 2px 8px rgba(249, 228, 183, 0.08);
 }
 
-.kanban-col:nth-child(2) .kcard-name {
+.theme-meadow .kanban-col:nth-child(2) .kcard-name {
     color: var(--accent-butter);
 }
 
-.kanban-col:nth-child(2) .kcard-tag {
+.theme-meadow .kanban-col:nth-child(2) .kcard-tag {
     background: rgba(249, 228, 183, 0.12);
     color: var(--accent-butter);
     border: 1px solid rgba(249, 228, 183, 0.2);
 }
 
-/* Idea column cards */
-.kanban-col:nth-child(3) .kanban-card {
+/* Planning column cards */
+.theme-meadow .kanban-col:nth-child(3) .kanban-card {
     background: rgba(201, 184, 232, 0.04);
 }
 
-.kanban-col:nth-child(3) .kanban-card:hover {
+.theme-meadow .kanban-col:nth-child(3) .kanban-card:hover {
     background: rgba(201, 184, 232, 0.08);
     box-shadow: 0 2px 8px rgba(201, 184, 232, 0.08);
 }
 
-.kanban-col:nth-child(3) .kcard-name {
+.theme-meadow .kanban-col:nth-child(3) .kcard-name {
     color: var(--accent-lavender);
 }
 
-.kanban-col:nth-child(3) .kcard-tag {
+.theme-meadow .kanban-col:nth-child(3) .kcard-tag {
     background: rgba(201, 184, 232, 0.12);
     color: var(--accent-lavender);
     border: 1px solid rgba(201, 184, 232, 0.2);
@@ -361,14 +361,14 @@
    RESTORE BUTTON
    ============================================================================= */
 
-.restore-btn {
+.theme-meadow .restore-btn {
     background: var(--bg-soft);
     color: var(--text-dark);
     border: 2px solid var(--terminal-border);
     box-shadow: 0 4px 12px rgba(139, 115, 85, 0.2);
 }
 
-.restore-btn:hover {
+.theme-meadow .restore-btn:hover {
     background: var(--bg-cream);
     transform: translateX(-50%) translateY(-2px);
     box-shadow: 0 6px 16px rgba(139, 115, 85, 0.25);
@@ -378,6 +378,6 @@
    DESKTOP ICONS
    ============================================================================= */
 
-.icon-label {
+.theme-meadow .icon-label {
     color: var(--text-dark);
 }
