@@ -234,26 +234,69 @@
 }
 
 /* =============================================================================
-   PROJECT CARDS - Meadow theme
+   TUI PANEL - Meadow theme
    ============================================================================= */
 
-.theme-meadow .kanban-card {
-    background: rgba(152, 212, 187, 0.04);
+.theme-meadow .tui-panel {
+    border-color: rgba(152, 212, 187, 0.2);
 }
 
-.theme-meadow .kanban-card:hover {
+.theme-meadow .tui-header {
+    border-bottom-color: rgba(152, 212, 187, 0.12);
+}
+
+.theme-meadow .tui-row:hover {
+    background: rgba(152, 212, 187, 0.06);
+}
+
+.theme-meadow .tui-row.expanded {
     background: rgba(152, 212, 187, 0.08);
-    box-shadow: 0 2px 8px rgba(152, 212, 187, 0.08);
 }
 
-.theme-meadow .kcard-name {
+.theme-meadow .tui-name {
     color: var(--accent-mint);
 }
 
-.theme-meadow .kcard-tag {
-    background: rgba(152, 212, 187, 0.12);
+.theme-meadow .tui-shipped {
     color: var(--accent-mint);
-    border: 1px solid rgba(152, 212, 187, 0.2);
+}
+
+.theme-meadow .tui-building {
+    color: var(--accent-peach);
+}
+
+.theme-meadow .tui-section-building {
+    border-top-color: rgba(152, 212, 187, 0.12);
+}
+
+/* Git Log — Meadow */
+.theme-meadow .gl-graph {
+    color: var(--accent-peach);
+}
+
+.theme-meadow .gl-hash,
+.theme-meadow .gl-hash-full {
+    color: var(--accent-butter);
+}
+
+.theme-meadow .gl-branch {
+    color: var(--accent-mint);
+}
+
+.theme-meadow .gl-award {
+    color: var(--accent-butter);
+}
+
+.theme-meadow .gl-row:hover {
+    background: rgba(152, 212, 187, 0.06);
+}
+
+.theme-meadow .gl-row.expanded {
+    background: rgba(152, 212, 187, 0.08);
+}
+
+.theme-meadow .git-log::before {
+    background: rgba(152, 212, 187, 0.2);
 }
 
 /* =============================================================================

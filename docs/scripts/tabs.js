@@ -48,11 +48,11 @@
         // Update browser title
         document.title = '~/emilynguyen';
 
-        // Focus the input in the new tab
+        // Focus the input in the new tab (preventScroll so we stay at the top)
         setTimeout(() => {
             const activeTerminal = document.querySelector('.tab-content.active');
             const inputEl = activeTerminal?.querySelector('.input-text');
-            if (inputEl) inputEl.focus();
+            if (inputEl) inputEl.focus({ preventScroll: true });
         }, 50);
     }
 

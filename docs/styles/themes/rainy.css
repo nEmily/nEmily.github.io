@@ -233,26 +233,69 @@
 }
 
 /* =============================================================================
-   PROJECT CARDS - Rainy theme
+   TUI PANEL - Rainy theme
    ============================================================================= */
 
-.theme-rainy .kanban-card {
-    background: rgba(168, 200, 184, 0.04);
+.theme-rainy .tui-panel {
+    border-color: rgba(168, 200, 184, 0.18);
 }
 
-.theme-rainy .kanban-card:hover {
+.theme-rainy .tui-header {
+    border-bottom-color: rgba(168, 200, 184, 0.10);
+}
+
+.theme-rainy .tui-row:hover {
+    background: rgba(168, 200, 184, 0.06);
+}
+
+.theme-rainy .tui-row.expanded {
     background: rgba(168, 200, 184, 0.08);
-    box-shadow: 0 2px 8px rgba(168, 200, 184, 0.08);
 }
 
-.theme-rainy .kcard-name {
+.theme-rainy .tui-name {
     color: var(--accent-mint);
 }
 
-.theme-rainy .kcard-tag {
-    background: rgba(168, 200, 184, 0.12);
+.theme-rainy .tui-shipped {
     color: var(--accent-mint);
-    border: 1px solid rgba(168, 200, 184, 0.2);
+}
+
+.theme-rainy .tui-building {
+    color: var(--accent-rose);
+}
+
+.theme-rainy .tui-section-building {
+    border-top-color: rgba(168, 200, 184, 0.10);
+}
+
+/* Git Log — Rainy */
+.theme-rainy .gl-graph {
+    color: var(--accent-rose);
+}
+
+.theme-rainy .gl-hash,
+.theme-rainy .gl-hash-full {
+    color: var(--accent-sky);
+}
+
+.theme-rainy .gl-branch {
+    color: var(--accent-mint);
+}
+
+.theme-rainy .gl-award {
+    color: var(--accent-sky);
+}
+
+.theme-rainy .gl-row:hover {
+    background: rgba(168, 200, 184, 0.06);
+}
+
+.theme-rainy .gl-row.expanded {
+    background: rgba(168, 200, 184, 0.08);
+}
+
+.theme-rainy .git-log::before {
+    background: rgba(168, 200, 184, 0.2);
 }
 
 /* =============================================================================

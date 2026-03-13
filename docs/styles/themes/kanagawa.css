@@ -262,28 +262,69 @@
 }
 
 /* =============================================================================
-   PROJECT CARDS — Kanagawa theme
+   TUI PANEL — Kanagawa theme
    ============================================================================= */
 
-.theme-kanagawa .kanban-card {
-    background: rgba(160, 212, 196, 0.04);
-    border-color: rgba(160, 212, 196, 0.10);
+.theme-kanagawa .tui-panel {
+    border-color: rgba(160, 212, 196, 0.15);
 }
 
-.theme-kanagawa .kanban-card:hover {
+.theme-kanagawa .tui-header {
+    border-bottom-color: rgba(160, 212, 196, 0.10);
+}
+
+.theme-kanagawa .tui-row:hover {
+    background: rgba(160, 212, 196, 0.06);
+}
+
+.theme-kanagawa .tui-row.expanded {
     background: rgba(160, 212, 196, 0.08);
-    border-color: rgba(160, 212, 196, 0.20);
-    box-shadow: 0 2px 10px rgba(160, 212, 196, 0.08);
 }
 
-.theme-kanagawa .kcard-name {
+.theme-kanagawa .tui-name {
     color: var(--accent-mint);
 }
 
-.theme-kanagawa .kcard-tag {
-    background: rgba(160, 212, 196, 0.10);
+.theme-kanagawa .tui-shipped {
     color: var(--accent-mint);
-    border: 1px solid rgba(160, 212, 196, 0.18);
+}
+
+.theme-kanagawa .tui-building {
+    color: var(--accent-sakura);
+}
+
+.theme-kanagawa .tui-section-building {
+    border-top-color: rgba(160, 212, 196, 0.10);
+}
+
+/* Git Log — Kanagawa */
+.theme-kanagawa .gl-graph {
+    color: var(--accent-sakura);
+}
+
+.theme-kanagawa .gl-hash,
+.theme-kanagawa .gl-hash-full {
+    color: var(--accent-gold);
+}
+
+.theme-kanagawa .gl-branch {
+    color: var(--accent-mint);
+}
+
+.theme-kanagawa .gl-award {
+    color: var(--accent-gold);
+}
+
+.theme-kanagawa .gl-row:hover {
+    background: rgba(160, 212, 196, 0.06);
+}
+
+.theme-kanagawa .gl-row.expanded {
+    background: rgba(160, 212, 196, 0.08);
+}
+
+.theme-kanagawa .git-log::before {
+    background: var(--text-dim);
 }
 
 /* =============================================================================

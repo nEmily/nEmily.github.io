@@ -540,6 +540,46 @@ Open to new opportunities → linkedin.com/in/nguyen-emily`
         }
     };
 
+    // Git — switches to experience tab
+    commands.git = {
+        description: 'View career history',
+        usage: 'git log',
+        execute: (args) => {
+            if (args[0] === 'log') {
+                setTimeout(() => {
+                    if (window.tabManager) {
+                        window.tabManager.switchTab('experience');
+                    }
+                }, 100);
+                return '<span class="comment">cd ~/career && git log --oneline</span>';
+            }
+            if (args[0] === 'blame') {
+                return 'Everything is Emily\'s fault. She takes full credit.';
+            }
+            if (args[0] === 'push') {
+                return 'Everything is already deployed. Relax.';
+            }
+            if (args[0] === 'status') {
+                return 'On branch main\nnothing to commit, working tree clean\n<span class="comment">(career is on track)</span>';
+            }
+            return `usage: git log | git status | git blame`;
+        }
+    };
+
+    // pj — switches to projects tab (matches the TUI command shown)
+    commands.pj = {
+        description: 'Project dashboard',
+        usage: 'pj [status]',
+        execute: (args) => {
+            setTimeout(() => {
+                if (window.tabManager) {
+                    window.tabManager.switchTab('projects');
+                }
+            }, 100);
+            return '<span class="comment">launching project dashboard...</span>';
+        }
+    };
+
     // Status shortcut — shows ~/status.txt inline
     commands.status = {
         description: 'Show current status and what I\'m working on',
@@ -1193,7 +1233,7 @@ Or use 'search [keyword]' to find specific content.`;
                 setTimeout(() => {
                     const activeTerminal = getActiveTerminal();
                     const inputEl = activeTerminal.querySelector('.input-text');
-                    if (inputEl) inputEl.focus();
+                    if (inputEl) inputEl.focus({ preventScroll: true });
                 }, 50);
             });
         });

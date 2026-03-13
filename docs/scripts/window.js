@@ -53,7 +53,7 @@
         setTimeout(() => {
             const activeTerminal = document.querySelector('.tab-content.active');
             const inputEl = activeTerminal?.querySelector('.input-text');
-            if (inputEl) inputEl.focus();
+            if (inputEl) inputEl.focus({ preventScroll: true });
         }, 100);
     });
 

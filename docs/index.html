@@ -114,12 +114,12 @@
                     <span class="tab-label">~/home</span>
                     <span class="tab-close" aria-label="Close tab">×</span>
                 </button>
-                <button class="tab" role="tab" aria-selected="false" data-tab="projects">
-                    <span class="tab-label">~/projects</span>
-                    <span class="tab-close" aria-label="Close tab">×</span>
-                </button>
                 <button class="tab" role="tab" aria-selected="false" data-tab="experience">
                     <span class="tab-label">~/experience</span>
+                    <span class="tab-close" aria-label="Close tab">×</span>
+                </button>
+                <button class="tab" role="tab" aria-selected="false" data-tab="projects">
+                    <span class="tab-label">~/projects</span>
                     <span class="tab-close" aria-label="Close tab">×</span>
                 </button>
                 <button class="tab" role="tab" aria-selected="false" data-tab="contact">
@@ -134,100 +134,105 @@
                 <!-- Experience Tab -->
                 <section id="tab-experience" class="tab-content">
                     <div class="terminal-line">
-                        <span class="prompt">></span>
-                        <span class="command">cat experience.txt</span>
+                        <span class="prompt">~/career (main) ></span>
+                        <span class="command">git log --oneline</span>
                     </div>
-                    <div class="output">
-                        <span class="comment"># work experience</span><br><br>
-                        <div class="exp-item">
-                            <div class="exp-header">
-                                <span class="exp-company">Meta Reality Labs</span>
-                                <span class="exp-sep"> / </span>
-                                <span class="exp-title">Senior Software Engineer — Build Test Release</span>
+
+                    <div class="git-log">
+                        <div class="gl-row" data-hash="face0b0">
+                            <span class="gl-graph">*</span>
+                            <span class="gl-hash">face0b0</span>
+                            <span class="gl-branch">(HEAD -> main)</span>
+                            <span class="gl-msg">Senior Software Engineer @ Meta</span>
+                        </div>
+                        <div class="gl-detail">
+                            <div class="gl-show-header">
+                                <div><span class="gl-label">commit</span> <span class="gl-hash-full">face0b0</span> <span class="gl-branch">(HEAD -> main)</span></div>
+                                <div><span class="gl-label">Author:</span> Emily Nguyen</div>
+                                <div><span class="gl-label">Date:</span>   Jul 2024 – present</div>
                             </div>
-                            <div class="exp-dates">Jul 2024 – present</div>
-                            <div class="exp-desc">
-                                CI/CD and test automation for wearable devices — built the device lab from scratch, 30+ devices across 2 racks. Defined the release quality framework that surfaced 72 bugs pre-release. Built a Claude IDE plugin for the team, an MCP server for internal job and task data, and a daily codemod runner that generates wiki docs from code diffs using LLMs. Led a 3-engineer testing team. Won an engineering award for pioneering release testing.
-                            </div>
-                            <div class="project-tags">
-                                <span class="tag">Python</span>
-                                <span class="tag">JavaScript</span>
-                                <span class="tag">CI/CD</span>
-                                <span class="tag">LLM tooling</span>
-                                <span class="tag">Test Infrastructure</span>
+                            <div class="gl-show-body">
+                                <div class="gl-title">Senior Software Engineer</div>
+                                <div class="gl-desc">Built a hardware CI/CD device testing lab — 8 servers and 30+ devices across 2 racks with automated health checks, remote leasing, and quality-gating suites on every build for wearable programs supporting 300+ deployed research units. Defined the test strategy and release qualification framework — build stamping criteria, coverage dashboards, and a repeatable process that surfaced 72 bugs pre-release. Built an internal MCP server, a Claude-based IDE extension, and a codemod pipeline that ran LLMs on code diffs to auto-generate wiki docs.</div>
+                                <div class="gl-award">★ Led a team of 3 engineers — recognized with an engineering award for "single-handedly pioneering release testing."</div>
+                                <div class="gl-tags">Python · JavaScript · CI/CD · LLM tooling · Test Infrastructure</div>
                             </div>
                         </div>
-                        <div class="exp-item">
-                            <div class="exp-header">
-                                <span class="exp-company">Dolby Laboratories</span>
-                                <span class="exp-sep"> / </span>
-                                <span class="exp-title">Senior Software Engineer — Games, Audio, Test</span>
+
+                        <div class="gl-row" data-hash="dec1be1">
+                            <span class="gl-graph">*</span>
+                            <span class="gl-hash">dec1be1</span>
+                            <span class="gl-msg">Senior SWE, Games, Audio, Test @ Dolby Laboratories</span>
+                        </div>
+                        <div class="gl-detail">
+                            <div class="gl-show-header">
+                                <div><span class="gl-label">commit</span> <span class="gl-hash-full">dec1be1</span></div>
+                                <div><span class="gl-label">Author:</span> Emily Nguyen</div>
+                                <div><span class="gl-label">Date:</span>   Jan 2021 – Dec 2023</div>
                             </div>
-                            <div class="exp-dates">Jan 2021 – Dec 2023</div>
-                            <div class="exp-desc">
-                                Shipped the Dolby Atmos Plugin for Unreal Engine in collaboration with Epic Games. First test-focused engineer on the team — designed the QA framework, automated 300+ tests, and sped up CI pipelines by 33%. Python interfaces for a real-time audio C++/C SDK.
-                            </div>
-                            <div class="project-tags">
-                                <span class="tag">Python</span>
-                                <span class="tag">C++</span>
-                                <span class="tag">Unreal Engine</span>
-                                <span class="tag">CI/CD</span>
-                                <span class="tag">Test Automation</span>
+                            <div class="gl-show-body">
+                                <div class="gl-title">Senior Software Engineer, Games, Audio, Test</div>
+                                <div class="gl-desc">Released the Dolby Atmos Plugin for Unreal Engine, a cross-platform real-time audio-processing SDK, with a team of 12, in collaboration with Epic Games. Created Python interfaces for complex applications and a real-time audio C++/C SDK for integrating tools in automated workflows. Optimized CI/CD across multiple projects — automated pipeline of 300+ integration and unit tests, speeding up previous pipelines by 33%.</div>
+                                <div class="gl-tags">Python · C++ · Unreal Engine · CI/CD · Test Automation</div>
                             </div>
                         </div>
-                        <div class="exp-item">
-                            <div class="exp-header">
-                                <span class="exp-company">Lokafy</span>
-                                <span class="exp-sep"> / </span>
-                                <span class="exp-title">Software Developer</span>
+
+                        <div class="gl-row" data-hash="c0de101">
+                            <span class="gl-graph">*</span>
+                            <span class="gl-hash">c0de101</span>
+                            <span class="gl-msg">Code Coach @ the Coder School</span>
+                        </div>
+                        <div class="gl-detail">
+                            <div class="gl-show-header">
+                                <div><span class="gl-label">commit</span> <span class="gl-hash-full">c0de101</span></div>
+                                <div><span class="gl-label">Author:</span> Emily Nguyen</div>
+                                <div><span class="gl-label">Date:</span>   Jul 2019 – Jan 2021</div>
                             </div>
-                            <div class="exp-dates">Jun – Aug 2018</div>
-                            <div class="exp-desc">
-                                Built a QuickPay payment system — transaction links on demand, real-time transaction views. Stripe API backend in Python/SQL; customer-facing UI in HTML/CSS with Django.
-                            </div>
-                            <div class="project-tags">
-                                <span class="tag">Python</span>
-                                <span class="tag">Django</span>
-                                <span class="tag">Stripe API</span>
-                                <span class="tag">SQL</span>
+                            <div class="gl-show-body">
+                                <div class="gl-title">Code Coach</div>
+                                <div class="gl-desc">Instructed students ages 7–16 in personalized one-on-one and one-on-two sessions — Scratch, Python, Java, and C#, emphasizing problem-solving, algorithm design, and project-building. Led nine week-long camps with 12–14 students each, resulting in each student producing a polished deliverable.</div>
+                                <div class="gl-tags">Teaching · Python · Scratch · Java · C#</div>
                             </div>
                         </div>
-                        <div class="exp-item">
-                            <div class="exp-header">
-                                <span class="exp-company">the Coder School</span>
-                                <span class="exp-sep"> / </span>
-                                <span class="exp-title">Code Coach</span>
+
+                        <div class="gl-row" data-hash="acad3a0">
+                            <span class="gl-graph">*</span>
+                            <span class="gl-hash">acad3a0</span>
+                            <span class="gl-msg">XR/VR Course Facilitator @ UC Berkeley</span>
+                        </div>
+                        <div class="gl-detail">
+                            <div class="gl-show-header">
+                                <div><span class="gl-label">commit</span> <span class="gl-hash-full">acad3a0</span></div>
+                                <div><span class="gl-label">Author:</span> Emily Nguyen</div>
+                                <div><span class="gl-label">Date:</span>   Jan – May 2020</div>
                             </div>
-                            <div class="exp-dates">Jul 2019 – Jan 2021</div>
-                            <div class="exp-desc">
-                                Taught programming to students ages 7–16 in one-on-one sessions. Led nine week-long camps with 12–14 students — every camper shipped something by the end.
-                            </div>
-                            <div class="project-tags">
-                                <span class="tag">Teaching</span>
-                                <span class="tag">Python</span>
-                                <span class="tag">Scratch</span>
-                                <span class="tag">Java</span>
-                                <span class="tag">C#</span>
+                            <div class="gl-show-body">
+                                <div class="gl-title">XR/VR Course Facilitator</div>
+                                <div class="gl-desc">Facilitated a VR development course — Unity, C#, hands-on labs, and a final project.</div>
+                                <div class="gl-tags">Unity · C# · VR · Teaching</div>
                             </div>
                         </div>
-                        <div class="exp-item">
-                            <div class="exp-header">
-                                <span class="exp-company">UC Berkeley</span>
-                                <span class="exp-sep"> / </span>
-                                <span class="exp-title">XR/VR Course Facilitator</span>
+
+                        <div class="gl-row" data-hash="5eed01">
+                            <span class="gl-graph">*</span>
+                            <span class="gl-hash">5eed01</span>
+                            <span class="gl-msg">Software Developer @ Lokafy</span>
+                        </div>
+                        <div class="gl-detail">
+                            <div class="gl-show-header">
+                                <div><span class="gl-label">commit</span> <span class="gl-hash-full">5eed01</span></div>
+                                <div><span class="gl-label">Author:</span> Emily Nguyen</div>
+                                <div><span class="gl-label">Date:</span>   Jun – Aug 2018</div>
                             </div>
-                            <div class="exp-dates">Jan – May 2020</div>
-                            <div class="exp-desc">
-                                Facilitated a VR development course — Unity, C#, hands-on labs, and a final project.
-                            </div>
-                            <div class="project-tags">
-                                <span class="tag">Unity</span>
-                                <span class="tag">C#</span>
-                                <span class="tag">VR</span>
-                                <span class="tag">Teaching</span>
+                            <div class="gl-show-body">
+                                <div class="gl-title">Software Developer</div>
+                                <div class="gl-desc">Built a QuickPay payment system — transaction links on demand, real-time transaction views. Stripe API backend in Python/SQL; customer-facing UI in HTML/CSS with Django.</div>
+                                <div class="gl-tags">Python · Django · Stripe API · SQL</div>
                             </div>
                         </div>
-                        <br>
+                    </div>
+
+                    <div class="gl-footer">
                         <span class="comment"># open to new opportunities — </span><a href="https://linkedin.com/in/nguyen-emily" class="link" target="_blank" rel="noopener">linkedin.com/in/nguyen-emily</a>
                     </div>
 
@@ -271,98 +276,118 @@
                 <section id="tab-projects" class="tab-content">
                     <div class="terminal-line">
                         <span class="prompt">></span>
-                        <span class="command">cat projects.txt</span>
+                        <span class="command">pj status</span>
                     </div>
-                    <div class="output">
-                        <span class="comment"># shipped</span>
 
-                        <div class="project-grid">
-                            <a class="kanban-card" href="https://nemily.github.io/roundhouse/" target="_blank" rel="noopener">
-                                <div class="kcard-name">roundhouse</div>
-                                <div class="kcard-desc">party game PWA for game night. 8 players, one phone, hot takes mode</div>
-                                <div class="kcard-footer">
-                                    <span class="kcard-tag">PWA</span>
-                                    <span class="kcard-tag">game</span>
-                                    <span class="kcard-link">↗ play</span>
-                                </div>
-                            </a>
-                            <a class="kanban-card" href="https://nemily.github.io/impostor-game/" target="_blank" rel="noopener">
-                                <div class="kcard-name">impostor-game</div>
-                                <div class="kcard-desc">social deduction party game. find the impostor before they find you</div>
-                                <div class="kcard-footer">
-                                    <span class="kcard-tag">PWA</span>
-                                    <span class="kcard-tag">game</span>
-                                    <span class="kcard-link">↗ play</span>
-                                </div>
-                            </a>
-                            <a class="kanban-card" href="https://nemily.github.io/traffic/" target="_blank" rel="noopener">
-                                <div class="kcard-name">crowd-sim</div>
-                                <div class="kcard-desc">NavMesh AI pedestrians navigating a live traffic intersection</div>
-                                <div class="kcard-footer">
-                                    <span class="kcard-tag">AI</span>
-                                    <span class="kcard-tag">sim</span>
-                                    <span class="kcard-link">↗ play demo</span>
-                                </div>
-                            </a>
-                            <div class="kanban-card">
-                                <div class="kcard-name">thirdwheel</div>
-                                <div class="kcard-desc">discord bot for my household. AI inbox, reminders, chaos management</div>
-                                <div class="kcard-footer">
-                                    <span class="kcard-tag">discord</span>
-                                    <span class="kcard-tag">bot</span>
-                                    <span class="kcard-link">private</span>
-                                </div>
-                            </div>
-                            <div class="kanban-card">
-                                <div class="kcard-name">one-night-werewolf</div>
-                                <div class="kcard-desc">werewolf for when you only have 10 minutes and everyone's already suspicious</div>
-                                <div class="kcard-footer">
-                                    <span class="kcard-tag">PWA</span>
-                                    <span class="kcard-tag">game</span>
-                                    <span class="kcard-link">coming soon</span>
-                                </div>
-                            </div>
-                            <div class="kanban-card">
-                                <div class="kcard-name">killer-boba</div>
-                                <div class="kcard-desc">someone's boba is poisoned. figure out whose before you drink</div>
-                                <div class="kcard-footer">
-                                    <span class="kcard-tag">PWA</span>
-                                    <span class="kcard-tag">game</span>
-                                    <span class="kcard-link">coming soon</span>
-                                </div>
-                            </div>
+                    <div class="tui-panel">
+                        <div class="tui-header">
+                            <span class="tui-header-dash">─</span>
+                            <span class="tui-header-title">projects</span>
+                            <span class="tui-header-dash">───</span>
+                            <span class="tui-header-stats">6 shipped · 3 building</span>
                         </div>
 
-                        <span class="comment"># building</span>
+                        <div class="tui-section-label"><span class="comment"># shipped</span></div>
 
-                        <div class="project-grid">
-                            <div class="kanban-card">
-                                <div class="kcard-name">dude-were-so-cooked</div>
-                                <div class="kcard-desc">AI-curated news digest. agents decide what's actually worth your attention</div>
-                                <div class="kcard-footer">
-                                    <span class="kcard-tag">AI</span>
-                                    <span class="kcard-tag">agents</span>
-                                    <span class="kcard-link">↗ github</span>
-                                </div>
-                            </div>
-                            <div class="kanban-card">
-                                <div class="kcard-name">splitsheet</div>
-                                <div class="kcard-desc">snap a receipt, split it with friends, send venmo charges. that's it</div>
-                                <div class="kcard-footer">
-                                    <span class="kcard-tag">OCR</span>
-                                    <span class="kcard-tag">mobile</span>
-                                    <span class="kcard-link">coming soon</span>
-                                </div>
-                            </div>
-                            <div class="kanban-card">
-                                <div class="kcard-name">ace-interview</div>
-                                <div class="kcard-desc">practice technical interviews with an AI that actually pushes back</div>
-                                <div class="kcard-footer">
-                                    <span class="kcard-tag">AI</span>
-                                    <span class="kcard-tag">web</span>
-                                    <span class="kcard-link">coming soon</span>
-                                </div>
-                            </div>
+                        <div class="tui-row" data-href="https://nemily.github.io/roundhouse/">
+                            <span class="tui-status tui-shipped">✓</span>
+                            <span class="tui-name">roundhouse</span>
+                            <span class="tui-brief">party game PWA for game night</span>
+                        </div>
+                        <div class="tui-detail">
+                            <div class="tui-detail-line"><span class="tui-tree">├─</span> 8 players, one phone, hot takes mode</div>
+                            <div class="tui-detail-line"><span class="tui-tree">├─</span> <span class="tui-tag">PWA</span> <span class="tui-tag">game</span></div>
+                            <div class="tui-detail-line"><span class="tui-tree">└─</span> <a class="tui-link" href="https://nemily.github.io/roundhouse/" target="_blank" rel="noopener">↗ play</a></div>
+                        </div>
+
+                        <div class="tui-row" data-href="https://nemily.github.io/impostor-game/">
+                            <span class="tui-status tui-shipped">✓</span>
+                            <span class="tui-name">impostor-game</span>
+                            <span class="tui-brief">social deduction party game</span>
+                        </div>
+                        <div class="tui-detail">
+                            <div class="tui-detail-line"><span class="tui-tree">├─</span> find the impostor before they find you</div>
+                            <div class="tui-detail-line"><span class="tui-tree">├─</span> <span class="tui-tag">PWA</span> <span class="tui-tag">game</span></div>
+                            <div class="tui-detail-line"><span class="tui-tree">└─</span> <a class="tui-link" href="https://nemily.github.io/impostor-game/" target="_blank" rel="noopener">↗ play</a></div>
+                        </div>
+
+                        <div class="tui-row" data-href="https://nemily.github.io/traffic/">
+                            <span class="tui-status tui-shipped">✓</span>
+                            <span class="tui-name">crowd-sim</span>
+                            <span class="tui-brief">NavMesh AI pedestrian sim</span>
+                        </div>
+                        <div class="tui-detail">
+                            <div class="tui-detail-line"><span class="tui-tree">├─</span> pedestrians navigating a live traffic intersection</div>
+                            <div class="tui-detail-line"><span class="tui-tree">├─</span> <span class="tui-tag">AI</span> <span class="tui-tag">sim</span></div>
+                            <div class="tui-detail-line"><span class="tui-tree">└─</span> <a class="tui-link" href="https://nemily.github.io/traffic/" target="_blank" rel="noopener">↗ play demo</a></div>
+                        </div>
+
+                        <div class="tui-row">
+                            <span class="tui-status tui-shipped">✓</span>
+                            <span class="tui-name">thirdwheel</span>
+                            <span class="tui-brief">discord bot for my household</span>
+                        </div>
+                        <div class="tui-detail">
+                            <div class="tui-detail-line"><span class="tui-tree">├─</span> AI inbox, reminders, chaos management</div>
+                            <div class="tui-detail-line"><span class="tui-tree">├─</span> <span class="tui-tag">discord</span> <span class="tui-tag">bot</span></div>
+                            <div class="tui-detail-line"><span class="tui-tree">└─</span> <span class="tui-private">private</span></div>
+                        </div>
+
+                        <div class="tui-row">
+                            <span class="tui-status tui-shipped">✓</span>
+                            <span class="tui-name">one-night-werewolf</span>
+                            <span class="tui-brief">werewolf in 10 minutes</span>
+                        </div>
+                        <div class="tui-detail">
+                            <div class="tui-detail-line"><span class="tui-tree">├─</span> everyone's already suspicious</div>
+                            <div class="tui-detail-line"><span class="tui-tree">├─</span> <span class="tui-tag">PWA</span> <span class="tui-tag">game</span></div>
+                            <div class="tui-detail-line"><span class="tui-tree">└─</span> <span class="tui-coming-soon">coming soon</span></div>
+                        </div>
+
+                        <div class="tui-row">
+                            <span class="tui-status tui-shipped">✓</span>
+                            <span class="tui-name">killer-boba</span>
+                            <span class="tui-brief">poisoned boba deduction game</span>
+                        </div>
+                        <div class="tui-detail">
+                            <div class="tui-detail-line"><span class="tui-tree">├─</span> figure out whose boba is poisoned before you drink</div>
+                            <div class="tui-detail-line"><span class="tui-tree">├─</span> <span class="tui-tag">PWA</span> <span class="tui-tag">game</span></div>
+                            <div class="tui-detail-line"><span class="tui-tree">└─</span> <span class="tui-coming-soon">coming soon</span></div>
+                        </div>
+
+                        <div class="tui-section-label tui-section-building"><span class="comment"># building</span></div>
+
+                        <div class="tui-row">
+                            <span class="tui-status tui-building"><span class="tui-spinner">◐</span></span>
+                            <span class="tui-name">dude-were-so-cooked</span>
+                            <span class="tui-brief">AI-curated news digest</span>
+                        </div>
+                        <div class="tui-detail">
+                            <div class="tui-detail-line"><span class="tui-tree">├─</span> agents decide what's actually worth your attention</div>
+                            <div class="tui-detail-line"><span class="tui-tree">├─</span> <span class="tui-tag">AI</span> <span class="tui-tag">agents</span></div>
+                            <div class="tui-detail-line"><span class="tui-tree">└─</span> <a class="tui-link" href="https://github.com/nemily/dude-were-so-cooked" target="_blank" rel="noopener">↗ github</a></div>
+                        </div>
+
+                        <div class="tui-row">
+                            <span class="tui-status tui-building"><span class="tui-spinner">◐</span></span>
+                            <span class="tui-name">splitsheet</span>
+                            <span class="tui-brief">snap receipt, split with friends</span>
+                        </div>
+                        <div class="tui-detail">
+                            <div class="tui-detail-line"><span class="tui-tree">├─</span> snap a receipt, split it with friends, send venmo charges</div>
+                            <div class="tui-detail-line"><span class="tui-tree">├─</span> <span class="tui-tag">OCR</span> <span class="tui-tag">mobile</span></div>
+                            <div class="tui-detail-line"><span class="tui-tree">└─</span> <span class="tui-coming-soon">coming soon</span></div>
+                        </div>
+
+                        <div class="tui-row">
+                            <span class="tui-status tui-building"><span class="tui-spinner">◐</span></span>
+                            <span class="tui-name">ace-interview</span>
+                            <span class="tui-brief">AI technical interview practice</span>
+                        </div>
+                        <div class="tui-detail">
+                            <div class="tui-detail-line"><span class="tui-tree">├─</span> practice with an AI that actually pushes back</div>
+                            <div class="tui-detail-line"><span class="tui-tree">├─</span> <span class="tui-tag">AI</span> <span class="tui-tag">web</span></div>
+                            <div class="tui-detail-line"><span class="tui-tree">└─</span> <span class="tui-coming-soon">coming soon</span></div>
                         </div>
                     </div>
 
@@ -411,6 +436,90 @@
     <script src="scripts/terminal.js"></script>
     <script src="scripts/window.js"></script>
     <script src="scripts/desktop.js"></script>
+
+    <!-- Interactive panel navigation (projects TUI + experience git log) -->
+    <script>
+    (function() {
+        // Generic panel navigator — works for both .tui-row/.tui-detail and .gl-row/.gl-detail
+        function initPanel(tabId, rowSelector, detailSelector, focusClass) {
+            const rows = Array.from(document.querySelectorAll('#tab-' + tabId + ' ' + rowSelector));
+            let focusedIndex = -1;
+
+            function toggleRow(row) {
+                const detail = row.nextElementSibling;
+                if (!detail || !detail.classList.contains(detailSelector)) return;
+
+                const wasExpanded = detail.classList.contains('visible');
+
+                // Collapse all within this panel
+                document.querySelectorAll('#tab-' + tabId + ' .' + detailSelector + '.visible').forEach(d => {
+                    d.classList.remove('visible');
+                    d.previousElementSibling.classList.remove('expanded');
+                });
+
+                if (!wasExpanded) {
+                    detail.classList.add('visible');
+                    row.classList.add('expanded');
+                }
+            }
+
+            function focusRow(index) {
+                if (index < 0 || index >= rows.length) return;
+                rows.forEach(r => r.classList.remove(focusClass));
+                focusedIndex = index;
+                rows[index].classList.add(focusClass);
+                rows[index].scrollIntoView({ block: 'nearest' });
+            }
+
+            // Click
+            rows.forEach((row, i) => {
+                row.addEventListener('click', () => {
+                    focusRow(i);
+                    toggleRow(row);
+                });
+            });
+
+            // Keyboard
+            document.addEventListener('keydown', (e) => {
+                const tab = document.getElementById('tab-' + tabId);
+                if (!tab || !tab.classList.contains('active')) return;
+                const inInput = e.target.closest('.input-text') || e.target.closest('input');
+
+                if (e.key === 'ArrowDown' || e.key === 'j') {
+                    // j only navigates when not typing
+                    if (e.key === 'j' && inInput) return;
+                    e.preventDefault();
+                    focusRow(focusedIndex < 0 ? 0 : Math.min(focusedIndex + 1, rows.length - 1));
+                } else if (e.key === 'ArrowUp' || e.key === 'k') {
+                    if (e.key === 'k' && inInput) return;
+                    e.preventDefault();
+                    focusRow(focusedIndex <= 0 ? 0 : focusedIndex - 1);
+                } else if (e.key === 'Enter' || e.key === ' ') {
+                    // Enter/Space toggle rows if input is empty and a row is focused
+                    if (inInput && inInput.textContent.trim().length > 0) return;
+                    if (focusedIndex >= 0) {
+                        e.preventDefault();
+                        toggleRow(rows[focusedIndex]);
+                    }
+                }
+            });
+
+            // Clear focus when tab deactivates
+            const tab = document.getElementById('tab-' + tabId);
+            if (tab) {
+                new MutationObserver(() => {
+                    if (!tab.classList.contains('active')) {
+                        rows.forEach(r => r.classList.remove(focusClass));
+                        focusedIndex = -1;
+                    }
+                }).observe(tab, { attributes: true, attributeFilter: ['class'] });
+            }
+        }
+
+        initPanel('projects', '.tui-row', 'tui-detail', 'tui-focused');
+        initPanel('experience', '.gl-row', 'gl-detail', 'gl-focused');
+    })();
+    </script>
 
 </body>
 </html>
