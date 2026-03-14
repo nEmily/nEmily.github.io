@@ -133,7 +133,7 @@ body {
     border-radius: 12px;
     width: 780px;
     min-width: 320px;
-    min-height: 200px;
+    min-height: max(200px, 60vh);
     max-width: calc(100vw - 4rem);
     max-height: calc(100vh - 4rem);
     margin-left: 5%;
@@ -1059,6 +1059,11 @@ body {
         align-items: stretch;
     }
 
+    /* Hide desktop icons on mobile — terminal is fullscreen, no desktop visible */
+    .desktop-icons {
+        display: none;
+    }
+
     .window-frame {
         width: 100%;
         max-width: 100%;
@@ -1185,7 +1190,12 @@ body {
 
     .tab {
         font-size: 0.68rem;
-        padding: 0.35rem 0.4rem;
+        padding: 0.35rem 0.35rem;
+    }
+
+    /* Hide the + new tab button to save space */
+    .tab-add {
+        display: none;
     }
 
     /* Wrap project descriptions */
