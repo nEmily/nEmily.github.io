@@ -38,16 +38,18 @@
         },
         '~/about.txt': {
             type: 'file',
-            content: `<span class="comment"># hello world</span>
+            content: `<span class="comment"># hey, i'm emily</span>
 
-<span class="highlight">Hi, I'm Emily!</span>
+I build things at <span class="highlight">Meta</span> (dev tooling for wearables — the
+kind of infra where if you do it right, nobody notices).
+Before that I shipped a <span class="highlight">Dolby Atmos plugin for Unreal
+Engine</span> with Epic Games, which was cool.
 
-UC Berkeley CS grad with 5+ years of software engineering
-experience. Currently at Meta building dev tooling for
-Reality Labs Research wearables — CI/CD, test infrastructure,
-and AI agent tooling.
+On the side, I build party games for game night, a discord
+bot that manages my household, and an AI agent swarm that
+ships code while I sleep. I mostly make things I wish existed.
 
-I like to build things I use.`
+<span class="comment"># currently: rune factory 4 · stardew valley · hollow knight</span>`
         },
         '~/status.txt': {
             type: 'file',
@@ -180,7 +182,10 @@ Link: https://news.dolby.com/en-WW/227541-dolby-releases-native-dolby-vision-and
         },
         '~/contact.txt': {
             type: 'file',
-            content: `<span class="comment"># let's connect</span>
+            content: `<span class="comment"># say hi</span>
+
+Always down to chat about AI agents, party games,
+or why Stardew Valley is a perfect game.
 
 → <a href="https://linkedin.com/in/nguyen-emily" class="link link-linkedin" target="_blank" rel="noopener">linkedin.com/in/nguyen-emily</a> — best way to reach me
 
@@ -191,22 +196,19 @@ Link: https://news.dolby.com/en-WW/227541-dolby-releases-native-dolby-vision-and
             type: 'file',
             content: `<span class="comment"># work experience</span>
 
-<span class="highlight">Meta</span> — Senior Software Engineer, Reality Labs  <span class="comment">2022–present</span>
-  Test infrastructure for wearable devices. AI-powered developer tooling:
-  LLM IDE plugins, agent pipeline for auto-generating wiki docs from code.
-  Led 3-engineer testing team; surfaced 72 bugs pre-release.
-  Tags: Python, CI/CD, LLM tooling, Test Infrastructure
+<span class="highlight">Meta</span> — Senior Software Engineer, Reality Labs  <span class="comment">2024–present</span>
+  Built a hardware testing lab from scratch — 8 servers, 30+ devices.
+  Claude-based IDE extension + LLM pipeline for auto-generating docs.
+  Led 3 engineers, got an award for pioneering release testing.
 
-<span class="highlight">Dolby Laboratories</span> — Senior Software Engineer  <span class="comment">2021–2022</span>
-  Shipped Dolby Atmos Plugin for Unreal Engine with Epic Games.
-  Python interfaces for real-time audio C++/C SDK.
-  Optimized CI/CD pipelines — 33% faster builds.
-  Tags: Python, C++, Unreal Engine, CI/CD
+<span class="highlight">Dolby Laboratories</span> — Senior SWE, Games/Audio/Test  <span class="comment">2021–2023</span>
+  Shipped Dolby Atmos plugin for Unreal Engine with Epic Games.
+  Made the CI pipeline 33% faster because life's too short for slow builds.
 
 <span class="highlight">UC Berkeley</span> — B.S. Computer Science  <span class="comment">2017–2021</span>
-  TA and VR/XR course facilitator. Taught Unity + C# to students.
+  Taught kids to code. Ran a VR dev course. Peak college experience.
 
-Open to new opportunities → linkedin.com/in/nguyen-emily`
+<span class="comment"># what's next? let's find out →</span> linkedin.com/in/nguyen-emily`
         },
         '~/resume.pdf': {
             type: 'file',
@@ -704,10 +706,11 @@ Open to new opportunities → linkedin.com/in/nguyen-emily`
    <span class="comment">OS:</span> Emily's Cozy Terminal v1.0
    <span class="comment">Host:</span> GitHub Pages
    <span class="comment">Shell:</span> custom-bash
-   <span class="comment">Theme:</span> ${window.themeManager?.getCurrentTheme() || 'meadow'}
-   <span class="comment">Terminal:</span> VT323
+   <span class="comment">Theme:</span> ${window.themeManager?.getCurrentTheme() || 'kanagawa'}
+   <span class="comment">Terminal:</span> JetBrains Mono
    <span class="comment">CPU:</span> Caffeine-powered
-   <span class="comment">Memory:</span> Full of dreams`;
+   <span class="comment">Memory:</span> Full of game night ideas
+   <span class="comment">Uptime:</span> since 2019`;
         }
     };
 
