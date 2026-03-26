@@ -14,6 +14,7 @@
 body {
     font-family: 'Nunito', sans-serif;
     height: 100vh;
+    height: 100dvh;
     overflow: hidden;
 }
 
@@ -23,6 +24,7 @@ body {
 
 .desktop {
     height: 100vh;
+    height: 100dvh;
     padding: 2rem;
     display: flex;
     align-items: flex-start;
@@ -61,8 +63,10 @@ body {
     transition: all 0.15s ease;
 }
 
-.desktop-icon:hover {
-    background: rgba(255, 255, 255, 0.3);
+@media (hover: hover) and (pointer: fine) {
+    .desktop-icon:hover {
+        background: rgba(255, 255, 255, 0.3);
+    }
 }
 
 .desktop-icon:active {
@@ -100,7 +104,7 @@ body {
 
 .restore-btn {
     position: fixed;
-    bottom: 2rem;
+    bottom: calc(2rem + env(safe-area-inset-bottom, 0px));
     left: 50%;
     transform: translateX(-50%);
     display: none;
@@ -134,8 +138,10 @@ body {
     width: 780px;
     min-width: 320px;
     min-height: max(200px, 60vh);
+    min-height: max(200px, 60dvh);
     max-width: calc(100vw - 4rem);
     max-height: calc(100vh - 4rem);
+    max-height: calc(100dvh - 4rem);
     margin-left: 5%;
     margin-top: 2vh;
     display: flex;
@@ -152,6 +158,7 @@ body {
 
 .window-frame.minimized {
     transform: translateY(100vh);
+    transform: translateY(100dvh);
     opacity: 0;
     pointer-events: none;
 }
@@ -159,6 +166,7 @@ body {
 .window-frame.maximized {
     max-width: 100%;
     max-height: calc(100vh - 4rem);
+    max-height: calc(100dvh - 4rem);
     margin: 0;
     border-radius: 0;
 }
@@ -267,6 +275,7 @@ body {
     flex-shrink: 0;
     cursor: grab;
     user-select: none;
+    touch-action: none;
 }
 
 .title-bar:active {
@@ -286,11 +295,24 @@ body {
     cursor: pointer;
     transition: all 0.15s ease;
     padding: 0;
+    position: relative;
 }
 
-.btn:hover {
-    filter: brightness(1.1);
-    transform: scale(1.1);
+/* Expand touch target to 44px without changing visual size */
+.btn::after {
+    content: '';
+    position: absolute;
+    top: -16px;
+    left: -16px;
+    right: -16px;
+    bottom: -16px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .btn:hover {
+        filter: brightness(1.1);
+        transform: scale(1.1);
+    }
 }
 
 .btn:active {
@@ -381,12 +403,14 @@ body {
     transition: opacity 0.15s ease;
 }
 
-.tab:hover .tab-close {
-    opacity: 0.6;
-}
+@media (hover: hover) and (pointer: fine) {
+    .tab:hover .tab-close {
+        opacity: 0.6;
+    }
 
-.tab-close:hover {
-    opacity: 1 !important;
+    .tab-close:hover {
+        opacity: 1 !important;
+    }
 }
 
 .tab-label {
@@ -405,6 +429,8 @@ body {
     overflow-y: auto;
     flex: 1;
     min-height: 0; /* Important for flex scroll */
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
 }
 
 /* Custom scrollbar */
@@ -630,8 +656,10 @@ body {
     user-select: none;
 }
 
-.tui-row:hover {
-    background: rgba(255, 255, 255, 0.04);
+@media (hover: hover) and (pointer: fine) {
+    .tui-row:hover {
+        background: rgba(255, 255, 255, 0.04);
+    }
 }
 
 .tui-row.expanded {
@@ -726,8 +754,10 @@ body {
     transition: opacity 0.15s ease;
 }
 
-.tui-link:hover {
-    opacity: 1;
+@media (hover: hover) and (pointer: fine) {
+    .tui-link:hover {
+        opacity: 1;
+    }
 }
 
 .tui-private,
@@ -769,8 +799,10 @@ body {
     position: relative;
 }
 
-.gl-row:hover {
-    background: rgba(255, 255, 255, 0.04);
+@media (hover: hover) and (pointer: fine) {
+    .gl-row:hover {
+        background: rgba(255, 255, 255, 0.04);
+    }
 }
 
 .gl-row.expanded {
@@ -979,9 +1011,11 @@ body {
     cursor: pointer;
 }
 
-.kanban-card:hover {
-    transform: translateY(-1px);
-    border-color: rgba(255, 255, 255, 0.15);
+@media (hover: hover) and (pointer: fine) {
+    .kanban-card:hover {
+        transform: translateY(-1px);
+        border-color: rgba(255, 255, 255, 0.15);
+    }
 }
 
 .kcard-name {
@@ -1020,8 +1054,10 @@ body {
     transition: opacity 0.15s ease;
 }
 
-.kanban-card:hover .kcard-link {
-    opacity: 0.8;
+@media (hover: hover) and (pointer: fine) {
+    .kanban-card:hover .kcard-link {
+        opacity: 0.8;
+    }
 }
 
 /* Project subsection label */
@@ -1046,6 +1082,7 @@ body {
         margin-top: 1vh;
         max-width: 100%;
         max-height: calc(100vh - 3rem);
+        max-height: calc(100dvh - 3rem);
     }
 
     .tui-brief {
@@ -1068,7 +1105,9 @@ body {
         width: 100%;
         max-width: 100%;
         max-height: 100vh;
+        max-height: 100dvh;
         height: 100vh;
+        height: 100dvh;
         margin: 0;
         border-radius: 0;
         border-left: none;
@@ -1078,6 +1117,7 @@ body {
 
     .window-frame.maximized {
         max-height: 100vh;
+        max-height: 100dvh;
     }
 
     .terminal {
@@ -1096,19 +1136,25 @@ body {
     }
 
     .tab {
-        padding: 0.4rem 0.5rem;
+        padding: 0.6rem 0.65rem;
         font-size: 0.78rem;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
     }
 
-    /* Hide tab close buttons on mobile — replaced by swipe/gesture; avoid mis-taps */
+    /* Hide tab close buttons on mobile */
     .tab-close {
         display: none;
     }
 
     /* Hide window add-tab button on mobile */
     .tab-add {
-        padding: 0.4rem 0.5rem;
+        padding: 0.6rem 0.5rem;
         font-size: 0.95rem;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
     }
 
     /* Disable resize handles on touch screens */
@@ -1144,6 +1190,17 @@ body {
         font-size: 0.82rem;
     }
 
+    /* Bigger tap targets for interactive rows */
+    .tui-row,
+    .gl-row {
+        padding: 0.55rem 0.75rem;
+    }
+
+    /* Hide git hash on mobile — takes too much horizontal space */
+    .gl-hash {
+        display: none;
+    }
+
 /* Contact: ensure rows don't overflow */
     .contact-row {
         flex-wrap: wrap;
@@ -1157,10 +1214,9 @@ body {
 }
 
 @media (max-width: 414px) {
-    /* Tighter tab labels: drop ~/ prefix visually via font-size */
     .tab {
-        font-size: 0.72rem;
-        padding: 0.35rem 0.45rem;
+        font-size: 0.75rem;
+        padding: 0.6rem 0.45rem;
     }
 
     .terminal {
@@ -1189,8 +1245,8 @@ body {
     }
 
     .tab {
-        font-size: 0.68rem;
-        padding: 0.35rem 0.35rem;
+        font-size: 0.72rem;
+        padding: 0.6rem 0.35rem;
     }
 
     /* Hide the + new tab button to save space */

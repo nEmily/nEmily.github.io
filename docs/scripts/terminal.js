@@ -1026,7 +1026,7 @@ Or use 'search [keyword]' to find specific content.`;
         line.className = 'terminal-line input-line';
         line.innerHTML = `
             <span class="prompt">${CONFIG.prompt}</span>
-            <span class="input-text" contenteditable="true" spellcheck="false"></span>
+            <span class="input-text" contenteditable="true" spellcheck="false" autocapitalize="none" autocorrect="off" autocomplete="off"></span>
         `;
         return line;
     }
@@ -1219,25 +1219,15 @@ Or use 'search [keyword]' to find specific content.`;
             inputEl.addEventListener('keydown', handleInput);
         });
 
-        // Focus on click anywhere in terminal
+        // Focus on click anywhere in terminal — skip on touch devices and interactive elements
+        const isTouchDevice = 'ontouchstart' in window;
         document.querySelectorAll('.terminal').forEach(terminal => {
             terminal.addEventListener('click', (e) => {
-                if (!e.target.closest('.input-text')) {
-                    const activeTerminal = getActiveTerminal();
-                    const inputEl = activeTerminal.querySelector('.input-text');
-                    if (inputEl) inputEl.focus();
-                }
-            });
-        });
-
-        // Focus input when tab changes
-        document.querySelectorAll('.tab').forEach(tab => {
-            tab.addEventListener('click', () => {
-                setTimeout(() => {
-                    const activeTerminal = getActiveTerminal();
-                    const inputEl = activeTerminal.querySelector('.input-text');
-                    if (inputEl) inputEl.focus({ preventScroll: true });
-                }, 50);
+                if (isTouchDevice) return;
+                if (e.target.closest('.input-text, .tui-row, .gl-row, .tui-detail, .gl-detail, a, button')) return;
+                const activeTerminal = getActiveTerminal();
+                const inputEl = activeTerminal.querySelector('.input-text');
+                if (inputEl) inputEl.focus();
             });
         });
     }

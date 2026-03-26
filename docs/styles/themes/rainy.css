@@ -108,9 +108,11 @@
     color: #7A7888;
 }
 
-.theme-rainy .tab:hover {
-    color: var(--text-light);
-    background: #3A3848;
+@media (hover: hover) and (pointer: fine) {
+    .theme-rainy .tab:hover {
+        color: var(--text-light);
+        background: #3A3848;
+    }
 }
 
 .theme-rainy .tab.active {
@@ -122,16 +124,20 @@
     color: #7A7888;
 }
 
-.theme-rainy .tab-add:hover {
-    color: var(--text-light);
+@media (hover: hover) and (pointer: fine) {
+    .theme-rainy .tab-add:hover {
+        color: var(--text-light);
+    }
 }
 
 .theme-rainy .tab-close {
     color: inherit;
 }
 
-.theme-rainy .tab-close:hover {
-    color: var(--accent-rose);
+@media (hover: hover) and (pointer: fine) {
+    .theme-rainy .tab-close:hover {
+        color: var(--accent-rose);
+    }
 }
 
 /* =============================================================================
@@ -177,9 +183,11 @@
     border-bottom: 1px dashed var(--link-color);
 }
 
-.theme-rainy .link:hover {
-    color: var(--accent-rose);
-    border-color: var(--accent-rose);
+@media (hover: hover) and (pointer: fine) {
+    .theme-rainy .link:hover {
+        color: var(--accent-rose);
+        border-color: var(--accent-rose);
+    }
 }
 
 /* Projects */
@@ -244,8 +252,10 @@
     border-bottom-color: rgba(168, 200, 184, 0.10);
 }
 
-.theme-rainy .tui-row:hover {
-    background: rgba(168, 200, 184, 0.06);
+@media (hover: hover) and (pointer: fine) {
+    .theme-rainy .tui-row:hover {
+        background: rgba(168, 200, 184, 0.06);
+    }
 }
 
 .theme-rainy .tui-row.expanded {
@@ -286,8 +296,10 @@
     color: var(--accent-sky);
 }
 
-.theme-rainy .gl-row:hover {
-    background: rgba(168, 200, 184, 0.06);
+@media (hover: hover) and (pointer: fine) {
+    .theme-rainy .gl-row:hover {
+        background: rgba(168, 200, 184, 0.06);
+    }
 }
 
 .theme-rainy .gl-row.expanded {
@@ -309,10 +321,12 @@
     box-shadow: 0 4px 12px rgba(60, 50, 70, 0.2);
 }
 
-.theme-rainy .restore-btn:hover {
-    background: var(--bg-cream);
-    transform: translateX(-50%) translateY(-2px);
-    box-shadow: 0 6px 16px rgba(60, 50, 70, 0.25);
+@media (hover: hover) and (pointer: fine) {
+    .theme-rainy .restore-btn:hover {
+        background: var(--bg-cream);
+        transform: translateX(-50%) translateY(-2px);
+        box-shadow: 0 6px 16px rgba(60, 50, 70, 0.25);
+    }
 }
 
 /* =============================================================================

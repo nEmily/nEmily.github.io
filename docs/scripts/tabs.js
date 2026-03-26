@@ -48,12 +48,14 @@
         // Update browser title
         document.title = '~/emilynguyen';
 
-        // Focus the input in the new tab (preventScroll so we stay at the top)
-        setTimeout(() => {
-            const activeTerminal = document.querySelector('.tab-content.active');
-            const inputEl = activeTerminal?.querySelector('.input-text');
-            if (inputEl) inputEl.focus({ preventScroll: true });
-        }, 50);
+        // Focus the input in the new tab — skip on touch devices to avoid keyboard popup
+        if (!('ontouchstart' in window)) {
+            setTimeout(() => {
+                const activeTerminal = document.querySelector('.tab-content.active');
+                const inputEl = activeTerminal?.querySelector('.input-text');
+                if (inputEl) inputEl.focus({ preventScroll: true });
+            }, 50);
+        }
     }
 
     /**
@@ -126,7 +128,7 @@
             <div class="output">new terminal session</div>
             <div class="terminal-line input-line">
                 <span class="prompt">></span>
-                <span class="input-text" contenteditable="true" spellcheck="false"></span>
+                <span class="input-text" contenteditable="true" spellcheck="false" autocapitalize="none" autocorrect="off" autocomplete="off"></span>
                 <span class="cursor"></span>
             </div>
         `;
@@ -245,7 +247,7 @@
 
             <div class="terminal-line input-line">
                 <span class="prompt">></span>
-                <span class="input-text" contenteditable="true" spellcheck="false"></span>
+                <span class="input-text" contenteditable="true" spellcheck="false" autocapitalize="none" autocorrect="off" autocomplete="off"></span>
                 <span class="cursor"></span>
             </div>
         `;

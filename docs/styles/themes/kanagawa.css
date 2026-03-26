@@ -77,9 +77,24 @@
     /* Wider and taller — terminal should dominate the viewport */
     width: 920px;
     min-height: 75vh;
+    min-height: 75dvh;
     max-height: calc(100vh - 2rem);
+    max-height: calc(100dvh - 2rem);
     margin-top: 1vh;
+    margin-top: 1dvh;
     margin-left: 3%;
+}
+
+/* Override theme width on mobile — prevents 920px from causing horizontal scroll */
+@media (max-width: 600px) {
+    .theme-kanagawa .window-frame {
+        width: 100%;
+        min-height: 0;
+        max-height: 100vh;
+        max-height: 100dvh;
+        margin: 0;
+        border-radius: 0;
+    }
 }
 
 /* Title Bar — minimal, no macOS-gradient, just a thin dark bar */
@@ -139,9 +154,11 @@
     border-radius: 0;
 }
 
-.theme-kanagawa .tab:hover:not(.active) {
-    color: var(--text-cream);
-    background: rgba(255, 255, 255, 0.04);
+@media (hover: hover) and (pointer: fine) {
+    .theme-kanagawa .tab:hover:not(.active) {
+        color: var(--text-cream);
+        background: rgba(255, 255, 255, 0.04);
+    }
 }
 
 .theme-kanagawa .tab-add {
@@ -149,17 +166,21 @@
     border-radius: 0;
 }
 
-.theme-kanagawa .tab-add:hover {
-    color: var(--text-muted);
-    background: rgba(255,255,255,0.04);
+@media (hover: hover) and (pointer: fine) {
+    .theme-kanagawa .tab-add:hover {
+        color: var(--text-muted);
+        background: rgba(255,255,255,0.04);
+    }
 }
 
 .theme-kanagawa .tab-close {
     color: inherit;
 }
 
-.theme-kanagawa .tab-close:hover {
-    color: var(--accent-sakura);
+@media (hover: hover) and (pointer: fine) {
+    .theme-kanagawa .tab-close:hover {
+        color: var(--accent-sakura);
+    }
 }
 
 /* =============================================================================
@@ -206,9 +227,11 @@
     border-bottom: 1px dashed rgba(160, 212, 196, 0.4);
 }
 
-.theme-kanagawa .link:hover {
-    color: var(--accent-sakura);
-    border-color: rgba(232, 160, 191, 0.5);
+@media (hover: hover) and (pointer: fine) {
+    .theme-kanagawa .link:hover {
+        color: var(--accent-sakura);
+        border-color: rgba(232, 160, 191, 0.5);
+    }
 }
 
 /* Projects */
@@ -273,8 +296,10 @@
     border-bottom-color: rgba(160, 212, 196, 0.10);
 }
 
-.theme-kanagawa .tui-row:hover {
-    background: rgba(160, 212, 196, 0.06);
+@media (hover: hover) and (pointer: fine) {
+    .theme-kanagawa .tui-row:hover {
+        background: rgba(160, 212, 196, 0.06);
+    }
 }
 
 .theme-kanagawa .tui-row.expanded {
@@ -315,8 +340,10 @@
     color: var(--accent-gold);
 }
 
-.theme-kanagawa .gl-row:hover {
-    background: rgba(160, 212, 196, 0.06);
+@media (hover: hover) and (pointer: fine) {
+    .theme-kanagawa .gl-row:hover {
+        background: rgba(160, 212, 196, 0.06);
+    }
 }
 
 .theme-kanagawa .gl-row.expanded {
@@ -338,10 +365,12 @@
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
 }
 
-.theme-kanagawa .restore-btn:hover {
-    background: #303040;
-    transform: translateX(-50%) translateY(-2px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+@media (hover: hover) and (pointer: fine) {
+    .theme-kanagawa .restore-btn:hover {
+        background: #303040;
+        transform: translateX(-50%) translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+    }
 }
 
 /* =============================================================================
@@ -353,8 +382,10 @@
     text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
 }
 
-.theme-kanagawa .desktop-icon:hover {
-    background: rgba(160, 212, 196, 0.12);
+@media (hover: hover) and (pointer: fine) {
+    .theme-kanagawa .desktop-icon:hover {
+        background: rgba(160, 212, 196, 0.12);
+    }
 }
 
 .theme-kanagawa .desktop-icon.selected {

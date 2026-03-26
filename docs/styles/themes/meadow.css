@@ -109,9 +109,11 @@
     color: #8B8578;
 }
 
-.theme-meadow .tab:hover {
-    color: var(--text-light);
-    background: #4D4A44;
+@media (hover: hover) and (pointer: fine) {
+    .theme-meadow .tab:hover {
+        color: var(--text-light);
+        background: #4D4A44;
+    }
 }
 
 .theme-meadow .tab.active {
@@ -123,16 +125,20 @@
     color: #8B8578;
 }
 
-.theme-meadow .tab-add:hover {
-    color: var(--text-light);
+@media (hover: hover) and (pointer: fine) {
+    .theme-meadow .tab-add:hover {
+        color: var(--text-light);
+    }
 }
 
 .theme-meadow .tab-close {
     color: inherit;
 }
 
-.theme-meadow .tab-close:hover {
-    color: var(--accent-peach);
+@media (hover: hover) and (pointer: fine) {
+    .theme-meadow .tab-close:hover {
+        color: var(--accent-peach);
+    }
 }
 
 /* =============================================================================
@@ -178,9 +184,11 @@
     border-bottom: 1px dashed var(--link-color);
 }
 
-.theme-meadow .link:hover {
-    color: var(--accent-peach);
-    border-color: var(--accent-peach);
+@media (hover: hover) and (pointer: fine) {
+    .theme-meadow .link:hover {
+        color: var(--accent-peach);
+        border-color: var(--accent-peach);
+    }
 }
 
 /* Projects */
@@ -245,8 +253,10 @@
     border-bottom-color: rgba(152, 212, 187, 0.12);
 }
 
-.theme-meadow .tui-row:hover {
-    background: rgba(152, 212, 187, 0.06);
+@media (hover: hover) and (pointer: fine) {
+    .theme-meadow .tui-row:hover {
+        background: rgba(152, 212, 187, 0.06);
+    }
 }
 
 .theme-meadow .tui-row.expanded {
@@ -287,8 +297,10 @@
     color: var(--accent-butter);
 }
 
-.theme-meadow .gl-row:hover {
-    background: rgba(152, 212, 187, 0.06);
+@media (hover: hover) and (pointer: fine) {
+    .theme-meadow .gl-row:hover {
+        background: rgba(152, 212, 187, 0.06);
+    }
 }
 
 .theme-meadow .gl-row.expanded {
@@ -310,10 +322,12 @@
     box-shadow: 0 4px 12px rgba(139, 115, 85, 0.2);
 }
 
-.theme-meadow .restore-btn:hover {
-    background: var(--bg-cream);
-    transform: translateX(-50%) translateY(-2px);
-    box-shadow: 0 6px 16px rgba(139, 115, 85, 0.25);
+@media (hover: hover) and (pointer: fine) {
+    .theme-meadow .restore-btn:hover {
+        background: var(--bg-cream);
+        transform: translateX(-50%) translateY(-2px);
+        box-shadow: 0 6px 16px rgba(139, 115, 85, 0.25);
+    }
 }
 
 /* =============================================================================
