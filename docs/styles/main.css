@@ -1093,31 +1093,26 @@ body {
 @media (max-width: 600px) {
     .desktop {
         padding: 0;
-        align-items: stretch;
+        align-items: center;
+        justify-content: flex-start;
     }
 
-    /* Hide desktop icons on mobile — terminal is fullscreen, no desktop visible */
+    /* Hide desktop icons on mobile — terminal floats over the background */
     .desktop-icons {
         display: none;
     }
 
     .window-frame {
-        width: 100%;
-        max-width: 100%;
-        max-height: 100vh;
-        max-height: 100dvh;
-        height: 100vh;
-        height: 100dvh;
-        margin: 0;
-        border-radius: 0;
-        border-left: none;
-        border-right: none;
-        border-bottom: none;
+        width: calc(100% - 1rem);
+        max-width: calc(100% - 1rem);
+        max-height: calc(100dvh - 1.5rem);
+        height: calc(100dvh - 1.5rem);
+        margin: 0.5rem auto 0;
+        border-radius: 10px;
     }
 
     .window-frame.maximized {
-        max-height: 100vh;
-        max-height: 100dvh;
+        max-height: calc(100dvh - 1.5rem);
     }
 
     .terminal {
@@ -1133,14 +1128,19 @@ body {
     /* Tab bar: smaller text, tighter padding, show abbreviated labels */
     .tab-bar {
         padding-left: 0.25rem;
+        overflow: hidden;
     }
 
     .tab {
-        padding: 0.6rem 0.65rem;
+        padding: 0.6rem 0.5rem;
         font-size: 0.78rem;
         min-height: 44px;
         display: flex;
         align-items: center;
+        flex-shrink: 1;
+        min-width: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 
     /* Hide tab close buttons on mobile */
@@ -1150,11 +1150,7 @@ body {
 
     /* Hide window add-tab button on mobile */
     .tab-add {
-        padding: 0.6rem 0.5rem;
-        font-size: 0.95rem;
-        min-height: 44px;
-        display: flex;
-        align-items: center;
+        display: none;
     }
 
     /* Disable resize handles on touch screens */
