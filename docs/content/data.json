@@ -72,6 +72,14 @@
 
   "projects": [
     {
+      "name": "Think Lofi",
+      "description": "audio-reactive music game that reacts to your Spotify. shapes spawn to your music, bass drops give 2x score, combos unlock power-ups. every song plays different.",
+      "tags": ["TypeScript", "Spotify", "Audio", "Game"],
+      "link": "https://github.com/nEmily/clawgames",
+      "type": "personal",
+      "featured": true
+    },
+    {
       "name": "AI Agent Orchestrator",
       "description": "the system that manages my kanban board and ships code overnight. dispatches AI workers across projects, reviews its own PRs, and sends me a report in the morning.",
       "tags": ["TypeScript", "Claude Code", "Orchestration", "Agents"],

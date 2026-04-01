@@ -639,10 +639,99 @@ body {
     font-size: 0.82rem;
 }
 
-.tui-section-building {
+.tui-section-building,
+.tui-section-shipped {
     border-top: 1px solid var(--terminal-border, rgba(255,255,255,0.06));
     margin-top: 0.15rem;
     padding-top: 0.5rem;
+}
+
+/* Featured project card */
+.tui-featured {
+    margin: 0.35rem 0.75rem 0.5rem;
+    padding: 0.65rem 0.85rem;
+    border: 1px solid var(--accent-sakura, #e8a0bf);
+    border-radius: 4px;
+    background: rgba(232, 160, 191, 0.06);
+}
+
+.tui-featured-header {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    margin-bottom: 0.4rem;
+}
+
+.tui-featured-icon {
+    color: var(--accent-sakura, #e8a0bf);
+    font-size: 0.9rem;
+}
+
+.tui-featured-name {
+    font-weight: bold;
+    font-size: 0.95rem;
+    color: var(--accent-sakura, #e8a0bf);
+}
+
+.tui-featured-brief {
+    font-size: 0.82rem;
+    opacity: 0.6;
+}
+
+.tui-featured-body {
+    padding-left: 1.5rem;
+}
+
+.tui-featured-img {
+    width: 100%;
+    max-height: 180px;
+    object-fit: cover;
+    border-radius: 3px;
+    margin-bottom: 0.45rem;
+    opacity: 0.9;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.tui-featured-desc {
+    font-size: 0.82rem;
+    line-height: 1.55;
+    opacity: 0.8;
+    margin-bottom: 0.45rem;
+}
+
+.tui-featured-tags {
+    display: flex;
+    gap: 0.35rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.45rem;
+}
+
+.tui-featured-links {
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
+    font-size: 0.82rem;
+}
+
+.tui-featured-link-primary {
+    font-weight: 600;
+}
+
+.tui-featured-sep {
+    opacity: 0.3;
+}
+
+.tui-featured-install {
+    opacity: 0.6;
+    font-size: 0.78rem;
+}
+
+.tui-featured-install code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    padding: 0.1rem 0.3rem;
+    border-radius: 2px;
+    background: rgba(255, 255, 255, 0.06);
 }
 
 /* Row — clickable project line */
@@ -1226,6 +1315,22 @@ body {
 
     .tui-brief {
         display: none;
+    }
+
+    .tui-featured-brief {
+        display: none;
+    }
+
+    .tui-featured-header {
+        gap: 0.35rem;
+    }
+
+    .tui-featured-body {
+        padding-left: 0;
+    }
+
+    .tui-featured-links {
+        flex-wrap: wrap;
     }
 }
 
